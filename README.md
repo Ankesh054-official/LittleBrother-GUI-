@@ -3,8 +3,14 @@ LittleBrother is an information collection tool (OSINT), It is basically a CLI b
 or Belgian person.It provides various modules that allow efficient searches. LittleBrother does not require an API key or login ID. This is a extended version
 of LittleBrother tool, It is a GUI based tool.We need some of your information to run this tool properly, We promise you not to leak your data and try to make it more secure.
 
-## Motivation
-The joy behind codeing.
+## Screenshots.
+
+<img align="left" alt="Loading" width="400px" src="https://github.com/Ankesh054-official/LittleBrother-GUI-/blob/master/screenshots/Loading.png?raw=true" />
+<img align="right" alt="decision" width="400px" src="https://github.com/Ankesh054-official/LittleBrother-GUI-/blob/master/screenshots/decisionscreen.png?raw=true" />
+
+<img align="left" alt="createuser" width="400px" src="https://github.com/Ankesh054-official/LittleBrother-GUI-/blob/master/screenshots/createuser.png?raw=true" />
+<img align="left" alt="Login" width="400px" src="https://github.com/Ankesh054-official/LittleBrother-GUI-/blob/master/screenshots/loginuser.png?raw=true" />
+
 
 <br>
 <br>
@@ -23,3 +29,6 @@ The joy behind codeing.
 
 ## LicenseMIT © [Ankesh054-official](https://github.com/Ankesh054-official)
 =======
+
+
+
