@@ -4,6 +4,7 @@ Table of Contents
    * [LittleBrother](#LittleBrother(GUI))
    * [Disclaimer](#Disclaimer)
    * [Screenshots](#Screenshots)
+   * [Languages and Tools](#Languages and Tools:)
    * [Installation on Linux](#Installation on Linux)
    * [Installation on Windows](#Installation on Windows)
    * [Contributors](#Contributors)
@@ -32,9 +33,7 @@ Screenshots.
     <img align="left" alt="Login"  width="300px" src="https://github.com/Ankesh054-official/LittleBrother-GUI-/blob/master/screenshots/loginuser.png?raw=true" style="float: left; width: 33.33%; padding: 5px;"/>
 
  
-<br><br>
-<br>
-<hr>
+
 
 Languages and Tools:
 =
@@ -45,9 +44,6 @@ Languages and Tools:
 <img align="left" alt="kali linux" width="70" src="https://www.kali.org/wp-content/uploads/2015/09/kali-2.0-website-logo.png" />
 <img align="left" alt="Firebase" width="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/firebase/firebase.png" />
 
-
-<br>
-<br>
 
 
 Installation on Linux
