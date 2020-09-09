@@ -7,7 +7,6 @@ Table of Contents
    * [Installation on Linux](#Installation on Linux)
    * [Installation on Windows](#Installation on Windows)
    * [Contributors](#Contributors)
-   * [Support us](#Support us)
 
 
 LittleBrother(GUI)
