@@ -6,16 +6,18 @@ of LittleBrother tool, It is a GUI based tool.We need some of your information t
 ## Screenshots.
 
 <img align="left" alt="Loading" width="500px" src="https://github.com/Ankesh054-official/LittleBrother-GUI-/blob/master/screenshots/Loading.png?raw=true" style="float: left; width: 33.33%; padding: 5px;"/>
+<vr></vr>
 <img align="left" alt="decision" width="500px" src="https://github.com/Ankesh054-official/LittleBrother-GUI-/blob/master/screenshots/decisionscreen.png?raw=true" style="float: left; width: 33.33%; padding: 5px;" />
 
-<img align="down" alt="createuser" width="400px" src="https://github.com/Ankesh054-official/LittleBrother-GUI-/blob/master/screenshots/createuser.png?raw=true" style="float: left; width: 33.33%; padding: 5px;"/>
-<img align="left" alt="Login"  width="400px" src="https://github.com/Ankesh054-official/LittleBrother-GUI-/blob/master/screenshots/loginuser.png?raw=true" style="float: left; width: 33.33%; padding: 5px;"/>
+<img align="left" alt="createuser" width="500px" src="https://github.com/Ankesh054-official/LittleBrother-GUI-/blob/master/screenshots/createuser.png?raw=true" style="float: left; width: 33.33%; padding: 5px;"/>
+<img align="left" alt="Login"  width="500px" src="https://github.com/Ankesh054-official/LittleBrother-GUI-/blob/master/screenshots/loginuser.png?raw=true" style="float: left; width: 33.33%; padding: 5px;"/>
 
 
 
 
 <br>
 <br>
+<hr>
 
 ### Languages and Tools:
 <img align="left" alt="Python" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/python/python.png" />
@@ -29,8 +31,9 @@ of LittleBrother tool, It is a GUI based tool.We need some of your information t
 <br>
 <br>
 
+
 ## LicenseMIT © [Ankesh054-official](https://github.com/Ankesh054-official)
-=======
+======================================================================================
 
 
 
