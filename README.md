@@ -4,7 +4,7 @@ Table of Contents
    * [LittleBrother](#LittleBrother(GUI))
    * [Disclaimer](#Disclaimer)
    * [Screenshots](#Screenshots)
-   * [Languages and Tools](#Languages-and-Tools:)
+   * [Languages and Tools](#Languages-and-Tools)
    * [Installation on Linux](#Installation-on-Linux)
    * [Installation on Windows](#Installation-on-Windows)
    * [Contributors](#Contributors)
@@ -24,7 +24,7 @@ The authors of LittleBrother cannot be held responsible for the use of their too
 
 Screenshots.
 =
-<img height="150" hspace="20"/>
+<img height="50" hspace="20"/>
     <img align="left" alt="Loading" width="300px" src="https://github.com/Ankesh054-official/LittleBrother-GUI-/blob/master/screenshots/Loading.png?raw=true" style="float: left; width: 33.33%; padding: 5px;"/>
     <img align="left" alt="decision" width="300px" src="https://github.com/Ankesh054-official/LittleBrother-GUI-/blob/master/screenshots/decisionscreen.png?raw=true" style="float: left; width: 33.33%; padding: 5px;" />
 <br>
@@ -33,9 +33,13 @@ Screenshots.
     <img align="left" alt="Login"  width="300px" src="https://github.com/Ankesh054-official/LittleBrother-GUI-/blob/master/screenshots/loginuser.png?raw=true" style="float: left; width: 33.33%; padding: 5px;"/>
 
  
+<br>
+<br>
+<br>
+<br>
+<br>
 
-
-Languages and Tools:
+Languages and Tools
 =
 <img align="left" alt="Python" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/python/python.png" />
 <img align="left" alt="pycharm" width="26px" src="https://banner2.cleanpng.com/20180617/hev/kisspng-pycharm-intellij-idea-jetbrains-integrated-develop-jbj-5b25ebbd21dbe9.7593892615292118371387.jpg" />
