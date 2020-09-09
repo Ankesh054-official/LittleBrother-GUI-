@@ -5,11 +5,13 @@ of LittleBrother tool, It is a GUI based tool.We need some of your information t
 
 ## Screenshots.
 
-<img align="left" alt="Loading" width="400px" src="https://github.com/Ankesh054-official/LittleBrother-GUI-/blob/master/screenshots/Loading.png?raw=true" />
-<img align="right" alt="decision" width="400px" src="https://github.com/Ankesh054-official/LittleBrother-GUI-/blob/master/screenshots/decisionscreen.png?raw=true" />
+<img align="left" alt="Loading" width="500px" src="https://github.com/Ankesh054-official/LittleBrother-GUI-/blob/master/screenshots/Loading.png?raw=true" style="float: left; width: 33.33%; padding: 5px;"/>
+<img align="left" alt="decision" width="500px" src="https://github.com/Ankesh054-official/LittleBrother-GUI-/blob/master/screenshots/decisionscreen.png?raw=true" style="float: left; width: 33.33%; padding: 5px;" />
 
-<img align="left" alt="createuser" width="400px" src="https://github.com/Ankesh054-official/LittleBrother-GUI-/blob/master/screenshots/createuser.png?raw=true" />
-<img align="left" alt="Login" width="400px" src="https://github.com/Ankesh054-official/LittleBrother-GUI-/blob/master/screenshots/loginuser.png?raw=true" />
+<img align="down" alt="createuser" width="400px" src="https://github.com/Ankesh054-official/LittleBrother-GUI-/blob/master/screenshots/createuser.png?raw=true" style="float: left; width: 33.33%; padding: 5px;"/>
+<img align="left" alt="Login"  width="400px" src="https://github.com/Ankesh054-official/LittleBrother-GUI-/blob/master/screenshots/loginuser.png?raw=true" style="float: left; width: 33.33%; padding: 5px;"/>
+
+
 
 
 <br>
