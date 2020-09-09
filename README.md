@@ -4,9 +4,9 @@ Table of Contents
    * [LittleBrother](#LittleBrother(GUI))
    * [Disclaimer](#Disclaimer)
    * [Screenshots](#Screenshots)
-   * [Languages and Tools](#Languages and Tools:)
-   * [Installation on Linux](#Installation on Linux)
-   * [Installation on Windows](#Installation on Windows)
+   * [Languages and Tools](#Languages-and-Tools:)
+   * [Installation on Linux](#Installation-on-Linux)
+   * [Installation on Windows](#Installation-on-Windows)
    * [Contributors](#Contributors)
 
 
