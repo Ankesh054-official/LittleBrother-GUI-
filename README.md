@@ -4,8 +4,8 @@ Table of Contents
    * [LittleBrother](#LittleBrother(GUI))
    * [Disclaimer](#Disclaimer)
    * [Screenshots](#Screenshots)
-   * [Installation on Linux](#Installation on Linux))
-   * [Installation on Windows](#Installation on Windows))
+   * [Installation on Linux](#Installation on Linux)
+   * [Installation on Windows](#Installation on Windows)
    * [Contributors](#Contributors)
    * [Support us](#Support us)
 
@@ -51,26 +51,89 @@ Languages and Tools:
 <br>
 
 
-
-
 Installation on Linux
 =
+You must have git and python3 installed on your machine.
+            
+            sudo apt install git python3 #sur les distributions utilisant APT (comme la famille Debian)
+            git clone https://github.com/Lulz3xploit/LittleBrother
+            cd LittleBrother
+            python3 -m pip install -r requirements.txt
+Execution Linux
+=
+In the LittleBrother directory, run this command to be able to launch LittleBrother:
+            
+            python3 LittleBrother.py
 
 Installation on Windows
 =
+* Download [LittleBrother](https://github.com/Ankesh054-official/LittleBrother-GUI-/archive/master.zip)
+* Install Python from the Windows Store
+* Dezipper LittleBrother (master.zip)
+* Open *CMD* and go to the **LittleBrother-master** directory using the *cd* command. Eg:
 
+
+            cd Desktop\
+            cd LittleBrother-master\
+and run:
+
+            python3 -m pip install -r requirements.txt
+
+Start LittleBrother from Windows:
+=
+* Go to the **LittleBrother-master** directory as it was installed and run the command:
+
+
+            python3 LittleBrother.py
+
+Compatible
+=
+*  Windows
+*  MacOS
+*  Linux
+
+    
+
+Features
+=
+ - Lookup:
+    - Phone lookup
+    - Email lookup
+    - Last name / First name lookup
+    - Surname lookup
+    - Lookup address
+    - Mail ip locator
+    - Ip locator
+    - Bssid locator
+    - Exif read
+    - Google search
+    - Twitter
+    - Instagram
+    - Facebook
+    - LinkedIn employee search (New!)
+    - Hash Bruteforce (New!)
+
+ - Other tools:
+
+	- Hash Bruteforce
+
+- Profiler (New!)
+    - Profiler an profile
+    - Database management
+    - Profile creator
 
 
 
 Contributors
 =
-
-Support us
-=
+<a href=" https://github.com/Ankesh054-official" >
+    <img alt="@Ankesh054-official" src="https://avatars0.githubusercontent.com/u/68959350?s=60&amp;u=e2d8c8eb3330e224cf16667f72326d3bd0696e0a&amp;v=4" padding="25px" width="42" height="42"/>
+    </a>
 
 
 LicenseMIT © [Ankesh054-official](https://github.com/Ankesh054-official)
 ======================================================================================
 
+[Ankesh054-official]: https://avatars0.githubusercontent.com/u/68959350?s=60&amp;u=e2d8c8eb3330e224cf16667f72326d3bd0696e0a&amp;v=4
 
 
