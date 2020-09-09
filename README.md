@@ -4,14 +4,22 @@ or Belgian person.It provides various modules that allow efficient searches. Lit
 of LittleBrother tool, It is a GUI based tool.We need some of your information to run this tool properly, We promise you not to leak your data and try to make it more secure.
 
 ## Screenshots.
-
-<img align="left" alt="Loading" width="300px" src="https://github.com/Ankesh054-official/LittleBrother-GUI-/blob/master/screenshots/Loading.png?raw=true" style="float: left; width: 33.33%; padding: 5px;"/>
-<vr></vr>
-<img align="left" alt="decision" width="300px" src="https://github.com/Ankesh054-official/LittleBrother-GUI-/blob/master/screenshots/decisionscreen.png?raw=true" style="float: left; width: 33.33%; padding: 5px;" />
-
-<img align="left" alt="createuser" width="300px" src="https://github.com/Ankesh054-official/LittleBrother-GUI-/blob/master/screenshots/createuser.png?raw=true" style="float: left; width: 33.33%; padding: 5px;"/>
-<img align="left" alt="Login"  width="300px" src="https://github.com/Ankesh054-official/LittleBrother-GUI-/blob/master/screenshots/loginuser.png?raw=true" style="float: left; width: 33.33%; padding: 5px;"/>
-
+ <div class="row">
+  <div class="column">
+    <img align="left" alt="Loading" width="300px" src="https://github.com/Ankesh054-official/LittleBrother-GUI-/blob/master/screenshots/Loading.png?raw=true" style="float: left; width: 33.33%; padding: 5px;"/>
+  </div>
+  <div class="column">
+    <img align="left" alt="decision" width="300px" src="https://github.com/Ankesh054-official/LittleBrother-GUI-/blob/master/screenshots/decisionscreen.png?raw=true" style="float: left; width: 33.33%; padding: 5px;" />
+  </div>
+  </div>
+  <div class="row">
+  <div class="column">
+    <img align="left" alt="createuser" width="300px" src="https://github.com/Ankesh054-official/LittleBrother-GUI-/blob/master/screenshots/createuser.png?raw=true" style="float: left; width: 33.33%; padding: 5px;"/>
+  </div>
+  <div class="column">
+    <img align="left" alt="Login"  width="300px" src="https://github.com/Ankesh054-official/LittleBrother-GUI-/blob/master/screenshots/loginuser.png?raw=true" style="float: left; width: 33.33%; padding: 5px;"/>
+  </div>
+</div> 
 
 
 
