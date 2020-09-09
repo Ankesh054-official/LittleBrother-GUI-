@@ -1,9 +1,29 @@
-## LittleBrother(GUI)
+Table of Contents
+=
+
+   * [LittleBrother](#LittleBrother(GUI))
+   * [Disclaimer](#Disclaimer)
+   * [Screenshots](#Screenshots)
+   * [Installation on Linux](#Installation on Linux))
+   * [Installation on Windows](#Installation on Windows))
+   * [Contributors](#Contributors)
+   * [Support us](#Support us)
+
+
+LittleBrother(GUI)
+=
 LittleBrother is an information collection tool (OSINT), It is basically a CLI based tool which aims to carry out research on a French, Swiss,Luxembourgish
 or Belgian person.It provides various modules that allow efficient searches. LittleBrother does not require an API key or login ID. This is a extended version
 of LittleBrother tool, It is a GUI based tool.We need some of your information to run this tool properly, We promise you not to leak your data and try to make it more secure.
 
-## Screenshots.
+Disclaimer
+=
+LittleBrother was developed to do self-research and to see private and sensitive information that can be left behind on 
+social media. I do not in any way encourage the use of this tool on anyone other than yourself or to misuse this tool. 
+The authors of LittleBrother cannot be held responsible for the use of their tool.
+
+Screenshots.
+=
 <img height="150" hspace="20"/>
     <img align="left" alt="Loading" width="300px" src="https://github.com/Ankesh054-official/LittleBrother-GUI-/blob/master/screenshots/Loading.png?raw=true" style="float: left; width: 33.33%; padding: 5px;"/>
     <img align="left" alt="decision" width="300px" src="https://github.com/Ankesh054-official/LittleBrother-GUI-/blob/master/screenshots/decisionscreen.png?raw=true" style="float: left; width: 33.33%; padding: 5px;" />
@@ -13,11 +33,12 @@ of LittleBrother tool, It is a GUI based tool.We need some of your information t
     <img align="left" alt="Login"  width="300px" src="https://github.com/Ankesh054-official/LittleBrother-GUI-/blob/master/screenshots/loginuser.png?raw=true" style="float: left; width: 33.33%; padding: 5px;"/>
 
  
-<br><br><br><br><br><br><br>
+<br><br>
 <br>
 <hr>
 
-### Languages and Tools:
+Languages and Tools:
+=
 <img align="left" alt="Python" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/python/python.png" />
 <img align="left" alt="pycharm" width="26px" src="https://banner2.cleanpng.com/20180617/hev/kisspng-pycharm-intellij-idea-jetbrains-integrated-develop-jbj-5b25ebbd21dbe9.7593892615292118371387.jpg" />
 <img align="left" alt="GitHub" width="26px" src="https://raw.githubusercontent.com/github/explore/78df643247d429f6cc873026c0622819ad797942/topics/github/github.png" />
@@ -30,7 +51,25 @@ of LittleBrother tool, It is a GUI based tool.We need some of your information t
 <br>
 
 
-## LicenseMIT © [Ankesh054-official](https://github.com/Ankesh054-official)
+
+
+Installation on Linux
+=
+
+Installation on Windows
+=
+
+
+
+
+Contributors
+=
+
+Support us
+=
+
+
+LicenseMIT © [Ankesh054-official](https://github.com/Ankesh054-official)
 ======================================================================================
 
 
