@@ -8,7 +8,7 @@ of LittleBrother tool, It is a GUI based tool.We need some of your information t
     <img align="left" alt="Loading" width="300px" src="https://github.com/Ankesh054-official/LittleBrother-GUI-/blob/master/screenshots/Loading.png?raw=true" style="float: left; width: 33.33%; padding: 5px;"/>
     <img align="left" alt="decision" width="300px" src="https://github.com/Ankesh054-official/LittleBrother-GUI-/blob/master/screenshots/decisionscreen.png?raw=true" style="float: left; width: 33.33%; padding: 5px;" />
 <br>
-<img height="250" hspace="20"/>
+<img height="150" hspace="20"/>
     <img align="left" alt="createuser" width="300px" src="https://github.com/Ankesh054-official/LittleBrother-GUI-/blob/master/screenshots/createuser.png?raw=true" style="float: left; width: 33.33%; padding: 5px;"/>
     <img align="left" alt="Login"  width="300px" src="https://github.com/Ankesh054-official/LittleBrother-GUI-/blob/master/screenshots/loginuser.png?raw=true" style="float: left; width: 33.33%; padding: 5px;"/>
 
