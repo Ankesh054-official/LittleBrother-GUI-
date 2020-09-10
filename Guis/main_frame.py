@@ -4,7 +4,7 @@ from tkinter import *
 from random import *
 from tkinter import messagebox
 from core.switch import switch
-
+from core.navbtn import Profle, Help, Feedback, More_Tools, Lookup, About, Change_country
 def main_frame(self, Email):
     # self.destroy()
     self = Tk()
@@ -43,10 +43,7 @@ def main_frame(self, Email):
     options = ["Profile", "Lookup","More Tools", "Change country","Help", "About", "Feedback"]
 
     # commands for the navbar:
-    work = [lambda: messagebox.showinfo("DATA FLOW", "ABOUT"), lambda: messagebox.showinfo("DATA FLOW", "ABOUT"),
-            lambda: messagebox.showinfo("DATA FLOW", "ABOUT"),
-            lambda: messagebox.showinfo("DATA FLOW", "ABOUT"), lambda: messagebox.showinfo("DATA FLOW", "ABOUT"),
-            lambda: messagebox.showinfo("DATA FLOW", "ABOUT"), lambda: messagebox.showinfo("DATA FLOW", "ABOUT")]
+    work = [lambda: Profle(), lambda: Lookup(navself, False, topFrame), lambda: More_Tools(), lambda: Change_country(), lambda: Help(), lambda: About(),lambda: Feedback()]
 
     # Navbar Option Buttons:
     y = 80
@@ -57,7 +54,7 @@ def main_frame(self, Email):
                activebackground="gray17", activeforeground="green", bd=0,
                command=work[i]).place(x=x, y=y)
         y += 40
-        x -= randrange(5, 20, 5)
+        x -= randrange(10, 20, 5)
 
     self = Label(text="WELCOME {0}".format(Email.split("@")[0].upper()), bg="black", fg="white",
                  font=("comicsansms", 30, "bold"), relief=FLAT)
