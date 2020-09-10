@@ -1,10 +1,12 @@
 """ # Main Console
    Designed By : ANKESH"""
 from tkinter import *
+from random import *
 from tkinter import messagebox
+from core.switch import switch
 
 def main_frame(self, Email):
-    self.destroy()
+    # self.destroy()
     self = Tk()
     p1 = PhotoImage(file='../res/bit.png')
     self.iconphoto(False, p1)
@@ -16,27 +18,62 @@ def main_frame(self, Email):
     lb = Label(self, image=img)
     lb.place(x=5, y=-1)
 
-    # Menubar
-    menubar = Menu(self, bg="black", fg="white", font=("comicsansms", 12, "bold"))
+    # dictionary of colors:
+    color = {"nero": "#252726", "orange": "#FF8700", "darkorange": "#FE6101"}
 
-    menubar.add_command(label="Profile", font=("comicsansms", 12, "bold"), command=lambda: messagebox.showinfo("DATA FLOW","PROFILE")) # add command (profile function).
 
-    more = Menu(menubar, bg="black", fg="white", tearoff=0)
-    more.add_command(label="Hash Decrypter", font=("comicsansms", 12, "bold"), command=lambda: messagebox.showinfo("DATA FLOW","Hash Decrypter")) # add command (function of Hash Decrypter).
-    more.add_command(label="Profiler", font=("comicsansms", 12, "bold"), command=lambda: messagebox.showinfo("DATA FLOW","Profiler")) # add command (function of Profiler).
-    more.add_separator()
-    more.add_command(label="Exit", font=("comicsansms", 12, "bold"), command=self.destroy)
-    menubar.add_cascade(label="More Tools", menu=more)
+    # loading Navbar icon image:
+    navIcon = PhotoImage(file="../res/menu.png")
+    closeIcon = PhotoImage(file="../res/close.png")
 
-    help = Menu(menubar, bg="black", fg="white", tearoff=0)
-    help.add_command(label="About", font=("comicsansms", 12, "bold"), command=lambda: messagebox.showinfo("DATA FLOW","ABOUT")) # add command (function of About).
-    menubar.add_cascade(label="Help", menu=help)
+    # top Navigation bar:
+    topFrame = Frame(self, width=50, bg="#252726")
+    topFrame.pack(side=LEFT, fill=Y)
 
-    self.config(menu=menubar)
+    # setting Navbar frame:
+    navself = Frame(self, bg="gray17", height=1000, width=300)
+    navself.place(x=-300, y=0)
+    Label(navself, font="Bahnschrift 15", bg="#252726", fg="black", height=2, width=300, padx=20).place(x=0,
+                                                                                                                 y=0)
+
+    # set y-coordinate of Navbar widgets:
+    y = 80
+    x = 22
+    # option in the navbar:
+    options = ["Profile", "Lookup","More Tools", "Change country","Help", "About", "Feedback"]
+
+    # commands for the navbar:
+    work = [lambda: messagebox.showinfo("DATA FLOW", "ABOUT"), lambda: messagebox.showinfo("DATA FLOW", "ABOUT"),
+            lambda: messagebox.showinfo("DATA FLOW", "ABOUT"),
+            lambda: messagebox.showinfo("DATA FLOW", "ABOUT"), lambda: messagebox.showinfo("DATA FLOW", "ABOUT"),
+            lambda: messagebox.showinfo("DATA FLOW", "ABOUT"), lambda: messagebox.showinfo("DATA FLOW", "ABOUT")]
+
+    # Navbar Option Buttons:
+    y = 80
+    x = 22
+    for i in range(7):
+        x += randrange(5, 20, 5)
+        Button(navself, text=options[i], font="BahnschriftLight 15", bg="gray17", fg="white",
+               activebackground="gray17", activeforeground="green", bd=0,
+               command=work[i]).place(x=x, y=y)
+        y += 40
+        x -= randrange(5, 20, 5)
 
     self = Label(text="WELCOME {0}".format(Email.split("@")[0].upper()), bg="black", fg="white",
-                  font=("comicsansms", 30, "bold"), relief=FLAT)
+                 font=("comicsansms", 30, "bold"), relief=FLAT)
     self.master.lift()
     self.place(x=140, y=300)
-    self.after(1000, lambda: self.destroy())
+    self.after(1300, lambda: self.destroy())
+
+    # Navbar button:
+    navbarBtn = Button(topFrame, image=navIcon, bg=color["orange"], activebackground=color["orange"], bd=0, padx=20,
+                           command= lambda: switch(self, navself, topFrame, btnState=False))
+    navbarBtn.place(x=6, y=10)
+
+    # Navbar Close Button:
+    closeBtn = Button(navself, image=closeIcon, bg=color["orange"], activebackground=color["orange"], bd=0,
+                         command= lambda: switch(self, navself, topFrame, btnState=True))
+    closeBtn.place(x=250, y=10)
+
     self.mainloop()
+main_frame(self="root",Email="ankeshs054@gmail.com")
