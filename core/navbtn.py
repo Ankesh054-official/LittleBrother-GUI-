@@ -103,13 +103,17 @@ def Help(navself):
     # setting Navbar frame:
     right = Frame(help, bg="gray17",  width=600)
     right.pack(side=RIGHT, fill=Y)
-    Label(navself, font="Bahnschrift 15", bg="#252726", fg="black", height=2, width=300, padx=20).place(x=0, y=0)
+    Label(left, font="Bahnschrift 15", bg="#252726", fg="black", height=2, width=300, padx=20).place(x=0, y=0)
 
     # label for help
     La = Label(left, text=name, bg="grey17", fg="white", font=("comicsansms", 20, "bold"), relief=FLAT).pack()
     La = Label(right, text=options, bg="grey17", fg="white", font=("comicsansms", 20, "bold"), relief=FLAT).pack()
-    help.mainloop()
+    Button(right, activebackground="black", activeforeground="white", text="Exit", bg="white",
+           fg="black", font=("comicsansms", 9, "bold"),
+           relief=SUNKEN, borderwidth=3, command=lambda: help.destroy()).place(x=480, y=10)
 
+    # help.mainloop()
+    return
 
 # for lookup
 def Lookup(navself):
@@ -154,7 +158,8 @@ def About(navself):
     Button(About, activebackground="black", activeforeground="white", text="Exit", bg="white",
                 fg="black", font=("comicsansms", 9, "bold"),
                 relief=SUNKEN, borderwidth=3, command=lambda: About.destroy()).place(x=1250, y=10)
-    About.mainloop()
+    # About.mainloop()
+    return
 
 #for feedback
 def Feedback(navself):
@@ -172,8 +177,8 @@ def Feedback(navself):
                activebackground="gray17", activeforeground="green", bd=0,
                command=[i]).place(x=x, y=y)
         y += 40
-    feedback.mainloop()
-
+    # feedback.mainloop()
+    return
 
 # for change country
 def Change_country(navself):
@@ -191,6 +196,6 @@ def Change_country(navself):
                activebackground="gray17", activeforeground="green", bd=0,
                command=[i]).place(x=x, y=y)
         y += 40
-    changecountry.mainloop()
-
+    # changecountry.mainloop()
+    return
 
