@@ -5,6 +5,8 @@ from random import *
 from tkinter import messagebox
 from core.switch import switch
 from core.navbtn import Profle, Help, Feedback, More_Tools, Lookup, About, Change_country
+
+
 def main_frame(self, Email):
     # self.destroy()
     self = Tk()
@@ -33,8 +35,7 @@ def main_frame(self, Email):
     # setting Navbar frame:
     navself = Frame(self, bg="gray17", height=1000, width=300)
     navself.place(x=-300, y=0)
-    Label(navself, font="Bahnschrift 15", bg="#252726", fg="black", height=2, width=300, padx=20).place(x=0,
-                                                                                                                 y=0)
+    Label(navself, font="Bahnschrift 15", bg="#252726", fg="black", height=2, width=300, padx=20).place(x=0,y=0)
 
     # set y-coordinate of Navbar widgets:
     y = 80
@@ -43,7 +44,7 @@ def main_frame(self, Email):
     options = ["Profile", "Lookup","More Tools", "Change country","Help", "About", "Feedback"]
 
     # commands for the navbar:
-    work = [lambda: Profle(), lambda: Lookup(navself, False, topFrame), lambda: More_Tools(), lambda: Change_country(), lambda: Help(), lambda: About(),lambda: Feedback()]
+    work = [lambda: Profle(navself), lambda: Lookup(navself), lambda: More_Tools(navself), lambda: Change_country(navself), lambda: Help(navself), lambda: About(navself),lambda: Feedback(navself)]
 
     # Navbar Option Buttons:
     y = 80
