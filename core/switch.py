@@ -1,4 +1,6 @@
 from tkinter import *
+from tkinter import messagebox
+
 # setting switch function:
 def switch(self, navself, topFrame, btnState):
     # dictionary of colors:
@@ -26,3 +28,64 @@ def switch(self, navself, topFrame, btnState):
 
         # turing button ON:
         btnState = True
+
+def seeProfle(navself):
+    return messagebox.showinfo("info ","seeprofile")
+
+def allprofile(navself):
+    return messagebox.showinfo("info","allprofile")
+
+def createprofile(navself):
+    return messagebox.showinfo("info","create profile")
+
+def hashdecrypter(navself):
+    return messagebox.showinfo("info","hash")
+
+def Person_lookup(navself):
+    return messagebox.showinfo("info","Person_lookup")
+
+def Mail_tracer(navself):
+    return messagebox.showinfo("info", "Mail_tracer")
+
+
+def Username_lookup(navself):
+    return messagebox.showinfo("info", "Username_lookup")
+
+
+def Employees_search(navself):
+    return messagebox.showinfo("info", "Employees_search")
+
+
+def Lookup_address(navself):
+    return messagebox.showinfo("info", "Lookup_address")
+
+
+def Google_search(navself):
+    return messagebox.showinfo("info", "Google_search")
+
+
+def Phone_lookup(navself):
+    return messagebox.showinfo("info", "Phone_lookup")
+
+
+def Facebook_GraphSearch(navself):
+    return messagebox.showinfo("info", "Facebook_GraphSearch")
+
+
+def IP_lookup(navself):
+    return messagebox.showinfo("info", "IP_lookup")
+
+
+def twitter_info(navself):
+    return messagebox.showinfo("info", "twitter_info")
+
+
+def SSID_locator(navself):
+    return messagebox.showinfo("info", "SSID_locator")
+
+
+def instagram_info(navself):
+    return messagebox.showinfo("info","instagram_info")
+
+def Email_lookup(navself):
+    return messagebox.showinfo("info","Email_lookup")
