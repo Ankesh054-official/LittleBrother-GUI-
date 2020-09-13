@@ -1,14 +1,16 @@
 """ # Main Console
    Designed By : ANKESH"""
 from tkinter import *
+from time import sleep
 from random import *
+from lib.menu import menu
 from tkinter import messagebox
 from core.switch import switch
-from core.navbtn import Profle, Help, Feedback, More_Tools, Lookup, About, Change_country
+from core.navbtn import Profle, main_Help, Feedback, More_Tools, Lookup, About, Change_country
 
 
 def main_frame(self, Email):
-    # self.destroy()
+    self.destroy()
     self = Tk()
     p1 = PhotoImage(file='../res/bit.png')
     self.iconphoto(False, p1)
@@ -19,7 +21,8 @@ def main_frame(self, Email):
     img = PhotoImage(file="../res/canvalogo1.png")
     lb = Label(self, image=img)
     lb.place(x=5, y=-1)
-
+    sleep(1)
+    menu(self,False)
     # dictionary of colors:
     color = {"nero": "#252726", "orange": "#FF8700", "darkorange": "#FE6101"}
 
@@ -41,10 +44,10 @@ def main_frame(self, Email):
     y = 80
     x = 22
     # option in the navbar:
-    options = ["Profile", "Lookup","More Tools", "Change country","Help", "About", "Feedback"]
+    options = ["Profile", "Lookup","More Tools", "Change country","Main Help", "About", "Feedback"]
 
     # commands for the navbar:
-    work = [lambda: Profle(navself), lambda: Lookup(navself), lambda: More_Tools(navself), lambda: Change_country(navself), lambda: Help(navself), lambda: About(navself),lambda: Feedback(navself)]
+    work = [lambda: Profle(navself), lambda: Lookup(navself), lambda: More_Tools(navself), lambda: Change_country(navself), lambda: main_Help(navself), lambda: About(navself),lambda: Feedback(navself)]
 
     # Navbar Option Buttons:
     y = 80
@@ -57,11 +60,11 @@ def main_frame(self, Email):
         y += 40
         x -= randrange(10, 20, 5)
 
-    self = Label(text="WELCOME {0}".format(Email.split("@")[0].upper()), bg="black", fg="white",
-                 font=("comicsansms", 30, "bold"), relief=FLAT)
-    self.master.lift()
-    self.place(x=140, y=300)
-    self.after(1300, lambda: self.destroy())
+    # self = Label(text="WELCOME {0}".format(Email.split("@")[0].upper()), bg="black", fg="white",
+    #              font=("comicsansms", 30, "bold"), relief=FLAT)
+    # self.master.lift()
+    # self.place(x=140, y=30)
+    # self.after(1300, lambda: self.destroy())
 
     # Navbar button:
     navbarBtn = Button(topFrame, image=navIcon, bg=color["orange"], activebackground=color["orange"], bd=0, padx=20,
@@ -74,4 +77,4 @@ def main_frame(self, Email):
     closeBtn.place(x=250, y=10)
 
     self.mainloop()
-main_frame(self="root",Email="ankeshs054@gmail.com")
+# main_frame(self="root",Email="ankeshs054@gmail.com")
