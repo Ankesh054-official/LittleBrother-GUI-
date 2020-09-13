@@ -1,8 +1,9 @@
 from tkinter import *
 from random import *
-from core.switch import switch, createprofile, allprofile, seeProfle, hashdecrypter, Person_lookup, Mail_tracer, \
-    Username_lookup, Employees_search, Lookup_address,Google_search, \
-Phone_lookup, Facebook_GraphSearch, IP_lookup, twitter_info, SSID_locator, instagram_info, Email_lookup
+from core.switch import switch, createprofile, allprofile, seeProfle, hashdecrypter, Person_lookup, Mail_tracer
+from core.switch import  Username_lookup, Employees_search, Lookup_address,Google_search
+from core.switch import Phone_lookup, Facebook_GraphSearch, IP_lookup, twitter_info, SSID_locator, instagram_info, Email_lookup
+from core.switch import FR, LU, BE, All, CH
 from tkinter import messagebox
 
 
@@ -13,6 +14,8 @@ def Profle(navself):
     work = [lambda: seeProfle(navself), lambda: allprofile(navself), lambda: createprofile(navself)]
     profile = Toplevel(navself)
     profile.geometry("300x685+0+55")
+    profile.minsize(300,685)
+    profile.maxsize(300,685)
     profile.config(bg="grey17")
     profile.title("Profile")
     # Navbar Option Buttons:
@@ -33,6 +36,8 @@ def More_Tools(navself):
     work = [lambda: hashdecrypter(navself)]
     more_tools = Toplevel(navself)
     more_tools.geometry("300x685+0+55")
+    more_tools.minsize(300,685)
+    more_tools.maxsize(300,685)
     more_tools.config(bg="grey17")
     more_tools.title("More Tools")
     # Navbar Option Buttons:
@@ -116,6 +121,8 @@ def Lookup(navself):
             lambda: Email_lookup(navself)]
     lookup = Toplevel(navself)
     lookup.geometry("300x685+0+55")
+    lookup.minsize(300,685)
+    lookup.maxsize(300,685)
     lookup.config(bg="grey17")
     lookup.title("Lookup")
     # Navbar Option Buttons:
@@ -177,8 +184,11 @@ def Feedback(navself):
 def Change_country(navself):
     # option in the navbar:
     options = ["FR (France)", "LU (Luxembourg)", "BE (Belgique)", "All (FR, BE, CH, LU)", "CH (Suisse)"]
+    work = [lambda: FR(navself), lambda: LU(navself), lambda: BE(navself), lambda: All(navself), lambda: CH(navself)]
     changecountry = Toplevel(navself)
     changecountry.geometry("300x685+0+55")
+    changecountry.minsize(300,685)
+    changecountry.maxsize(300,685)
     changecountry.config(bg="grey17")
     changecountry.title("Change Country")
     # Navbar Option Buttons:
@@ -187,7 +197,7 @@ def Change_country(navself):
     for i in range(5):
         Button(changecountry, text=options[i], font="BahnschriftLight 15", bg="gray17", fg="white",
                activebackground="gray17", activeforeground="green", bd=0,
-               command=[i]).place(x=x, y=y)
+               command=work[i]).place(x=x, y=y)
         y += 40
     # changecountry.mainloop()
     return
