@@ -40,18 +40,16 @@ def main_frame(self, Email):
     navself.place(x=-300, y=0)
     Label(navself, font="Bahnschrift 15", bg="#252726", fg="black", height=2, width=300, padx=20).place(x=0,y=0)
 
-    # set y-coordinate of Navbar widgets:
-    y = 80
-    x = 22
+
     # option in the navbar:
     options = ["Profile", "Lookup","More Tools", "Change country","Main Help", "About", "Feedback"]
 
     # commands for the navbar:
     work = [lambda: Profle(navself), lambda: Lookup(navself), lambda: More_Tools(navself), lambda: Change_country(navself), lambda: main_Help(navself), lambda: About(navself),lambda: Feedback(navself)]
-
-    # Navbar Option Buttons:
+    # set y-coordinate of Navbar widgets:
     y = 80
-    x = 22
+    x = 30
+    # Navbar Option Buttons:
     for i in range(7):
         x += randrange(5, 20, 5)
         Button(navself, text=options[i], font="BahnschriftLight 15", bg="gray17", fg="white",
