@@ -43,52 +43,36 @@ def More_Tools(navself):
 
 
 # for help
-def Help(navself):
+def main_Help(navself):
     # option in the navbar:
     options = """
      Action
      ------
-    Make searches with a name, first name and (city).
-    Do some research with a username.
-    Do some research with an address.
-    Do some research with a phone number.
-    Make searches with an IP address.
-    Search with a MAC / BSSID address
-    Do some research with an email address.
-    Do research with the header of an email.
-    Finds the employees of a company.
-    Do some research on google.
-    Do research using graphSearch.
-    Retrieve information from a Twitter account.
-    Retrieve information from an Instagram account.
+    Do some research on a person.
+    Use tools other than recognition.
+    Create a '.txt' file to write the information obtained.
+    Access the database.
     
-    Return to the main menu.
-    To quit the software.
+    Exit the software.
+    Displays this message.
     Clear the screen.
-    Display this message.
+    Clear the screen.
     
     """
     name = """
      Name                             
      ----                             
-    [1] Person lookup                 
-    [2] Username lookup               
-    [3] Address lookup                
-    [4] Phone lookup                  
-    [5] IP lookup                     
-    [6] SSID locator                  
-    [7] Email lookup                  
-    [8] Mail tracer                   
-    [9] Employees search              
-    [10] Google search                
-    [11] Facebook graphSearch         
-    [12] twitter info                 
-    [13] instagram info               
-    
-    [b] Back main menu                
-    [e] Exit script                   
-    [c] Clear screen                  
-    [h] Help Message                  
+     Name                   
+ ----                  
+ Lookup                 
+ Other Tool             
+ Make file              
+ Show Database          
+
+ Exit                   
+ Help                   
+ Clear                  
+                 
     
     """
     help = Toplevel(navself)
