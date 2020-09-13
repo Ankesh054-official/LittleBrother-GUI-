@@ -37,6 +37,49 @@ def seeProfle(navself):
 def allprofile(navself):
     return messagebox.showinfo("info","allprofile")
 
+def go(name):
+    while True:
+        if name != '':
+            messagebox.showinfo("error","Profile name is required")
+    name = name.split(" ")
+    name = [i.capitalize() for i in name]
+    name = " ".join(name)
+    while True:
+        # messagebox.askquestion("Profile","Want to register a Twitter account to profile?","yes","no")
+        print(question + " Want to register a Twitter account to profile?")
+        choixPr = input(" [y/n]: ")
+        if choixPr.upper() == 'N':
+            break
+        else:
+            twitter = input("\n Twitter: ")
+            info['URL']['Twitter'] = twitter
+            break
+    # print(found+" %s" % (twitter))
+    while True:
+        print(question + " Want to register an Instagram account to profile?")
+        choixPr = input(" [y/n]: ")
+        if choixPr.upper() == 'N':
+            break
+        else:
+            instagram = input("\n Instagram: ")
+            info['URL']['Instagram'] = instagram
+            break
+    while True:
+        print(question + " Want to register a Facebook account to profile?")
+        choixPr = input(" [y/n]: ")
+        if choixPr.upper() == 'N':
+            break
+        else:
+            facebook = input("\n Facebook: ")
+            info['URL']['Facebook'] = facebook
+            break
+
+    create = pr.writeProfile(fileName=name, path=settings.pathDatabase, info=info)
+
+    if create:
+        print("\n" + found + " Profile '% s' has been created successfully." % (name))
+    else:
+        print("\n" + warning + " An error has occurred. Profile '% s' could not be created." % (name))
 
 # to create a profile
 def createprofile(navself):
@@ -45,13 +88,19 @@ def createprofile(navself):
     navself.minsize(713, 398)
     navself.maxsize(713, 398)
     navself.config(bg="grey17")
-    ltxt = ["Profile Name:"]
-    for i in ltxt:
-        Label(navself, text=i, bg="grey17", fg="red", font=("comicsansms", 15, "bold"), relief=FLAT).place(x=5, y=20)
-    p1 = Entry(navself)
-    p1.place(x=150, y=20)
-    Label(navself, text="(Format: First name Last name)", bg="grey17", fg="red", font=("comicsansms", 10, "bold"), relief=FLAT).place(x=100, y=50)
-    Button(navself, text="submit", command=lambda:).place(x=50, y=100)
+    Label(navself, text="Profile Name:", bg="grey17", fg="red", font=("comicsansms", 15, "bold"), relief=FLAT).place(x=5, y=20)
+    Label(navself, text="(Format: First name Last name)", bg="grey17", fg="red", font=("comicsansms", 15, "bold"), relief=FLAT).place(x=150 ,y=130)
+    name = Entry(navself)
+    name.place(x=150 ,y=60) # profile name
+    name = name.get()
+    Button(navself, text="submit", command=go(name)).place(x=50, y=100)
+
+
+    # p1 = Entry(navself)
+    # p1.place(x=150, y=20)
+    # Label(navself, text="(Format: First name Last name)", bg="grey17", fg="red", font=("comicsansms", 10, "bold"),
+    #       relief=FLAT).place(x=100, y=50)
+
     navself.mainloop()
 
 # to decrypte hash
