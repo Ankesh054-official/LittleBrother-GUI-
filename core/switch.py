@@ -29,15 +29,32 @@ def switch(self, navself, topFrame, btnState):
         # turing button ON:
         btnState = True
 
+# to show profile if exist
 def seeProfle(navself):
     return messagebox.showinfo("info ","seeprofile")
 
+# to show all existing profile in database
 def allprofile(navself):
     return messagebox.showinfo("info","allprofile")
 
-def createprofile(navself):
-    return messagebox.showinfo("info","create profile")
 
+# to create a profile
+def createprofile(navself):
+    navself = Toplevel(navself)
+    navself.title("Create Profile")
+    navself.minsize(713, 398)
+    navself.maxsize(713, 398)
+    navself.config(bg="grey17")
+    ltxt = ["Profile Name:"]
+    for i in ltxt:
+        Label(navself, text=i, bg="grey17", fg="red", font=("comicsansms", 15, "bold"), relief=FLAT).place(x=5, y=20)
+    p1 = Entry(navself)
+    p1.place(x=150, y=20)
+    Label(navself, text="(Format: First name Last name)", bg="grey17", fg="red", font=("comicsansms", 10, "bold"), relief=FLAT).place(x=100, y=50)
+    Button(navself, text="submit", command=lambda:).place(x=50, y=100)
+    navself.mainloop()
+
+# to decrypte hash
 def hashdecrypter(navself):
     return messagebox.showinfo("info","hash")
 
