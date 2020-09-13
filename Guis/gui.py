@@ -5,7 +5,7 @@ from core import layout_decision, loading
 
 
 def lay(frame1):
-    frame1.title("Tklogin-Firebase")
+    frame1.title("LITTLE BROTHER")
 
     # Checks Internet is connected or not,raise error accordingly.
     def ch():
