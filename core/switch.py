@@ -89,3 +89,18 @@ def instagram_info(navself):
 
 def Email_lookup(navself):
     return messagebox.showinfo("info","Email_lookup")
+
+def FR(navself):
+    return messagebox.showinfo("info","FR")
+
+def LU(navself):
+    return messagebox.showinfo("info","LU")
+
+def BE(navself):
+    return messagebox.showinfo("info","BE")
+
+def All(navself):
+    return messagebox.showinfo("info","ALL")
+
+def CH(navself):
+    return messagebox.showinfo("info","CH")
