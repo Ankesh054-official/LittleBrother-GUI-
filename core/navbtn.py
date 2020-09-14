@@ -109,12 +109,12 @@ def main_Help(navself):
     return
 
 # for lookup
-def Lookup(navself):
+def Lookup(self,navself):
     # option in the navbar:
     options = ["Person lookup", "Mail tracer", "Username lookup", "Employees search", "Lookup address",
                "Google search", "Phone lookup", "Facebook GraphSearch", "IP lookup", "twitter info",
                "SSID locator", "instagram info", "Email lookup"]
-    work = [lambda: Person_lookup(navself), lambda: Mail_tracer(navself), lambda: Username_lookup(navself),
+    work = [lambda: Person_lookup(self,navself), lambda: Mail_tracer(navself), lambda: Username_lookup(navself),
             lambda: Employees_search(navself), lambda: Lookup_address(navself), lambda: Google_search(navself),
             lambda: Phone_lookup(navself), lambda: Facebook_GraphSearch(navself), lambda: IP_lookup(navself),
             lambda: twitter_info(navself), lambda: SSID_locator(navself), lambda: instagram_info(navself),
