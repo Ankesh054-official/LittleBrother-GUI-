@@ -1,5 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
+from core import searchPersonne
+from core import settings
 
 # setting switch function:
 def switch(self, navself, topFrame, btnState):
@@ -107,8 +109,8 @@ def createprofile(navself):
 def hashdecrypter(navself):
     return messagebox.showinfo("info","hash")
 
-def Person_lookup(navself):
-    return messagebox.showinfo("info","Person_lookup")
+def Person_lookup(self,navself):
+    searchPersonne(self,settings.countrycode)
 
 def Mail_tracer(navself):
     return messagebox.showinfo("info", "Mail_tracer")
