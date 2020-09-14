@@ -1,4 +1,5 @@
 import requests
+from tkinter import *
 from core.searchPJ import searchPJ
 from core.searchInfoNumero import searchInfoNumero
 from core.searchYellowLU import searchYellowLU
@@ -19,9 +20,12 @@ wait = "["+Fore.MAGENTA+"*"+Fore.RESET+"]"
 
 init()
 
-def searchPersonne(codemonpays):
+def searchPersonne(self,codemonpays):
 
-	nom = input(" Nom, Prénom: ")
+	nom = Entry(self)
+	nom.place(x=200,y=200)
+	nom = nom.get()
+	print(nom)
 	city = input(" Ville/Departement: ")
 	print("\n"+wait+" Recherche...")
 
