@@ -20,8 +20,6 @@ def main_frame(self, Email):
     img = PhotoImage(file="../res/canvalogo1.png")
     lb = Label(self, image=img)
     lb.place(x=5, y=-1)
-    sleep(1)
-    menu(self,False)
     # dictionary of colors:
     color = {"nero": "#252726", "orange": "#FF8700", "darkorange": "#FE6101"}
 
