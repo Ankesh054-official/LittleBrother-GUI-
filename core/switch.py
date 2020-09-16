@@ -111,10 +111,16 @@ def hashdecrypter(navself):
 
 def Person_lookup(self,lookup):
     lookup.destroy()
+    l = Label(self, text="Name:", bg="black", fg="Grey",
+              font=("comicsansms", 16, "bold"),relief=FLAT).place(x=230,y=140)
+    l = Label(self, text="City/Department:", bg="black", fg="Grey",
+              font=("comicsansms", 16, "bold"),relief=FLAT).place(x=230, y=240)
+    l = Label(self, text="Last name first name.", bg="black", fg="red",
+              font=("comicsansms", 16, "bold"),relief=FLAT).place(x=250, y=180)
     nom = Entry(self, relief=FLAT,  font=("comicsansms", 20, "bold"))
-    nom.place(x=250,y=140)
+    nom.place(x=380,y=140)
     city = Entry(self, relief=FLAT,  font=("comicsansms", 20, "bold"))
-    city.place(x=250,y=240)
+    city.place(x=380,y=240)
     btn = Button(self, text="Search", font="BahnschriftLight 15", bg="gray17", fg="white",
                activebackground="gray17", activeforeground="green", bd=0,
                command=lambda: searchPersonne.searchPersonne(self,nom.get(),city.get(),settings.countrycode)).place(x=300, y=340)
