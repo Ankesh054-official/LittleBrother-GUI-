@@ -117,7 +117,7 @@ def Person_lookup(self,lookup):
     city.place(x=250,y=240)
     btn = Button(self, text="Search", font="BahnschriftLight 15", bg="gray17", fg="white",
                activebackground="gray17", activeforeground="green", bd=0,
-               command=lambda: searchPersonne.searchPersonne(nom.get(),city.get(),settings.countrycode)).place(x=300, y=340)
+               command=lambda: searchPersonne.searchPersonne(self,nom.get(),city.get(),settings.countrycode)).place(x=300, y=340)
 
 def Mail_tracer(navself):
     return messagebox.showinfo("info", "Mail_tracer")
