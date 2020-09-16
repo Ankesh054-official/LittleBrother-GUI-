@@ -132,7 +132,7 @@ def Lookup(self,topFrame,navself):
                activebackground="gray17", activeforeground="green", bd=0,
                command=work[i]).place(x=x, y=y)
         y += 40
-    switch(self,navself,topFrame,btnState=True)
+    switch(navself,topFrame,btnState=True)
     lookup.mainloop()
 
 
