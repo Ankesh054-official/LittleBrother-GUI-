@@ -1,8 +1,9 @@
 from bs4 import BeautifulSoup
 from terminaltables import SingleTable
 import requests, re
+from tkinter import *
 
-def searchCopainsdavant(nom, city):
+def searchCopainsdavant(self, nom, city):
 	url = "http://copainsdavant.linternaute.com/s/?ty=1&prenom=%s&nom=%s&nomjf=&annee=&anneeDelta=&ville=%s"
 	name = nom
 	if " " in name:
@@ -96,4 +97,7 @@ def searchCopainsdavant(nom, city):
 
 	if count > 0:
 		table_instance = SingleTable(TABLE_DATA, title)
-		print(table_instance.table)
+		labl = Label(self, text=table_instance.table, bg="black", fg="green",
+					 font=("comicsansms", 15, "bold"), relief=FLAT)
+		labl.place(x=20, y=2)
+		# print(table_instance.table)
