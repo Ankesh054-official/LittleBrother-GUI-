@@ -1,16 +1,16 @@
 from tkinter import *
 from core.switch import switch, createprofile, allprofile, seeProfle, hashdecrypter, Person_lookup, Mail_tracer
-from core.switch import  Username_lookup, Employees_search, Lookup_address,Google_search
-from core.switch import Phone_lookup, Facebook_GraphSearch, IP_lookup, twitter_info, SSID_locator, instagram_info, Email_lookup
+from core.switch import Username_lookup, Employees_search, Lookup_address, Google_search
+from core.switch import Phone_lookup, Facebook_GraphSearch, IP_lookup, twitter_info, SSID_locator, instagram_info, \
+    Email_lookup
 from core.switch import FR, LU, BE, All, CH
-from tkinter import messagebox
 
 
 # for profile
-def Profle(navself):
+def Profle(self, topFrame, navself):
     # option in the navbar:
     options = [" Profile", "Show all Profiles", "Create profile"]
-    work = [lambda: seeProfle(navself), lambda: allprofile(navself), lambda: createprofile(navself)]
+    work = [lambda: seeProfle(profile, navself), lambda: allprofile(profile, navself), lambda: createprofile(profile, navself)]
     profile = Toplevel(navself)
     profile.geometry("300x685+0+55")
     profile.minsize(300,685)
@@ -25,14 +25,16 @@ def Profle(navself):
                activebackground="gray17", activeforeground="green", bd=0,
                command=work[i]).place(x=x, y=y)
         y += 40
+    switch(navself,topFrame,btnState=True)
+
     profile.mainloop()
 
 
 # for more tools
-def More_Tools(navself):
+def More_Tools(self, topFrame, navself):
     # option in the navbar:
     options = ["Hash decrypter"]
-    work = [lambda: hashdecrypter(navself)]
+    work = [lambda: hashdecrypter(more_tools, navself)]
     more_tools = Toplevel(navself)
     more_tools.geometry("300x685+0+55")
     more_tools.minsize(300,685)
@@ -47,11 +49,13 @@ def More_Tools(navself):
                activebackground="gray17", activeforeground="green", bd=0,
                command=work[i]).place(x=x, y=y)
         y += 40
+    switch(navself,topFrame,btnState=True)
+
     more_tools.mainloop()
 
 
 # for help
-def main_Help(navself):
+def main_Help(self, topFrame, navself):
     # option in the navbar:
     options = """
      Action
@@ -103,22 +107,23 @@ def main_Help(navself):
     Button(right, activebackground="black", activeforeground="white", text="Exit", bg="white",
            fg="black", font=("comicsansms", 9, "bold"),
            relief=SUNKEN, borderwidth=3, command=lambda: help.destroy()).place(x=480, y=10)
+    switch(navself,topFrame,btnState=True)
 
     # help.mainloop()
     return
 
 # for lookup
-def Lookup(self,topFrame,navself):
+def Lookup(self, topFrame, navself):
     lookup = Toplevel(navself)
     # option in the navbar:
     options = ["Person lookup", "Mail tracer", "Username lookup", "Employees search", "Lookup address",
                "Google search", "Phone lookup", "Facebook GraphSearch", "IP lookup", "twitter info",
                "SSID locator", "instagram info", "Email lookup"]
-    work = [lambda: Person_lookup(self,lookup), lambda: Mail_tracer(navself), lambda: Username_lookup(navself),
-            lambda: Employees_search(navself), lambda: Lookup_address(navself), lambda: Google_search(navself),
-            lambda: Phone_lookup(navself), lambda: Facebook_GraphSearch(navself), lambda: IP_lookup(navself),
-            lambda: twitter_info(navself), lambda: SSID_locator(navself), lambda: instagram_info(navself),
-            lambda: Email_lookup(navself)]
+    work = [lambda: Person_lookup(self,lookup), lambda: Mail_tracer(self, lookup), lambda: Username_lookup(self, lookup),
+            lambda: Employees_search(self, lookup), lambda: Lookup_address(self, lookup), lambda: Google_search(self, lookup),
+            lambda: Phone_lookup(self, lookup), lambda: Facebook_GraphSearch(self, lookup), lambda: IP_lookup(self, lookup),
+            lambda: twitter_info(self, lookup), lambda: SSID_locator(self, lookup), lambda: instagram_info(self, lookup),
+            lambda: Email_lookup(self, lookup)]
     lookup.geometry("300x685+0+55")
     lookup.minsize(300,685)
     lookup.maxsize(300,685)
@@ -137,7 +142,7 @@ def Lookup(self,topFrame,navself):
 
 
 #for about
-def About(navself):
+def About(self, topFrame, navself):
     # option in the navbar:
     options = ["","","","",""]
     About = Toplevel(navself)
@@ -158,11 +163,13 @@ def About(navself):
     Button(About, activebackground="black", activeforeground="white", text="Exit", bg="white",
                 fg="black", font=("comicsansms", 9, "bold"),
                 relief=SUNKEN, borderwidth=3, command=lambda: About.destroy()).place(x=1250, y=10)
+    switch(navself,topFrame,btnState=True)
+
     # About.mainloop()
     return
 
 #for feedback
-def Feedback(navself):
+def Feedback(self, topFrame, navself):
     # option in the navbar:
     options = ["","","",""]
     feedback = Toplevel(navself)
@@ -177,14 +184,17 @@ def Feedback(navself):
                activebackground="gray17", activeforeground="green", bd=0,
                command=[i]).place(x=x, y=y)
         y += 40
+    switch(navself,topFrame,btnState=True)
+
     # feedback.mainloop()
     return
 
 # for change country
-def Change_country(navself):
+def Change_country(self, topFrame, navself):
     # option in the navbar:
     options = ["FR (France)", "LU (Luxembourg)", "BE (Belgique)", "All (FR, BE, CH, LU)", "CH (Suisse)"]
-    work = [lambda: FR(navself), lambda: LU(navself), lambda: BE(navself), lambda: All(navself), lambda: CH(navself)]
+    work = [lambda: FR(options, navself), lambda: LU(options, navself), lambda: BE(options, navself),
+            lambda: All(options, navself), lambda: CH(options, navself)]
     changecountry = Toplevel(navself)
     changecountry.geometry("300x685+0+55")
     changecountry.minsize(300,685)
@@ -199,6 +209,8 @@ def Change_country(navself):
                activebackground="gray17", activeforeground="green", bd=0,
                command=work[i]).place(x=x, y=y)
         y += 40
+    switch(navself,topFrame,btnState=True)
+
     # changecountry.mainloop()
     return
 
