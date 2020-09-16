@@ -30,16 +30,19 @@ def switch(navself, topFrame, btnState):
         btnState = True
 
 # to show profile if exist
-def seeProfle(navself):
+def seeProfle(profile, navself):
+    profile.destroy()
     return messagebox.showinfo("info ","seeprofile")
 
 # to show all existing profile in database
-def allprofile(navself):
+def allprofile(profile, navself):
+    profile.destroy()
     return messagebox.showinfo("info","allprofile")
 
 
 # to create a profile
-def createprofile(navself):
+def createprofile(profile, navself):
+    profile.destroy()
     navself = Toplevel(navself)
     navself.title("Create Profile")
     navself.minsize(713, 398)
@@ -61,7 +64,8 @@ def createprofile(navself):
     navself.mainloop()
 
 # to decrypte hash
-def hashdecrypter(navself):
+def hashdecrypter(more_tools, navself):
+    more_tools.destroy()
     return messagebox.showinfo("info","hash")
 
 def Person_lookup(self,lookup):
@@ -80,63 +84,80 @@ def Person_lookup(self,lookup):
                activebackground="gray17", activeforeground="green", bd=0,
                command=lambda: searchPersonne.searchPersonne(self,nom.get(),city.get(),settings.countrycode)).place(x=300, y=340)
 
-def Mail_tracer(navself):
+def Mail_tracer(self, lookup):
+    lookup.destroy()
     return messagebox.showinfo("info", "Mail_tracer")
 
 
-def Username_lookup(navself):
+def Username_lookup(self, lookup):
+    lookup.destroy()
     return messagebox.showinfo("info", "Username_lookup")
 
 
-def Employees_search(navself):
+def Employees_search(self, lookup):
+    lookup.destroy()
     return messagebox.showinfo("info", "Employees_search")
 
 
-def Lookup_address(navself):
+def Lookup_address(self, lookup):
+    lookup.destroy()
     return messagebox.showinfo("info", "Lookup_address")
 
 
-def Google_search(navself):
+def Google_search(self, lookup):
+    lookup.destroy()
     return messagebox.showinfo("info", "Google_search")
 
 
-def Phone_lookup(navself):
+def Phone_lookup(self, lookup):
+    lookup.destroy()
     return messagebox.showinfo("info", "Phone_lookup")
 
 
-def Facebook_GraphSearch(navself):
+def Facebook_GraphSearch(self, lookup):
+    lookup.destroy()
     return messagebox.showinfo("info", "Facebook_GraphSearch")
 
 
-def IP_lookup(navself):
+def IP_lookup(self, lookup):
+    lookup.destroy()
     return messagebox.showinfo("info", "IP_lookup")
 
 
-def twitter_info(navself):
+def twitter_info(self, lookup):
+    lookup.destroy()
     return messagebox.showinfo("info", "twitter_info")
 
 
-def SSID_locator(navself):
+def SSID_locator(self, lookup):
+    lookup.destroy()
     return messagebox.showinfo("info", "SSID_locator")
 
 
-def instagram_info(navself):
+def instagram_info(self, lookup):
+    lookup.destroy()
     return messagebox.showinfo("info","instagram_info")
 
-def Email_lookup(navself):
+def Email_lookup(self, lookup):
+    lookup.destroy()
     return messagebox.showinfo("info","Email_lookup")
 
-def FR(navself):
+def FR(options, navself):
+    options.destroy()
     return messagebox.showinfo("info","FR")
 
-def LU(navself):
+def LU(options, navself):
+    options.destroy()
     return messagebox.showinfo("info","LU")
 
-def BE(navself):
+def BE(options, navself):
+    options.destroy()
     return messagebox.showinfo("info","BE")
 
-def All(navself):
+def All(options, navself):
+    options.destroy()
     return messagebox.showinfo("info","ALL")
 
-def CH(navself):
+def CH(options, navself):
+    options.destroy()
     return messagebox.showinfo("info","CH")
