@@ -20,7 +20,7 @@ wait = "["+Fore.MAGENTA+"*"+Fore.RESET+"]"
 
 init()
 
-def searchPersonne(nom,city,codemonpays):
+def searchPersonne(self,nom,city,codemonpays):
 
 	# nom = Entry()
 	# nom.place(x=200,y=200)
@@ -114,8 +114,10 @@ def searchPersonne(nom,city,codemonpays):
 		
 		if count > 0:
 			table_instance = SingleTable(TABLE_DATA, title)
-			print(table_instance.table)
-		
+			labl = Label(self, text=table_instance.table, bg="black", fg="green",
+						 font=("comicsansms", 15, "bold"), relief=FLAT)
+			labl.place(x=20, y=2)
+
 # Twitter Search		
 		title = " Twitter "
 
