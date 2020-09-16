@@ -14,49 +14,28 @@ def check_internet(frame1):
 	url = "http://www.kite.com"
 	timeout = 5
 	try:
-
 		progress['value'] = 5
 		frame1.update_idletasks()
-		time.sleep(1)
+		time.sleep(0.1)
 
-		progress['value'] = 10
-		frame1.update_idletasks()
-		time.sleep(1)
-
-		progress['value'] = 20
-		frame1.update_idletasks()
-		time.sleep(1)
-
-		progress['value'] = 30
-		frame1.update_idletasks()
-		time.sleep(1)
-
-		settings.init()
+		settings.init(progress, frame1)
 
 		progress['value'] = 40
 		frame1.update_idletasks()
-		time.sleep(1)
+		time.sleep(0.1)
 
 		progress['value'] = 50
 		frame1.update_idletasks()
-		time.sleep(1)
+		time.sleep(0.1)
 
 		progress['value'] = 60
 		frame1.update_idletasks()
 
 		request = requests.get(url, timeout=timeout)
 
-		progress['value'] = 70
-		frame1.update_idletasks()
-		time.sleep(1)
-
-		progress['value'] = 80
-		frame1.update_idletasks()
-		time.sleep(1)
-
 		progress['value'] = 90
 		frame1.update_idletasks()
-		time.sleep(1)
+		time.sleep(0.1)
 
 		progress['value'] = 100
 		frame1.update_idletasks()
