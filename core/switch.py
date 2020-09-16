@@ -71,11 +71,11 @@ def hashdecrypter(more_tools, navself):
 def Person_lookup(self,lookup):
     lookup.destroy()
     l = Label(self, text="Name:", bg="black", fg="Grey",
-              font=("comicsansms", 16, "bold"),relief=FLAT).place(x=230,y=140)
+              font=("comicsansms", 16, "bold"),relief=FLAT).place(x=190,y=140)
     l = Label(self, text="City/Department:", bg="black", fg="Grey",
-              font=("comicsansms", 16, "bold"),relief=FLAT).place(x=230, y=240)
+              font=("comicsansms", 16, "bold"),relief=FLAT).place(x=190, y=240)
     l = Label(self, text="Last name first name.", bg="black", fg="red",
-              font=("comicsansms", 16, "bold"),relief=FLAT).place(x=250, y=180)
+              font=("comicsansms", 16, "bold"),relief=FLAT).place(x=370, y=180)
     nom = Entry(self, relief=FLAT,  font=("comicsansms", 20, "bold"))
     nom.place(x=380,y=140)
     city = Entry(self, relief=FLAT,  font=("comicsansms", 20, "bold"))
