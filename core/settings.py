@@ -16,8 +16,9 @@ from core.searchNumber import searchNumber
 from core.searchEmail import SearchEmail
 from core.Profiler import Profiler
 from core.facebookStalk import facebookStalk
+import time
 
-def init():
+def init(progress, frame1):
     global version
     global monip, monpays, country, countrycode, Region, Regionname
     global pathDatabase, city, zip, timezone, isp, org, query
@@ -27,21 +28,38 @@ def init():
 
     version = '0.0.9 beta'
 
+    progress['value'] = 10
+    frame1.update_idletasks()
+    time.sleep(0.1)
+
     pathDatabase = os.path.abspath(__file__).split("\\")[:-1]
     pathDatabase = "\\".join(pathDatabase)+"\\Watched"
     monip = requests.get("https://api.ipify.org/").text
     monpays = requests.get("http://ip-api.com/json/"+monip).text
     value = json.loads(monpays)
+
+    progress['value'] = 15
+    frame1.update_idletasks()
+    time.sleep(0.1)
+
     country = value['country']
     countrycode = value['countryCode']
     Region = value['region']
     Regionname = value['regionName']
     city = value['city']
     zip = value['zip']
+    progress['value'] = 20
+    frame1.update_idletasks()
+    time.sleep(0.1)
+
     timezone = value['timezone']
     isp = value['isp']
     org = value['org']
     query = value['query']
+
+    progress['value'] = 30
+    frame1.update_idletasks()
+    time.sleep(0.1)
 
     if not os.path.exists(pathDatabase):
         os.mkdir(pathDatabase)
