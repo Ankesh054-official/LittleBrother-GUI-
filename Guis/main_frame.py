@@ -1,9 +1,7 @@
 """ # Main Console
    Designed By : ANKESH"""
 from tkinter import *
-from time import sleep
 from random import *
-from lib.menu import menu
 from core.switch import switch
 from core.navbtn import Profle, main_Help, Feedback, More_Tools, Lookup, About, Change_country
 
@@ -41,8 +39,10 @@ def main_frame(self, Email):
     options = ["Profile", "Lookup","More Tools", "Change country","Main Help", "About", "Feedback"]
 
     # commands for the navbar:
-    work = [lambda: Profle(navself), lambda: Lookup(self,topFrame,navself), lambda: More_Tools(navself), lambda: Change_country(navself),
-            lambda: main_Help(navself), lambda: About(navself),lambda: Feedback(navself)]
+    work = [lambda: Profle(self,topFrame,navself), lambda: Lookup(self,topFrame,navself),
+            lambda: More_Tools(self,topFrame,navself), lambda: Change_country(self,topFrame,navself),
+            lambda: main_Help(self,topFrame,navself), lambda: About(self,topFrame,navself),
+            lambda: Feedback(self,topFrame,navself)]
     # set y-coordinate of Navbar widgets:
     y = 80
     x = 30
