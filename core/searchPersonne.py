@@ -82,10 +82,10 @@ def searchPersonne(self,nom,city,codemonpays):
 			searchYellowLU(url.format(nom))
 
 # Copain d'avant search
-		searchCopainsdavant(nom, city)
+		searchCopainsdavant(self,nom, city)
 
 # LinkedIn search
-		searchPersonneLinkedin(nom, city)
+		searchPersonneLinkedin(self, nom, city)
 
 # Facebook search		
 		fbtool = facebookSearchTool()
@@ -146,7 +146,8 @@ def searchPersonne(self,nom,city,codemonpays):
 
 		if count > 0:
 			table_instance = SingleTable(TABLE_DATA, title)
-			print(table_instance.table)
+			lb = Label(self,text=table_instance.table, bg="black", fg="red", font=("comicsansms", 10, "bold"), relief=FLAT).place(x=250, y=480)
+			# print(table_instance.table)
 	# Instagram search
 
 		title = " Instagram "
@@ -175,7 +176,8 @@ def searchPersonne(self,nom,city,codemonpays):
 
 		if count > 0:
 			table = SingleTable(TABLE_DATA, title)
-			print(table.table)
+			lb = Label(self,text=table.table, bg="black", fg="red", font=("comicsansms", 10, "bold"), relief=FLAT).place(x=250, y=480)
+			# print(table.table)
 
 	except IOError:
 		pass
