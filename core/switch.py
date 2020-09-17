@@ -109,10 +109,15 @@ def createprofile(navself):
 def hashdecrypter(navself):
     return messagebox.showinfo("info","hash")
 
-def Person_lookup(self,navself):
-    e1 = Entry(self)
-    e1.place(x=12,y=10)
-    searchPersonne(settings.countrycode)
+def Person_lookup(self,lookup):
+    lookup.destroy()
+    nom = Entry(self, relief=FLAT,  font=("comicsansms", 20, "bold"))
+    nom.place(x=250,y=140)
+    city = Entry(self, relief=FLAT,  font=("comicsansms", 20, "bold"))
+    city.place(x=250,y=240)
+    btn = Button(self, text="Search", font="BahnschriftLight 15", bg="gray17", fg="white",
+               activebackground="gray17", activeforeground="green", bd=0,
+               command=lambda: searchPersonne.searchPersonne(nom.get(),city.get(),settings.countrycode)).place(x=300, y=340)
 
 def Mail_tracer(navself):
     return messagebox.showinfo("info", "Mail_tracer")
