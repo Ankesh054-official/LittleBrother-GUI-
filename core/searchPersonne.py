@@ -20,6 +20,8 @@ wait = "["+Fore.MAGENTA+"*"+Fore.RESET+"]"
 
 init()
 
+
+
 def searchPersonne(self,nom,city,codemonpays):
 
 	# nom = Entry()
@@ -27,18 +29,18 @@ def searchPersonne(self,nom,city,codemonpays):
 	# nom = nom.get()
 	# print(nom)
 	# city = input(" Ville/Departement: ")
-	print("\n"+wait+" Recherche...")
+
 
 	try:
 
 		headers = {
 			'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
-    	    'referrer': 'https://google.com',
-        	'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
-        	'Accept-Encoding': 'utf-8',
-        	'Accept-Language': 'en-US,en;q=0.9',
-        	'Pragma': 'no-cache'
-        }
+			'referrer': 'https://google.com',
+			'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+			'Accept-Encoding': 'utf-8',
+			'Accept-Language': 'en-US,en;q=0.9',
+			'Pragma': 'no-cache'
+		}
 
 		if codemonpays == 'FR':
 			# Page Jaune search
@@ -63,7 +65,7 @@ def searchPersonne(self,nom,city,codemonpays):
 			searchYellowLU(url.format(nom))
 
 		else:
-	        # Recherche FR
+			# Recherche FR
 			url = "https://www.pagesjaunes.fr/pagesblanches/recherche?quoiqui={}&ou={}"
 			requete = requests.get(url.format(nom, city), headers=headers)
 			searchPJ(requete)
@@ -81,13 +83,13 @@ def searchPersonne(self,nom,city,codemonpays):
 			url = "https://www.yellow.lu/fr/pages-blanches/recherche?query={}"
 			searchYellowLU(url.format(nom))
 
-# Copain d'avant search
-		searchCopainsdavant(self,nom, city)
+		# Copain d'avant search
+		searchCopainsdavant(self, nom, city)
 
-# LinkedIn search
+		# LinkedIn search
 		searchPersonneLinkedin(self, nom, city)
 
-# Facebook search		
+		# Facebook search
 		fbtool = facebookSearchTool()
 		accountsFb = fbtool.searchFacebook(nom)
 
@@ -111,14 +113,14 @@ def searchPersonne(self,nom,city,codemonpays):
 			tuples = (name, username, loc)
 			# listeInfos.append(tuples)
 			TABLE_DATA.append(tuples)
-		
+
 		if count > 0:
 			table_instance = SingleTable(TABLE_DATA, title)
 			labl = Label(self, text=table_instance.table, bg="black", fg="green",
 						 font=("comicsansms", 15, "bold"), relief=FLAT)
 			labl.place(x=20, y=2)
 
-# Twitter Search		
+		# Twitter Search
 		title = " Twitter "
 
 		TABLE_DATA = [
@@ -133,9 +135,9 @@ def searchPersonne(self,nom,city,codemonpays):
 		for a in accountTwitter:
 			count += 1
 			name = a[1]
-			username = "@"+a[0]
+			username = "@" + a[0]
 			twitool.getInfoProfile(a[0])
-			
+
 			location = twitool.location
 			date = twitool.birth
 			bio = twitool.description
@@ -146,9 +148,10 @@ def searchPersonne(self,nom,city,codemonpays):
 
 		if count > 0:
 			table_instance = SingleTable(TABLE_DATA, title)
-			lb = Label(self,text=table_instance.table, bg="black", fg="red", font=("comicsansms", 10, "bold"), relief=FLAT).place(x=250, y=480)
-			# print(table_instance.table)
-	# Instagram search
+			lb = Label(self, text=table_instance.table, bg="black", fg="red", font=("comicsansms", 10, "bold"),
+					   relief=FLAT).place(x=250, y=480)
+		# print(table_instance.table)
+		# Instagram search
 
 		title = " Instagram "
 
@@ -164,7 +167,7 @@ def searchPersonne(self,nom,city,codemonpays):
 		count = 0
 
 		for account in accounts:
-			url = "https://instagram.com/"+account
+			url = "https://instagram.com/" + account
 			i = instagramSearchTool()
 			i.getInfo(url)
 			name = i.name
@@ -172,12 +175,13 @@ def searchPersonne(self,nom,city,codemonpays):
 			tuples = (name, account)
 			TABLE_DATA.append(tuples)
 
-			count +=1
+			count += 1
 
 		if count > 0:
 			table = SingleTable(TABLE_DATA, title)
-			lb = Label(self,text=table.table, bg="black", fg="red", font=("comicsansms", 10, "bold"), relief=FLAT).place(x=250, y=480)
-			# print(table.table)
+			lb = Label(self, text=table.table, bg="black", fg="red", font=("comicsansms", 10, "bold"),
+					   relief=FLAT).place(x=250, y=480)
+	# print(table.table)
 
 	except IOError:
 		pass
