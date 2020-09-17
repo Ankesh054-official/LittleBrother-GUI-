@@ -1,6 +1,6 @@
 /__pycache__/
 .idea/
 *.pyc
-.gitignore
+nav.py
 Watched/
 LittleBrother.py
