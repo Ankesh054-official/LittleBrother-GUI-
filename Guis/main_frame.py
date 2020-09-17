@@ -4,7 +4,6 @@ from tkinter import *
 from time import sleep
 from random import *
 from lib.menu import menu
-from tkinter import messagebox
 from core.switch import switch
 from core.navbtn import Profle, main_Help, Feedback, More_Tools, Lookup, About, Change_country
 
@@ -40,7 +39,6 @@ def main_frame(self, Email):
     navself.place(x=-300, y=0)
     Label(navself, font="Bahnschrift 15", bg="#252726", fg="black", height=2, width=300, padx=20).place(x=0,y=0)
 
-
     # option in the navbar:
     options = ["Profile", "Lookup","More Tools", "Change country","Main Help", "About", "Feedback"]
 
@@ -58,12 +56,6 @@ def main_frame(self, Email):
                command=work[i]).place(x=x, y=y)
         y += 40
         x -= randrange(10, 20, 5)
-
-    # self = Label(text="WELCOME {0}".format(Email.split("@")[0].upper()), bg="black", fg="white",
-    #              font=("comicsansms", 30, "bold"), relief=FLAT)
-    # self.master.lift()
-    # self.place(x=140, y=30)
-    # self.after(1300, lambda: self.destroy())
 
     # Navbar button:
     navbarBtn = Button(topFrame, image=navIcon, bg=color["orange"], activebackground=color["orange"], bd=0, padx=20,
