@@ -20,13 +20,13 @@ wait = "["+Fore.MAGENTA+"*"+Fore.RESET+"]"
 
 init()
 
-def searchPersonne(codemonpays):
+def searchPersonne(nom,city,codemonpays):
 
 	# nom = Entry()
 	# nom.place(x=200,y=200)
 	# nom = nom.get()
 	# print(nom)
-	city = input(" Ville/Departement: ")
+	# city = input(" Ville/Departement: ")
 	print("\n"+wait+" Recherche...")
 
 	try:
