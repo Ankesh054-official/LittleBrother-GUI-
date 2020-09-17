@@ -26,6 +26,7 @@ def times():
 	return(times)
 
 def menu(self,screen):
+	global labl
 	pr = Profiler()
 	pr.loadDatabase(settings.pathDatabase)
 	sizeOfDB = pr.size
