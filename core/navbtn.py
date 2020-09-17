@@ -1,5 +1,4 @@
 from tkinter import *
-from random import *
 from core.switch import switch, createprofile, allprofile, seeProfle, hashdecrypter, Person_lookup, Mail_tracer
 from core.switch import  Username_lookup, Employees_search, Lookup_address,Google_search
 from core.switch import Phone_lookup, Facebook_GraphSearch, IP_lookup, twitter_info, SSID_locator, instagram_info, Email_lookup
@@ -109,17 +108,17 @@ def main_Help(navself):
     return
 
 # for lookup
-def Lookup(self,navself):
+def Lookup(self,topFrame,navself):
+    lookup = Toplevel(navself)
     # option in the navbar:
     options = ["Person lookup", "Mail tracer", "Username lookup", "Employees search", "Lookup address",
                "Google search", "Phone lookup", "Facebook GraphSearch", "IP lookup", "twitter info",
                "SSID locator", "instagram info", "Email lookup"]
-    work = [lambda: Person_lookup(self,navself), lambda: Mail_tracer(navself), lambda: Username_lookup(navself),
+    work = [lambda: Person_lookup(self,lookup), lambda: Mail_tracer(navself), lambda: Username_lookup(navself),
             lambda: Employees_search(navself), lambda: Lookup_address(navself), lambda: Google_search(navself),
             lambda: Phone_lookup(navself), lambda: Facebook_GraphSearch(navself), lambda: IP_lookup(navself),
             lambda: twitter_info(navself), lambda: SSID_locator(navself), lambda: instagram_info(navself),
             lambda: Email_lookup(navself)]
-    lookup = Toplevel(navself)
     lookup.geometry("300x685+0+55")
     lookup.minsize(300,685)
     lookup.maxsize(300,685)
@@ -133,6 +132,7 @@ def Lookup(self,navself):
                activebackground="gray17", activeforeground="green", bd=0,
                command=work[i]).place(x=x, y=y)
         y += 40
+    switch(self,navself,topFrame,btnState=True)
     lookup.mainloop()
 
 
