@@ -110,7 +110,9 @@ def hashdecrypter(navself):
     return messagebox.showinfo("info","hash")
 
 def Person_lookup(self,navself):
-    searchPersonne(self,settings.countrycode)
+    e1 = Entry(self)
+    e1.place(x=12,y=10)
+    searchPersonne(settings.countrycode)
 
 def Mail_tracer(navself):
     return messagebox.showinfo("info", "Mail_tracer")
