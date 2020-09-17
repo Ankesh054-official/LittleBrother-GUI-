@@ -55,7 +55,6 @@ def createprofile(profile, navself):
     name = name.get()
     Button(navself, text="submit").place(x=50, y=100)
 
-
     # p1 = Entry(navself)
     # p1.place(x=150, y=20)
     # Label(navself, text="(Format: First name Last name)", bg="grey17", fg="red", font=("comicsansms", 10, "bold"),
