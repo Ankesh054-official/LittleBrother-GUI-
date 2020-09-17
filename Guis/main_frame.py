@@ -43,7 +43,7 @@ def main_frame(self, Email):
     options = ["Profile", "Lookup","More Tools", "Change country","Main Help", "About", "Feedback"]
 
     # commands for the navbar:
-    work = [lambda: Profle(navself), lambda: Lookup(self,navself), lambda: More_Tools(navself), lambda: Change_country(navself),
+    work = [lambda: Profle(navself), lambda: Lookup(self,topFrame,navself), lambda: More_Tools(navself), lambda: Change_country(navself),
             lambda: main_Help(navself), lambda: About(navself),lambda: Feedback(navself)]
     # set y-coordinate of Navbar widgets:
     y = 80
