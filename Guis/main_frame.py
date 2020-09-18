@@ -7,7 +7,7 @@ from core.navbtn import Profle, main_Help, Feedback, More_Tools, Lookup, About, 
 
 
 def main_frame(self, Email):
-    self.destroy()
+    # self.destroy()
     self = Tk()
     p1 = PhotoImage(file='../res/bit.png')
     self.iconphoto(False, p1)
@@ -65,8 +65,18 @@ def main_frame(self, Email):
     closeBtn = Button(navself, image=closeIcon, bg=color["orange"], activebackground=color["orange"], bd=0,
                          command= lambda: switch(navself, topFrame, btnState=True))
     closeBtn.place(x=250, y=10)
-    text = Text(textframe, width=120,bg="grey17", fg="white")
-    text.insert(INSERT, "Output of any tool will be displayed here.")
-    text.pack(side=RIGHT, fill=Y, pady=5)
+
+    # # Scroll bar for vertical movement for data:
+    h = Scrollbar(textframe, orient='horizontal')
+    h.pack(side=BOTTOM, fill=X)
+    v = Scrollbar(textframe)
+    v.pack(side=RIGHT, fill=Y)
+    text = Text(textframe, width=120, height=900, bg="grey17", fg="white", wrap=NONE, xscrollcommand=h.set,
+             yscrollcommand=v.set)
+    for i in range(1000):
+        text.insert(END, "Output of any tool will be displayed here.Output of any tool will be displayed here.Output of any tool will be displayed here.Output of any tool will be displayed here.Output of any tool will be displayed here.Output of any tool will be displayed here.Output of any tool will be displayed here.Output of any tool will be displayed here.Output of any tool will be displayed here.\n")
+    text.pack(side=TOP, fill=X)
+    h.config(command=text.xview)
+    v.config(command=text.yview)
     self.mainloop()
-# main_frame(self="root",Email="ankeshs054@gmail.com")
+main_frame(self="root",Email="ankeshs054@gmail.com")
