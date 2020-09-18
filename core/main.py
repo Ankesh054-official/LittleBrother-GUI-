@@ -18,9 +18,12 @@ def login(frame1, Email, Password):
     firebase = pyrebase.initialize_app(firebaseConfig)
     auth = firebase.auth()
     try:
-        login = auth.sign_in_with_email_and_password(email=Email, password=Password)
-        # divert to the little brother console
-        main_frame.main_frame(frame1, Email)
+        try:
+            login = auth.sign_in_with_email_and_password(email=Email, password=Password)
+            # divert to the little brother console
+            main_frame.main_frame(frame1, Email)
+        except requests.exceptions.ConnectionError:
+            messagebox.showinfo("Connection Error!", "Internet Disconnected")
     except requests.exceptions.HTTPError:
         return messagebox.showerror("SIGNIN_INVALID", "MAYBE, INVALID_EMAIL\nor\nINVALID_PASSWORD")
 
