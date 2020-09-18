@@ -1,5 +1,7 @@
 import requests
 from tkinter import *
+from tkinter.ttk import *
+import time
 from core.searchPJ import searchPJ
 from core.searchInfoNumero import searchInfoNumero
 from core.searchYellowLU import searchYellowLU
@@ -22,14 +24,17 @@ init()
 
 
 
-def searchPersonne(self,nom,city,codemonpays):
+def searchPersonne(self,person_lookup,nom,city,codemonpays):
 
+	person_lookup.destroy()
 	# nom = Entry()
 	# nom.place(x=200,y=200)
 	# nom = nom.get()
 	# print(nom)
 	# city = input(" Ville/Departement: ")
-
+	# Progress bar widget
+	progress = Progressbar(self, orient=HORIZONTAL, length=200, mode='determinate')
+	progress.place(x=500, y=500)
 
 	try:
 
@@ -41,6 +46,9 @@ def searchPersonne(self,nom,city,codemonpays):
 			'Accept-Language': 'en-US,en;q=0.9',
 			'Pragma': 'no-cache'
 		}
+		progress['value'] = 5
+		self.update_idletasks()
+		time.sleep(0.1)
 
 		if codemonpays == 'FR':
 			# Page Jaune search
@@ -82,9 +90,16 @@ def searchPersonne(self,nom,city,codemonpays):
 			# Recherche LU
 			url = "https://www.yellow.lu/fr/pages-blanches/recherche?query={}"
 			searchYellowLU(url.format(nom))
+		progress['value'] =10
+		self.update_idletasks()
+		time.sleep(0.1)
 
 		# Copain d'avant search
 		searchCopainsdavant(self, nom, city)
+
+		progress['value'] = 15
+		self.update_idletasks()
+		time.sleep(0.1)
 
 		# LinkedIn search
 		searchPersonneLinkedin(self, nom, city)
@@ -101,6 +116,10 @@ def searchPersonne(self,nom,city,codemonpays):
 
 		count = 0
 
+		progress['value'] = 25
+		self.update_idletasks()
+		time.sleep(0.1)
+
 		for a in accountsFb:
 			count += 1
 			name = a[1]
@@ -114,6 +133,10 @@ def searchPersonne(self,nom,city,codemonpays):
 			# listeInfos.append(tuples)
 			TABLE_DATA.append(tuples)
 
+		progress['value'] = 35
+		self.update_idletasks()
+		time.sleep(0.1)
+
 		if count > 0:
 			table_instance = SingleTable(TABLE_DATA, title)
 			labl = Label(self, text=table_instance.table, bg="black", fg="green",
@@ -122,6 +145,10 @@ def searchPersonne(self,nom,city,codemonpays):
 
 		# Twitter Search
 		title = " Twitter "
+
+		progress['value'] = 50
+		self.update_idletasks()
+		time.sleep(0.1)
 
 		TABLE_DATA = [
 			('Name', 'User', 'Date', 'Location'),
@@ -166,6 +193,10 @@ def searchPersonne(self,nom,city,codemonpays):
 
 		count = 0
 
+		progress['value'] = 65
+		self.update_idletasks()
+		time.sleep(0.1)
+
 		for account in accounts:
 			url = "https://instagram.com/" + account
 			i = instagramSearchTool()
@@ -178,10 +209,25 @@ def searchPersonne(self,nom,city,codemonpays):
 			count += 1
 
 		if count > 0:
+			progress['value'] = 100
+			self.update_idletasks()
+			time.sleep(0.1)
+			progress.destroy()
 			table = SingleTable(TABLE_DATA, title)
 			lb = Label(self, text=table.table, bg="black", fg="red", font=("comicsansms", 10, "bold"),
 					   relief=FLAT).place(x=250, y=480)
 	# print(table.table)
 
+
+
+
 	except IOError:
+		progress['value'] = 50
+		self.update_idletasks()
+		time.sleep(0.1)
+
+		progress['value'] = 80
+		self.update_idletasks()
+		time.sleep(0.1)
+		progress.destroy()
 		pass
