@@ -87,7 +87,7 @@ def Person_lookup(self,lookup):
     city.place(x=290,y=160)
     btn = Button(person_lookup, text="Search", font="BahnschriftLight 15", bg="gray17", fg="white",
                activebackground="gray17", activeforeground="green", bd=0,
-               command=lambda: searchPersonne.searchPersonne(self,nom.get(),city.get(),settings.countrycode)).place(x=120, y=260)
+               command=lambda: searchPersonne.searchPersonne(self,person_lookup,nom.get(),city.get(),settings.countrycode)).place(x=120, y=260)
     person_lookup.mainloop()
 
 
