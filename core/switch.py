@@ -75,6 +75,10 @@ def Person_lookup(self,lookup):
     person_lookup.geometry("600x300+200+200")
     person_lookup.maxsize(600,300)
     person_lookup.minsize(600,300)
+    text = Text(self, width=50, bg="grey17", fg="white")
+    text.insert(INSERT, "Hello.....")
+    text.insert(END, "Bye Bye.....")
+    text.pack(fill=Y)
     l = Label(person_lookup, text="Name:", bg="black", fg="Grey",
               font=("comicsansms", 16, "bold"),relief=FLAT).place(x=60,y=60)
     l = Label(person_lookup, text="City/Department:", bg="black", fg="Grey",
