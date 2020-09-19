@@ -1,9 +1,10 @@
 from bs4 import BeautifulSoup
+from tkinter import *
 from core.searchInfoNumero import searchInfoNumero
 from terminaltables import SingleTable
 
 
-def searchPageDor(requete='', num=''):
+def searchPageDor(text,self,requete='', num=''):
 	def testResponse(requete):
 		if 'Aucun résultat' in requete.text:
 			return 1
@@ -77,4 +78,5 @@ def searchPageDor(requete='', num=''):
 
 	if rep != 1:
 		table_instance = SingleTable(TABLE_DATA, title)
-		print("\n"+table_instance.table)
+		text.insert(END,table_instance.table)
+		# print("\n"+table_instance.table)
