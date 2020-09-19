@@ -8,7 +8,7 @@ warning = "["+Fore.RED+"!"+Fore.RESET+"]"
 question = "["+Fore.YELLOW+"?"+Fore.RESET+"]"
 found = "["+Fore.GREEN+"+"+Fore.RESET+"]"
 
-def searchPersonneLinkedin(self,nom, city):
+def searchPersonneLinkedin(text,nom, city):
 	linkedin = searchLinkedIn()
 	linkedin.search(nom, city)
 	found = linkedin.found
@@ -27,6 +27,7 @@ def searchPersonneLinkedin(self,nom, city):
 			TABLE_DATA.append(r)
 
 		table = SingleTable(TABLE_DATA, title=" LinkedIn ")
-		labl = Label(self, text=table.table, bg="black", fg="green",
-					 font=("comicsansms", 15, "bold"), relief=FLAT)
-		labl.place(x=20, y=2)
+		text.insert(END,table.table)
+		# labl = Label(self, text=table.table, bg="black", fg="green",
+		# 			 font=("comicsansms", 15, "bold"), relief=FLAT)
+		# labl.place(x=20, y=2)
