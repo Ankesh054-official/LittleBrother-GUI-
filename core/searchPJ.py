@@ -1,4 +1,5 @@
 from bs4 import BeautifulSoup
+from tkinter import *
 from core.searchInfoNumero import searchInfoNumero
 from terminaltables import SingleTable
 from colorama import init, Fore,  Back,  Style
@@ -10,7 +11,7 @@ wait = "["+Fore.MAGENTA+"*"+Fore.RESET+"]"
 
 init()
 
-def searchPJ(requete='', num=''):
+def searchPJ(t, requete='', num=''):
 	def testResponse(requete):
 		noReponse = soup.find("p", {"class": "wording-no-responses"})
 		if noReponse:
@@ -44,4 +45,5 @@ def searchPJ(requete='', num=''):
 	if rep != 1:
 		table_instance = SingleTable(TABLE_DATA, " Particulier ")
 		table_instance.inner_row_border = True
-		print("\n"+table_instance.table)
+		t.insert(END,table_instance.table)
+		# print("\n"+table_instance.table)
