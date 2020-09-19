@@ -14,10 +14,7 @@ def main_frame(self, Email):
     self.title("LittleBrother")
     self.geometry("1200x900+75+200")
     self.minsize(980, 660)
-    self.config(bg="grey17")
-    img = PhotoImage(file="../res/canvalogo1.png")
-    lb = Label(self, image=img)
-    lb.place(x=5, y=-1)
+    self.config(bg="black")
     # dictionary of colors:
     color = {"nero": "#252726", "orange": "#FF8700", "darkorange": "#FE6101"}
 
@@ -25,6 +22,10 @@ def main_frame(self, Email):
     # loading Navbar icon image:
     navIcon = PhotoImage(file="../res/menu.png")
     closeIcon = PhotoImage(file="../res/close.png")
+
+    # for text
+    textframe = Frame(self, width=1100, bg="red")
+    textframe.pack(side=RIGHT)
 
     # top Navigation bar:
     topFrame = Frame(self, width=50, bg="#252726")
@@ -64,9 +65,8 @@ def main_frame(self, Email):
     closeBtn = Button(navself, image=closeIcon, bg=color["orange"], activebackground=color["orange"], bd=0,
                          command= lambda: switch(navself, topFrame, btnState=True))
     closeBtn.place(x=250, y=10)
-    text = Text(self, bg="grey17", fg="white")
-    text.insert(INSERT, "Hello.....")
-    text.insert(END, "Bye Bye.....")
-    text.pack(side=RIGHT, fill=Y)
+    text = Text(textframe, width=1200,bg="grey17", fg="white")
+    text.insert(INSERT, "Output of any tool will be displayed here.")
+    text.pack(side=RIGHT)
     self.mainloop()
 # main_frame(self="root",Email="ankeshs054@gmail.com")
