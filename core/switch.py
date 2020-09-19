@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
-from core import searchPersonne
+from core import searchPersonne, searchInstagram
 from core import settings
 
 
@@ -141,8 +141,22 @@ def SSID_locator(self, lookup):
     return messagebox.showinfo("info", "SSID_locator")
 
 
-def instagram_info(self, lookup):
+def instagram_info(self,text, lookup):
     lookup.destroy()
+    instagram_info = Toplevel(self)
+    instagram_info.title("Person Lookup")
+    instagram_info.config(bg="grey17")
+    instagram_info.geometry("600x300+200+200")
+    instagram_info.maxsize(600, 300)
+    instagram_info.minsize(600, 300)
+    l = Label(instagram_info, text="USERNAME:", bg="black", fg="Grey",
+              font=("comicsansms", 16, "bold"), relief=FLAT).place(x=60, y=60)
+    nom = Entry(instagram_info, relief=FLAT, font=("comicsansms", 20, "bold"))
+    nom.place(x=290, y=60)
+    btn = Button(instagram_info, text="Search", font="BahnschriftLight 15", bg="gray17", fg="white",
+                 activebackground="gray17", activeforeground="green", bd=0,
+                 command=lambda: searchInstagram.searchInstagram(nom.get())).place(x=120, y=260)
+    instagram_info.mainloop()
     return messagebox.showinfo("info","instagram_info")
 
 def Email_lookup(self, lookup):
