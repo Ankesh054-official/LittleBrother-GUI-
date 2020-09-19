@@ -1,8 +1,9 @@
 import requests
+from tkinter import *
 from bs4 import BeautifulSoup
 from terminaltables import SingleTable
 
-def searchLocalCH(url):
+def searchLocalCH(text,url):
 	data = requests.get(url).content.decode("utf-8")
 
 	soup = BeautifulSoup(data, "html.parser") 
@@ -34,4 +35,5 @@ def searchLocalCH(url):
 		TABLE_DATA.append(r)
 
 	table = SingleTable(TABLE_DATA, title="Yellow")
-	print(table.table)
+	text.insert(END,table.table)
+	# print(table.table)
