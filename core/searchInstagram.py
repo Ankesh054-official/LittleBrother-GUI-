@@ -2,13 +2,14 @@ from colorama import init, Fore,  Back,  Style
 from core.instagramSearchTool import instagramSearchTool
 from core.shortCutUrl import shortCutUrl
 import os
+from tkinter import *
 
 warning = "["+Fore.RED+"!"+Fore.RESET+"]"
 question = "["+Fore.YELLOW+"?"+Fore.RESET+"]"
 found = "["+Fore.GREEN+"+"+Fore.RESET+"]"
 wait = "["+Fore.MAGENTA+"*"+Fore.RESET+"]"
 
-def searchInstagram(user):
+def searchInstagram(user,text):
 	# user = input(" Username: ")
 	urlProfil = "https://instagram.com/"+user
 
@@ -31,23 +32,23 @@ def searchInstagram(user):
 	phone = insta.phone
 
 
-	print("\n[%s]\n" % (username))
-	print(found+" Name: %s" % (name))
-	print(found+" Pictures: %s" % (images))
-	print(found+" ID: %s" % (userId))
-	print(found+" Protected: %s" % (private))
-	print(found+" Abonnés: %s  |  Abonnements: %s" % (followers, friend))
-	print(found+" Publication: %s" % (publication))
-	print(found+" Bio: %s" % (bio))
+	text.insert(END,"\n[{}]\n".format(username))
+	text.insert(END," Name: {}\n".format(name))
+	text.insert(END," Pictures: {}\n".format(images))
+	text.insert(END," ID: {}\n".format(userId))
+	text.insert(END," Protected: {}\n".format(private))
+	text.insert(END," Abonnés: {}  |  Abonnements: {}\n".format(followers, friend))
+	text.insert(END," Publication: {}\n".format(publication))
+	text.insert(END," Bio: {}\n".format(bio))
 
 	if url:
-		print(found+" Url: %s" % (url))
+		text.insert(END," Url: {}\n".format(url))
 	if email:
-		print(found+" Email: %s" % (email))
+		text.insert(END," Email: {}\n".format(email))
 	if phone:
-		print(found+" Telephone: %s" % (phone))
+		text.insert(END," Telephone: {}\n".format(phone))
 	if adresse:
-		print(found+" Lieux: %s" % (adresse))
+		text.insert(END," Lieux: {}\n".format(adresse))
 
 	if not private:
 		print("\n"+question+" Voulez vous télécharger les 12 dernières photos postées ?")
