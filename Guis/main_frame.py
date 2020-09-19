@@ -24,8 +24,8 @@ def main_frame(self, Email):
     closeIcon = PhotoImage(file="../res/close.png")
 
     # for text
-    textframe = Frame(self, width=90, bg="red")
-    textframe.pack(side=RIGHT)
+    textframe = Frame(self, height=900, width=1200, bg="black")
+    textframe.pack(side=RIGHT, fill=Y)
 
     # top Navigation bar:
     topFrame = Frame(self, width=50, bg="#252726")
@@ -65,8 +65,8 @@ def main_frame(self, Email):
     closeBtn = Button(navself, image=closeIcon, bg=color["orange"], activebackground=color["orange"], bd=0,
                          command= lambda: switch(navself, topFrame, btnState=True))
     closeBtn.place(x=250, y=10)
-    text = Text(textframe, width=1200,bg="grey17", fg="white")
+    text = Text(textframe, width=120,bg="grey17", fg="white")
     text.insert(INSERT, "Output of any tool will be displayed here.")
-    text.pack(side=RIGHT)
+    text.pack(side=RIGHT, fill=Y, pady=5)
     self.mainloop()
 # main_frame(self="root",Email="ankeshs054@gmail.com")
