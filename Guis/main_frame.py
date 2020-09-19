@@ -24,7 +24,7 @@ def main_frame(self, Email):
     closeIcon = PhotoImage(file="../res/close.png")
 
     # for text
-    textframe = Frame(self, width=1100, bg="red")
+    textframe = Frame(self, width=90, bg="red")
     textframe.pack(side=RIGHT)
 
     # top Navigation bar:
