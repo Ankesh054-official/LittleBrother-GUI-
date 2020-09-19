@@ -24,7 +24,7 @@ init()
 
 
 
-def searchPersonne(self,person_lookup,nom,city,codemonpays):
+def searchPersonne(self ,text,person_lookup,nom,city,codemonpays):
 
 	person_lookup.destroy()
 	# nom = Entry()
@@ -34,7 +34,7 @@ def searchPersonne(self,person_lookup,nom,city,codemonpays):
 	# city = input(" Ville/Departement: ")
 	# Progress bar widget
 	progress = Progressbar(self, orient=HORIZONTAL, length=200, mode='determinate')
-	progress.place(x=500, y=500)
+	progress.place(x=600, y=200)
 
 	try:
 
@@ -54,18 +54,18 @@ def searchPersonne(self,person_lookup,nom,city,codemonpays):
 			# Page Jaune search
 			url = "https://www.pagesjaunes.fr/pagesblanches/recherche?quoiqui={}&ou={}"
 			requete = requests.get(url.format(nom, city), headers=headers)
-			searchPJ(requete)
+			searchPJ(text, requete)
 
 		elif codemonpays == 'BE':
 			# Page D'or search
 			url = "https://www.pagesblanches.be/chercher/personne/{}/{}/"
 			requete = requests.get(url.format(nom, city), headers=headers)
-			searchPageDor(requete)
+			searchPageDor(text,self,requete)
 
 		elif codemonpays == 'CH':
 			# Suisse search
 			url = "https://tel.local.ch/fr/q?area={}&city=&company=&ext=1&name={}&phone=&rid=455h&street=&typeref=res"
-			searchLocalCH(url.format(city, nom))
+			searchLocalCH(text,url.format(city, nom))
 
 		elif codemonpays == 'LU':
 			# Luxembourg search
@@ -76,33 +76,33 @@ def searchPersonne(self,person_lookup,nom,city,codemonpays):
 			# Recherche FR
 			url = "https://www.pagesjaunes.fr/pagesblanches/recherche?quoiqui={}&ou={}"
 			requete = requests.get(url.format(nom, city), headers=headers)
-			searchPJ(requete)
+			searchPJ(text, requete)
 
 			# Recherche BE
 			url = "https://www.pagesblanches.be/chercher/personne/{}/{}/"
 			requete = requests.get(url.format(nom, city), headers=headers)
-			searchPageDor(requete)
+			searchPageDor(text,self,requete)
 
 			# Recherche CH
 			url = "https://tel.local.ch/fr/q?area={}&city=&company=&ext=1&name={}&phone=&rid=455h&street=&typeref=res"
-			searchLocalCH(url.format(city, nom))
+			searchLocalCH(text,url.format(city, nom))
 
 			# Recherche LU
 			url = "https://www.yellow.lu/fr/pages-blanches/recherche?query={}"
-			searchYellowLU(url.format(nom))
+			searchYellowLU(text,url.format(nom))
 		progress['value'] =10
 		self.update_idletasks()
 		time.sleep(0.1)
 
 		# Copain d'avant search
-		searchCopainsdavant(self, nom, city)
+		searchCopainsdavant(text, nom, city)
 
 		progress['value'] = 15
 		self.update_idletasks()
 		time.sleep(0.1)
 
 		# LinkedIn search
-		searchPersonneLinkedin(self, nom, city)
+		searchPersonneLinkedin(text, nom, city)
 
 		# Facebook search
 		fbtool = facebookSearchTool()
@@ -139,9 +139,10 @@ def searchPersonne(self,person_lookup,nom,city,codemonpays):
 
 		if count > 0:
 			table_instance = SingleTable(TABLE_DATA, title)
-			labl = Label(self, text=table_instance.table, bg="black", fg="green",
-						 font=("comicsansms", 15, "bold"), relief=FLAT)
-			labl.place(x=20, y=2)
+			text.insert(END,table_instance.table)
+			# labl = Label(self, text=table_instance.table, bg="black", fg="green",
+			# 			 font=("comicsansms", 15, "bold"), relief=FLAT)
+			# labl.place(x=20, y=2)
 
 		# Twitter Search
 		title = " Twitter "
@@ -175,8 +176,9 @@ def searchPersonne(self,person_lookup,nom,city,codemonpays):
 
 		if count > 0:
 			table_instance = SingleTable(TABLE_DATA, title)
-			lb = Label(self, text=table_instance.table, bg="black", fg="red", font=("comicsansms", 10, "bold"),
-					   relief=FLAT).place(x=250, y=480)
+			text.insert(END,table_instance.table)
+			# lb = Label(self, text=table_instance.table, bg="black", fg="red", font=("comicsansms", 10, "bold"),
+			# 		   relief=FLAT).place(x=250, y=480)
 		# print(table_instance.table)
 		# Instagram search
 
@@ -214,8 +216,9 @@ def searchPersonne(self,person_lookup,nom,city,codemonpays):
 			time.sleep(0.1)
 			progress.destroy()
 			table = SingleTable(TABLE_DATA, title)
-			lb = Label(self, text=table.table, bg="black", fg="red", font=("comicsansms", 10, "bold"),
-					   relief=FLAT).place(x=250, y=480)
+			text.insert(END,table.table)
+			# lb = Label(self, text=table.table, bg="black", fg="red", font=("comicsansms", 10, "bold"),
+			# 		   relief=FLAT).place(x=250, y=480)
 	# print(table.table)
 
 
