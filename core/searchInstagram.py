@@ -8,8 +8,8 @@ question = "["+Fore.YELLOW+"?"+Fore.RESET+"]"
 found = "["+Fore.GREEN+"+"+Fore.RESET+"]"
 wait = "["+Fore.MAGENTA+"*"+Fore.RESET+"]"
 
-def searchInstagram():
-	user = input(" Username: ")
+def searchInstagram(user):
+	# user = input(" Username: ")
 	urlProfil = "https://instagram.com/"+user
 
 	insta = instagramSearchTool()
