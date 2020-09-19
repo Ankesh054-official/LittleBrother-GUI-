@@ -113,17 +113,17 @@ def main_Help(self, topFrame, navself):
     return
 
 # for lookup
-def Lookup(self, topFrame, navself):
+def Lookup(self, text, topFrame, navself):
     lookup = Toplevel(navself)
     # option in the navbar:
     options = ["Person lookup", "Mail tracer", "Username lookup", "Employees search", "Lookup address",
                "Google search", "Phone lookup", "Facebook GraphSearch", "IP lookup", "twitter info",
                "SSID locator", "instagram info", "Email lookup"]
-    work = [lambda: Person_lookup(self,lookup), lambda: Mail_tracer(self, lookup), lambda: Username_lookup(self, lookup),
-            lambda: Employees_search(self, lookup), lambda: Lookup_address(self, lookup), lambda: Google_search(self, lookup),
-            lambda: Phone_lookup(self, lookup), lambda: Facebook_GraphSearch(self, lookup), lambda: IP_lookup(self, lookup),
-            lambda: twitter_info(self, lookup), lambda: SSID_locator(self, lookup), lambda: instagram_info(self, lookup),
-            lambda: Email_lookup(self, lookup)]
+    work = [lambda: Person_lookup(self, text, lookup), lambda: Mail_tracer(lookup), lambda: Username_lookup(lookup),
+            lambda: Employees_search(lookup), lambda: Lookup_address(lookup), lambda: Google_search(lookup),
+            lambda: Phone_lookup(lookup), lambda: Facebook_GraphSearch(lookup), lambda: IP_lookup(lookup),
+            lambda: twitter_info(lookup), lambda: SSID_locator(lookup), lambda: instagram_info(lookup),
+            lambda: Email_lookup(lookup)]
     lookup.geometry("300x685+0+55")
     lookup.minsize(300,685)
     lookup.maxsize(300,685)
