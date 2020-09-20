@@ -155,7 +155,7 @@ def instagram_info(self,text, lookup):
     nom.place(x=290, y=60)
     btn = Button(instagram_info, text="Search", font="BahnschriftLight 15", bg="gray17", fg="white",
                  activebackground="gray17", activeforeground="green", bd=0,
-                 command=lambda: searchInstagram.searchInstagram(nom.get(),text)).place(x=120, y=260)
+                 command=lambda: searchInstagram.searchInstagram(self,instagram_info,nom.get(),text)).place(x=120, y=260)
     instagram_info.mainloop()
 
 def Email_lookup(self, lookup):
