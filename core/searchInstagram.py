@@ -3,13 +3,15 @@ from core.instagramSearchTool import instagramSearchTool
 from core.shortCutUrl import shortCutUrl
 import os
 from tkinter import *
+from tkinter import messagebox
 
 warning = "["+Fore.RED+"!"+Fore.RESET+"]"
 question = "["+Fore.YELLOW+"?"+Fore.RESET+"]"
 found = "["+Fore.GREEN+"+"+Fore.RESET+"]"
 wait = "["+Fore.MAGENTA+"*"+Fore.RESET+"]"
 
-def searchInstagram(user,text):
+def searchInstagram(self,instagram_info,user,text):
+	instagram_info.destroy()
 	# user = input(" Username: ")
 	urlProfil = "https://instagram.com/"+user
 
@@ -31,13 +33,15 @@ def searchInstagram(user,text):
 	adresse = insta.adresse
 	phone = insta.phone
 
-
+	os.system("wget {}".format(images))
+	# img = PhotoImage(Image)
+	# panel = Label(text, image=img)
 	text.insert(END,"\n[{}]\n".format(username))
 	text.insert(END," Name: {}\n".format(name))
 	text.insert(END," Pictures: {}\n".format(images))
 	text.insert(END," ID: {}\n".format(userId))
 	text.insert(END," Protected: {}\n".format(private))
-	text.insert(END," Abonnés: {}  |  Abonnements: {}\n".format(followers, friend))
+	text.insert(END," Subscribers: {}  |  Subscriptions: {}\n".format(followers, friend))
 	text.insert(END," Publication: {}\n".format(publication))
 	text.insert(END," Bio: {}\n".format(bio))
 
@@ -46,25 +50,26 @@ def searchInstagram(user,text):
 	if email:
 		text.insert(END," Email: {}\n".format(email))
 	if phone:
-		text.insert(END," Telephone: {}\n".format(phone))
+		text.insert(END," Phone: {}\n".format(phone))
 	if adresse:
-		text.insert(END," Lieux: {}\n".format(adresse))
+		text.insert(END," Places: {}\n".format(adresse))
 
 	if not private:
-		print("\n"+question+" Voulez vous télécharger les 12 dernières photos postées ?")
+		messagebox.askquestion("Download Image","Do you want to download the last 12 photos posted?")
+		# print("\n"+question+" Do you want to download the last 12 photos posted? ?")
 
 		while True:
-			choix = input("\n [o/N]: ")
+			choix = input("\n [Y/N]: ")
 
 			if choix == "" or choix.upper() == "N":
 				break
 			
-			elif choix.upper() == "O":
-				print("\n"+question+" Ou voulez-vous enregistrer les photos ?")
+			elif choix.upper() == "Y":
+				print("\n"+question+" Or do you want to save the photos ?")
 				pathDefault = os.getcwd()
 				print(Fore.YELLOW+" Default path: "+pathDefault+Fore.RESET)
 				path = input("\n Path: ")
-				print("\n"+wait+" Téléchargement des photos de '%s'\n" % (user))
+				print("\n"+wait+" Upload photos from '%s'\n" % (user))
 			
 				if not path:
 					path = pathDefault
@@ -83,7 +88,7 @@ def searchInstagram(user,text):
 						loc = ''
 
 					insta.downloadPictures(media, path, filename)
-					print("(%s) %s %s [%s] %s téléchargé." % (str(i), typeMedia, date, view, loc))
+					print("(%s) %s %s [%s] %s downloaded." % (str(i), typeMedia, date, view, loc))
 
-				print("\n"+found+" Téléchargement fini.")
+				print("\n"+found+" Download finished.")
 				break
