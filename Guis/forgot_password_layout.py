@@ -22,7 +22,7 @@ def forgot_lay(self,title1):
                         fg="black", font=("comicsansms", 12, "bold"),
                         relief=SUNKEN, borderwidth=3,
                         command=lambda self=self: create_account_layout.create_ac(self, title1="Create account")).place(x=650, y=600)
-    p1 = PhotoImage(file='../res/bit.png')
+    p1 = PhotoImage(file='res/bit.png')
     self.iconphoto(False, p1)
     self.geometry("1200x900+75+200")
     self.minsize(980, 660)
@@ -31,7 +31,7 @@ def forgot_lay(self,title1):
     # photo = PhotoImage(file="res/back.png")
     # x_lable = Label(image=photo)
     # Label.pack(self=x_lable)
-    img = PhotoImage(file="../res/canvalogo1.png")
+    img = PhotoImage(file="res/canvalogo1.png")
     label = Label(self, image=img)
     label.place(x=0, y=-1)
     self.geometry("1200x900")
