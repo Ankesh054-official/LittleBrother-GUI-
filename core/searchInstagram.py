@@ -2,6 +2,7 @@ from colorama import init, Fore,  Back,  Style
 from core.instagramSearchTool import instagramSearchTool
 from core.shortCutUrl import shortCutUrl
 import os
+import wget
 from tkinter import *
 from tkinter import messagebox
 
@@ -33,9 +34,13 @@ def searchInstagram(self,instagram_info,user,text):
 	adresse = insta.adresse
 	phone = insta.phone
 
-	os.system("wget {}".format(images))
-	# img = PhotoImage(Image)
-	# panel = Label(text, image=img)
+	# Set up the image URL
+	image_url = "{}".format(images)
+
+	image_filename = wget.download(image_url)
+
+	img = PhotoImage(image_filename)
+	panel = Label(text, image=img).place(x=1100, y=20)
 	text.insert(END,"\n[{}]\n".format(username))
 	text.insert(END," Name: {}\n".format(name))
 	text.insert(END," Pictures: {}\n".format(images))
