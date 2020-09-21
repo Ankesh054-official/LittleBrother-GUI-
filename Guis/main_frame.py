@@ -26,7 +26,7 @@ def main_frame(self, Email):
 
     navIcon = PhotoImage(file="res/menu.png")
     closeIcon = PhotoImage(file="res/close.png")
-    
+
     # Scroll bar for vertical movement for data:
     h = Scrollbar(self, orient='horizontal')
     h.pack(side=BOTTOM, fill=X)
