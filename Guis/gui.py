@@ -22,16 +22,16 @@ def lay(frame1):
                   font=("comicsansms", 12, "bold"), relief=SUNKEN, borderwidth=3,
                   command=lambda: layout_decision.create_lay(frame1, "Forgot Password")).place(x=115, y=200)
 
-
-root = Tk()
-root.geometry('713x398+300+200')
-root.minsize(713, 398)
-root.maxsize(713, 398)
-root.config(bg="black")
-p1 = PhotoImage(file='../res/bit.png')
-root.iconphoto(False, p1)
-img = PhotoImage(file="../res/canvalogo.png")
-label = Label(root, image=img)
-label.place(x=-1, y=-1)
-lay(root) # main window
-root.mainloop()
+def root():
+    root = Tk()
+    root.geometry('713x398+300+200')
+    root.minsize(713, 398)
+    root.maxsize(713, 398)
+    root.config(bg="black")
+    p1 = PhotoImage(file='res/bit.png')
+    root.iconphoto(False, p1)
+    img = PhotoImage(file="res/canvalogo.png")
+    label = Label(root, image=img)
+    label.place(x=-1, y=-1)
+    lay(root) # main window
+    root.mainloop()
