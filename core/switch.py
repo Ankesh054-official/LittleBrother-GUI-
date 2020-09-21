@@ -151,11 +151,11 @@ def instagram_info(self,text, lookup):
     instagram_info.minsize(600, 300)
     l = Label(instagram_info, text="USERNAME:", bg="black", fg="Grey",
               font=("comicsansms", 16, "bold"), relief=FLAT).place(x=60, y=60)
-    nom = Entry(instagram_info, relief=FLAT, font=("comicsansms", 20, "bold"))
-    nom.place(x=290, y=60)
+    instaprofile = Entry(instagram_info, relief=FLAT, font=("comicsansms", 20, "bold"))
+    instaprofile.place(x=290, y=60)
     btn = Button(instagram_info, text="Search", font="BahnschriftLight 15", bg="gray17", fg="white",
                  activebackground="gray17", activeforeground="green", bd=0,
-                 command=lambda: searchInstagram.searchInstagram(self,instagram_info,nom.get(),text)).place(x=120, y=260)
+                 command=lambda: searchInstagram.searchInstagram(self,instagram_info,instaprofile.get(),text)).place(x=120, y=260)
     instagram_info.mainloop()
 
 def Email_lookup(self, lookup):
