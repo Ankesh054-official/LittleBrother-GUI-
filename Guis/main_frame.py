@@ -9,7 +9,8 @@ from core.navbtn import Profle, main_Help, Feedback, More_Tools, Lookup, About, 
 def main_frame(self, Email):
     self.destroy()
     self = Tk()
-    p1 = PhotoImage(file='../res/bit.png')
+    # p1 = PhotoImage(file='../res/bit.png')
+    p1 = PhotoImage(file='res/bit.png')
     self.iconphoto(False, p1)
     self.title("LittleBrother")
     self.geometry("1200x900+75+200")
@@ -19,13 +20,13 @@ def main_frame(self, Email):
     color = {"nero": "#252726", "orange": "#FF8700", "darkorange": "#FE6101"}
 
 
-    # loading Navbar icon image:
-    navIcon = PhotoImage(file="../res/menu.png")
-    closeIcon = PhotoImage(file="../res/close.png")
+    # # loading Navbar icon image:
+    # navIcon = PhotoImage(file="../res/menu.png")
+    # closeIcon = PhotoImage(file="../res/close.png")
 
-    # # # for text
-    # textframe = Frame(self, height=200, width=1300, bg="red")
-    # textframe.pack(side=RIGHT, fill=Y, padx=10, pady=10)
+    navIcon = PhotoImage(file="res/menu.png")
+    closeIcon = PhotoImage(file="res/close.png")
+    
     # Scroll bar for vertical movement for data:
     h = Scrollbar(self, orient='horizontal')
     h.pack(side=BOTTOM, fill=X)
