@@ -23,7 +23,7 @@ def login(frame1, Email, Password):
             # divert to the little brother console
             main_frame.main_frame(frame1, Email)
         except requests.exceptions.ConnectionError:
-            messagebox.showinfo("Connection Error!", "Internet Disconnected")
+            return messagebox.showinfo("Connection Error!", "Internet Disconnected")
     except requests.exceptions.HTTPError:
         return messagebox.showerror("SIGNIN_INVALID", "MAYBE, INVALID_EMAIL\nor\nINVALID_PASSWORD")
 
