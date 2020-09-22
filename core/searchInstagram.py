@@ -14,6 +14,7 @@ found = "["+Fore.GREEN+"+"+Fore.RESET+"]"
 wait = "["+Fore.MAGENTA+"*"+Fore.RESET+"]"
 
 def searchInstagram(self,instagram_info,user,text):
+	instagram_info.destroy()
 
 	# Progress bar widget
 	progress = Progressbar(self, orient=HORIZONTAL, length=200, mode='determinate')
@@ -51,7 +52,7 @@ def searchInstagram(self,instagram_info,user,text):
 	# Set up the image URL
 	image_url = "{}".format(images)
 	image_filename = wget.download(image_url)
-	img = PhotoImage(file='{}'.format(image_url.split('/')[-1].split('?')[0]))
+	img = PhotoImage(file=image_url.split('/')[-1].split('?')[0])
 
 	progress['value'] = 30
 	self.update_idletasks()
