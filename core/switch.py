@@ -181,3 +181,4 @@ def All(options, navself):
 def CH(options, navself):
     options.destroy()
     return messagebox.showinfo("info","CH")
+
