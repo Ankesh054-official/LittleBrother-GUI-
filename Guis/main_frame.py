@@ -32,7 +32,7 @@ def main_frame(self, Email):
     h.pack(side=BOTTOM, fill=X)
     v = Scrollbar(self)
     v.pack(side=RIGHT, fill=Y)
-    text = Text(self, height=200, width=160, bg="grey17", fg="white", wrap=NONE, xscrollcommand=h.set,
+    text = Text(self, height=200, width=100, bg="grey17", fg="white", wrap=NONE, xscrollcommand=h.set,
                 yscrollcommand=v.set)
     text.pack(side=RIGHT, fill=Y, padx=10, pady=10)
     h.config(command=text.xview)
