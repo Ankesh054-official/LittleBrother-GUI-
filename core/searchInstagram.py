@@ -1,6 +1,6 @@
 import PIL
 from colorama import init, Fore,  Back,  Style
-from core.instagramSearchTool import instagramSearchTool
+from core.instagramSearchTool import instagramSearchTool, pat
 from core.shortCutUrl import shortCutUrl
 from tkinter import *
 from tkinter.ttk import *
@@ -15,7 +15,9 @@ question = "["+Fore.YELLOW+"?"+Fore.RESET+"]"
 found = "["+Fore.GREEN+"+"+Fore.RESET+"]"
 wait = "["+Fore.MAGENTA+"*"+Fore.RESET+"]"
 
+
 def searchInstagram(self,instagram_info,user,text):
+	global path
 	instagram_info.destroy()
 
 	# Progress bar widget
@@ -68,9 +70,13 @@ def searchInstagram(self,instagram_info,user,text):
 
 	# Set up the image URL
 	image_url = "{}".format(images)
+	try:
+		os.mkdir("{0}/{1}".format(os.getcwd(), user))
+	except FileExistsError:
+		pass
 	image_filename = wget.download(image_url)
-	os.system("mv {0} profile.png ".format(image_url.split('/')[-1].split('?')[0]))
-	img = PhotoImage('profile.png')
+	os.system("mv {0} profile.png && mv profile.png {1}/".format(image_url.split('/')[-1].split('?')[0], user))
+	img = PhotoImage('/{0}/profile.png'.format(user))
 
 	progress['value'] = 30
 	self.update_idletasks()
@@ -121,19 +127,16 @@ def searchInstagram(self,instagram_info,user,text):
 				self.update_idletasks()
 				time.sleep(0.1)
 
+				pathDefault = os.getcwd()+"/"+user
 				print("\n"+question+" Or do you want to save the photos ?")
-				pathDefault = os.getcwd()
-				try:
-					os.mkdir("{0}/{1}".format(pathDefault, user))
-				except:
-					pass
-				print(Fore.YELLOW+" Default path: "+pathDefault+Fore.RESET)
-				# path = input("\n Path: ")
+				print(Fore.YELLOW+" Default path: "+os.getcwd()+"/"+user+Fore.RESET)
+
+				path = pat(self, user)
 				# print("\n"+wait+" Upload photos from '%s'\n" % (user))
 			
 				if not pathDefault:
 					path = pathDefault
-			
+				print(path)
 				pictureInfo = insta.get_picturesInfo(urlProfil)
 
 				for i in pictureInfo:
