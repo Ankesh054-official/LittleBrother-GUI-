@@ -1,3 +1,4 @@
+import PIL
 from colorama import init, Fore,  Back,  Style
 from core.instagramSearchTool import instagramSearchTool
 from core.shortCutUrl import shortCutUrl
@@ -7,6 +8,7 @@ from tkinter import messagebox
 import os
 import wget
 import time
+from PIL import Image
 
 warning = "["+Fore.RED+"!"+Fore.RESET+"]"
 question = "["+Fore.YELLOW+"?"+Fore.RESET+"]"
@@ -22,10 +24,15 @@ def searchInstagram(self,instagram_info,user,text):
 	# user = input(" Username: ")
 	urlProfil = "https://instagram.com/"+user
 
+	progress['value'] = 5
+	self.update_idletasks()
+	time.sleep(0.1)
+
 	insta = instagramSearchTool()
 	insta.getInfo(user)
 
-	progress['value'] = 5
+
+	progress['value'] = 10
 	self.update_idletasks()
 	time.sleep(0.1)
 
@@ -34,12 +41,18 @@ def searchInstagram(self,instagram_info,user,text):
 	images = insta.profi_pic_hd
 	image = shortCutUrl(images)
 	username = insta.username
+
+
+	progress['value'] = 15
+	self.update_idletasks()
+	time.sleep(0.1)
+
 	private = insta.private
 	followers = insta.followers
 	friend = insta.friends
 	publication = insta.medias
 
-	progress['value'] = 10
+	progress['value'] = 20
 	self.update_idletasks()
 	time.sleep(0.1)
 
@@ -49,17 +62,22 @@ def searchInstagram(self,instagram_info,user,text):
 	adresse = insta.adresse
 	phone = insta.phone
 
+	progress['value'] = 25
+	self.update_idletasks()
+	time.sleep(0.1)
+
 	# Set up the image URL
 	image_url = "{}".format(images)
 	image_filename = wget.download(image_url)
-	img = PhotoImage(file=image_url.split('/')[-1].split('?')[0])
+	os.system("mv {0} profile.png ".format(image_url.split('/')[-1].split('?')[0]))
+	img = PhotoImage('profile.png')
 
 	progress['value'] = 30
 	self.update_idletasks()
 	time.sleep(0.1)
 
-	panel = Label(text, width=50, height=50, image=img)
-	panel.place(x=1100, y=20)
+	panel = Label(self, width=50, image=img)
+	panel.place(x=20, y=20)
 	text.insert(END,"\n[{}]\n".format(username))
 	text.insert(END," Name: {}\n".format(name))
 	text.insert(END," Pictures: {}\n".format(image))
@@ -83,21 +101,21 @@ def searchInstagram(self,instagram_info,user,text):
 		text.insert(END," Places: {}\n".format(adresse))
 
 	if not private:
-		messagebox.askquestion("Download Image","Do you want to download the last 12 photos posted?")
 		# print("\n"+question+" Do you want to download the last 12 photos posted? ?")
 
 		while True:
-			choix = input("\n [Y/N]: ")
+			choix = messagebox.askquestion("Download Image", "Do you want to download the last 12 photos posted?")
+			# = input("\n [Y/N]: ")
 
-			if choix == "" or choix.upper() == "N":
+			if choix == "" or choix.upper() == "NO":
 
-				progress['value'] = 60
+				progress['value'] = 100
 				self.update_idletasks()
 				time.sleep(0.1)
-
+				progress.destroy()
 				break
 			
-			elif choix.upper() == "Y":
+			elif choix.upper() == "YES":
 
 				progress['value'] = 70
 				self.update_idletasks()
@@ -105,11 +123,15 @@ def searchInstagram(self,instagram_info,user,text):
 
 				print("\n"+question+" Or do you want to save the photos ?")
 				pathDefault = os.getcwd()
+				try:
+					os.mkdir("{0}/{1}".format(pathDefault, user))
+				except:
+					pass
 				print(Fore.YELLOW+" Default path: "+pathDefault+Fore.RESET)
-				path = input("\n Path: ")
-				print("\n"+wait+" Upload photos from '%s'\n" % (user))
+				# path = input("\n Path: ")
+				# print("\n"+wait+" Upload photos from '%s'\n" % (user))
 			
-				if not path:
+				if not pathDefault:
 					path = pathDefault
 			
 				pictureInfo = insta.get_picturesInfo(urlProfil)
@@ -133,4 +155,5 @@ def searchInstagram(self,instagram_info,user,text):
 				progress['value'] = 100
 				self.update_idletasks()
 				time.sleep(0.1)
+				progress.destroy()
 				break
