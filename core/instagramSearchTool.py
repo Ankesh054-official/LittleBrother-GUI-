@@ -1,4 +1,4 @@
-import requests, re, json, time, random
+import requests, re, json, time, random, os
 
 # /core
 from core.getUrlGoogleSearch import getUrlGoogleSearch
@@ -7,6 +7,26 @@ from core.shortCutUrl 		 import shortCutUrl
 
 # /lib
 from lib.download import download
+
+from tkinter import *
+
+
+def pat(frame, user):
+	patc = Toplevel(frame)
+	patc.title("Path")
+	patc.config(bg="grey17")
+	patc.geometry("600x300+200+200")
+	patc.maxsize(600, 300)
+	patc.minsize(600, 300)
+	l = Label(patc, text="Path:", font=("comicsansms", 16, "bold"))
+	l.place(x=60, y=60)
+	l = Label(patc, text=" Default path: {0}/{1}".format(os.getcwd(), user), font=("comicsansms", 16, "bold"))
+	l.place(x=100, y=100)
+	pac = Entry(patc, font=("comicsansms", 20, "bold"))
+	pac.place(x=290, y=60)
+	btn = Button(patc, text="Get", command=lambda pac=pac.get(): pac).place(
+		x=120, y=200)
+	return pac
 
 class instagramSearchTool:
 		
@@ -21,6 +41,8 @@ class instagramSearchTool:
 			values = None
 
 		return(values)
+
+
 
 	def _getNameById(self, ownerId):
 		username = None
@@ -88,7 +110,6 @@ class instagramSearchTool:
 			path += "/"
 		
 		download(url, path, filename)
-
 
 	def getInfo(self, username):
 		profilId 	= None
