@@ -7,27 +7,38 @@ from core.shortCutUrl 		 import shortCutUrl
 
 # /lib
 from lib.download import download
+from lib.download import download_insta_img
+
 
 from tkinter import *
 
+def go(l1, l2, entry, value, insta, urlProfil, user,pathDefault,path, frame):
+	l1.destroy()
+	l2.destroy()
+	entry.destroy()
+	if path == '':
+		path = pathDefault
+	download_insta_img(value, frame, insta, urlProfil, user, path)
+	return frame.destroy()
 
-def pat(frame, user):
+def pat(progress, value,insta, urlProfil,pathDefault,frame, user):
+	progress.destroy()
 	patc = Toplevel(frame)
 	patc.title("Path")
 	patc.config(bg="grey17")
-	patc.geometry("600x300+200+200")
+	patc.geometry("800x350+200+200")
 	patc.maxsize(600, 300)
 	patc.minsize(600, 300)
-	l = Label(patc, text="Path:", font=("comicsansms", 16, "bold"))
-	l.place(x=60, y=60)
-	l = Label(patc, text=" Default path: {0}/{1}".format(os.getcwd(), user), font=("comicsansms", 16, "bold"))
-	l.place(x=100, y=100)
+	l1 = Label(patc, text="Path:", font=("comicsansms", 16, "bold"))
+	l1.place(x=60, y=60)
+	l2 = Label(patc, text=" Default path: {0}/{1}".format(os.getcwd(), user), font=("comicsansms", 16, "bold"))
+	l2.place(x=10, y=100)
 	pac = Entry(patc, font=("comicsansms", 20, "bold"))
 	pac.place(x=290, y=60)
-	x = lambda pac: pac.get()
-	btn = Button(patc, text="Get", command=lambda x: patc.destroy()).place(
+	btn = Button(patc, text="Get", command=lambda: go(l1, l2, pac, value, insta, urlProfil, user,pathDefault, pac.get(), patc)).place(
 		x=120, y=200)
-	return x
+	patc.mainloop()
+	return
 
 class instagramSearchTool:
 		
@@ -106,11 +117,11 @@ class instagramSearchTool:
 		return(dict_postMedia)
 
 
-	def downloadPictures(self, url, path, filename):
+	def downloadPictures(self, url, user, path, filename):
 		if not path.endswith("/"):
 			path += "/"
 		
-		download(url, path, filename)
+		download(url, user, path, filename)
 
 	def getInfo(self, username):
 		profilId 	= None
