@@ -113,7 +113,9 @@ def main_Help(self, topFrame, navself):
     return
 
 # for lookup
-def Lookup(self, text, topFrame, navself):
+def Lookup(self, img, text, topFrame, navself):
+    img.destroy()
+    text.delete(1.0,END)
     lookup = Toplevel(navself)
     # option in the navbar:
     options = ["Person lookup", "Mail tracer", "Username lookup", "Employees search", "Lookup address",
