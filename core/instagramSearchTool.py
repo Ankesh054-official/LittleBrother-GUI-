@@ -12,9 +12,10 @@ from lib.download import download_insta_img
 
 from tkinter import *
 
-def go(l1, l2, entry, value, insta, urlProfil, user,pathDefault,path, frame):
+def go(l1, l2, l3, entry, value, insta, urlProfil, user,pathDefault,path, frame):
 	l1.destroy()
 	l2.destroy()
+	l3.destroy()
 	entry.destroy()
 	if path == '':
 		path = pathDefault
@@ -26,16 +27,18 @@ def pat(progress, value,insta, urlProfil,pathDefault,frame, user):
 	patc = Toplevel(frame)
 	patc.title("Path")
 	patc.config(bg="grey17")
-	patc.geometry("800x350+200+200")
+	patc.geometry("900x450+200+200")
 	patc.maxsize(600, 300)
 	patc.minsize(600, 300)
 	l1 = Label(patc, text="Path:", font=("comicsansms", 16, "bold"))
 	l1.place(x=60, y=60)
-	l2 = Label(patc, text=" Default path: {0}/{1}".format(os.getcwd(), user), font=("comicsansms", 16, "bold"))
+	l2 = Label(patc, text=" Default path: {0}/{1}".format(os.getcwd(), user), font=("comicsansms", 12, "bold"))
 	l2.place(x=10, y=100)
+	l3 = Label(patc, text="Click on get without inserting any input to choose default", fg="red",font=("comicsansms", 12, "bold"))
+	l3.place(x=10,y=140)
 	pac = Entry(patc, font=("comicsansms", 20, "bold"))
 	pac.place(x=290, y=60)
-	btn = Button(patc, text="Get", command=lambda: go(l1, l2, pac, value, insta, urlProfil, user,pathDefault, pac.get(), patc)).place(
+	btn = Button(patc, text="Get", command=lambda: go(l1, l2, l3, pac, value, insta, urlProfil, user,pathDefault, pac.get(), patc)).place(
 		x=120, y=200)
 	patc.mainloop()
 	return
