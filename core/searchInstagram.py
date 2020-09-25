@@ -1,3 +1,4 @@
+import ImageTk
 import PIL
 from colorama import init, Fore,  Back,  Style
 from core.instagramSearchTool import instagramSearchTool, pat
@@ -8,7 +9,7 @@ from tkinter import messagebox
 import os
 import wget
 import time
-from PIL import Image
+# from Pillow import ImageTk
 
 warning = "["+Fore.RED+"!"+Fore.RESET+"]"
 question = "["+Fore.YELLOW+"?"+Fore.RESET+"]"
@@ -75,15 +76,17 @@ def searchInstagram(self,instagram_info,user,text):
 	except FileExistsError:
 		pass
 	image_filename = wget.download(image_url)
-	os.system("mv {0} profile.png && mv profile.png {1}/".format(image_url.split('/')[-1].split('?')[0], user))
-	img = PhotoImage('/{0}/profile.png'.format(user))
+	os.system("mv {0} profile.jpg && mv profile.jpg {1}/".format(image_url.split('/')[-1].split('?')[0], user))
+	file = '{0}/profile.jpg'.format(user)
+	img = ImageTk.PhotoImage(Image(file).resize(20, 30))
+	label = Label(self, image=img)
+	label.image = img
+	label.place(x=-1, y=-1)
 
 	progress['value'] = 30
 	self.update_idletasks()
 	time.sleep(0.1)
 
-	panel = Label(self, width=50, image=img)
-	panel.place(x=20, y=20)
 	text.insert(END,"\n[{}]\n".format(username))
 	text.insert(END," Name: {}\n".format(name))
 	text.insert(END," Pictures: {}\n".format(image))
@@ -131,7 +134,6 @@ def searchInstagram(self,instagram_info,user,text):
 				print("\n"+question+" Or do you want to save the photos ?")
 				print(Fore.YELLOW+" Default path: "+os.getcwd()+"/"+user+Fore.RESET)
 
-				path = pat(self, user)
 				# print("\n"+wait+" Upload photos from '%s'\n" % (user))
 			
 				if not pathDefault:
@@ -160,3 +162,4 @@ def searchInstagram(self,instagram_info,user,text):
 				time.sleep(0.1)
 				progress.destroy()
 				break
+	progress.destroy()
