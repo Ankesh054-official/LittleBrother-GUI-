@@ -146,7 +146,7 @@ def instagram_info(self,text, lookup):
     instagram_info = Toplevel(self)
     instagram_info.title("Person Lookup")
     instagram_info.config(bg="grey17")
-    instagram_info.geometry("600x300+200+200")
+    instagram_info.geometry("700x350+200+200")
     instagram_info.maxsize(600, 300)
     instagram_info.minsize(600, 300)
     l = Label(instagram_info, text="USERNAME:", bg="black", fg="Grey",
