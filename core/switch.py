@@ -153,7 +153,6 @@ def instagram_info(self,text, lookup):
               font=("comicsansms", 16, "bold"), relief=FLAT).place(x=60, y=60)
     instaprofile = Entry(instagram_info, relief=FLAT, font=("comicsansms", 20, "bold"))
     instaprofile.place(x=290, y=60)
-    # path = pat(self, user)
     btn = Button(instagram_info, text="Search", font="BahnschriftLight 15", bg="gray17", fg="white",
                  activebackground="gray17", activeforeground="green", bd=0,
                  command=lambda: searchInstagram.searchInstagram(self,instagram_info,instaprofile.get(),text)).place(x=120, y=200)
