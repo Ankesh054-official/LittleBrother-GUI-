@@ -24,9 +24,10 @@ def pat(frame, user):
 	l.place(x=100, y=100)
 	pac = Entry(patc, font=("comicsansms", 20, "bold"))
 	pac.place(x=290, y=60)
-	btn = Button(patc, text="Get", command=lambda pac=pac.get(): pac).place(
+	x = lambda pac: pac.get()
+	btn = Button(patc, text="Get", command=lambda x: patc.destroy()).place(
 		x=120, y=200)
-	return pac
+	return x
 
 class instagramSearchTool:
 		
