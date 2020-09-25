@@ -1,7 +1,6 @@
 import ImageTk
-import PIL
 from colorama import init, Fore,  Back,  Style
-from core.instagramSearchTool import instagramSearchTool, pat
+from core.instagramSearchTool import instagramSearchTool, pat, go
 from core.shortCutUrl import shortCutUrl
 from tkinter import *
 from tkinter.ttk import *
@@ -9,7 +8,7 @@ from tkinter import messagebox
 import os
 import wget
 import time
-# from Pillow import ImageTk
+from PIL import Image
 
 warning = "["+Fore.RED+"!"+Fore.RESET+"]"
 question = "["+Fore.YELLOW+"?"+Fore.RESET+"]"
@@ -42,124 +41,98 @@ def searchInstagram(self,instagram_info,user,text):
 	name = insta.name
 	userId = insta.id
 	images = insta.profi_pic_hd
-	image = shortCutUrl(images)
-	username = insta.username
-
-
-	progress['value'] = 15
-	self.update_idletasks()
-	time.sleep(0.1)
-
-	private = insta.private
-	followers = insta.followers
-	friend = insta.friends
-	publication = insta.medias
-
-	progress['value'] = 20
-	self.update_idletasks()
-	time.sleep(0.1)
-
-	bio = insta.biography
-	url = insta.url
-	email = insta.email
-	adresse = insta.adresse
-	phone = insta.phone
-
-	progress['value'] = 25
-	self.update_idletasks()
-	time.sleep(0.1)
-
-	# Set up the image URL
-	image_url = "{}".format(images)
 	try:
-		os.mkdir("{0}/{1}".format(os.getcwd(), user))
-	except FileExistsError:
-		pass
-	image_filename = wget.download(image_url)
-	os.system("mv {0} profile.jpg && mv profile.jpg {1}/".format(image_url.split('/')[-1].split('?')[0], user))
-	file = '{0}/profile.jpg'.format(user)
-	img = ImageTk.PhotoImage(Image(file).resize(20, 30))
-	label = Label(self, image=img)
-	label.image = img
-	label.place(x=-1, y=-1)
+		image = shortCutUrl(images)
+		username = insta.username
 
-	progress['value'] = 30
-	self.update_idletasks()
-	time.sleep(0.1)
+		progress['value'] = 15
+		self.update_idletasks()
+		time.sleep(0.1)
 
-	text.insert(END,"\n[{}]\n".format(username))
-	text.insert(END," Name: {}\n".format(name))
-	text.insert(END," Pictures: {}\n".format(image))
-	text.insert(END," ID: {}\n".format(userId))
-	text.insert(END," Protected: {}\n".format(private))
-	text.insert(END," Subscribers: {}  |  Subscriptions: {}\n".format(followers, friend))
-	text.insert(END," Publication: {}\n".format(publication))
-	text.insert(END," Bio: {}\n".format(bio))
+		private = insta.private
+		followers = insta.followers
+		friend = insta.friends
+		publication = insta.medias
 
-	progress['value'] = 50
-	self.update_idletasks()
-	time.sleep(0.1)
+		progress['value'] = 20
+		self.update_idletasks()
+		time.sleep(0.1)
 
-	if url:
-		text.insert(END," Url: {}\n".format(url))
-	if email:
-		text.insert(END," Email: {}\n".format(email))
-	if phone:
-		text.insert(END," Phone: {}\n".format(phone))
-	if adresse:
-		text.insert(END," Places: {}\n".format(adresse))
+		bio = insta.biography
+		url = insta.url
+		email = insta.email
+		adresse = insta.adresse
+		phone = insta.phone
 
-	if not private:
-		# print("\n"+question+" Do you want to download the last 12 photos posted? ?")
+		progress['value'] = 25
+		self.update_idletasks()
+		time.sleep(0.1)
 
-		while True:
-			choix = messagebox.askquestion("Download Image", "Do you want to download the last 12 photos posted?")
-			# = input("\n [Y/N]: ")
+		# Set up the image URL
+		image_url = "{}".format(images)
+		try:
+			os.mkdir("{0}/{1}".format(os.getcwd(), user))
+		except FileExistsError:
+			pass
+		image_filename = wget.download(image_url)
+		os.system("mv {0} profile.png && mv profile.png {1}/".format(image_url.split('/')[-1].split('?')[0], user))
+		load = Image.open("{0}/profile.png".format(user))
+		render = ImageTk.PhotoImage(load)
+		img = Label(self, image=render)
+		img.image = render
+		img.pack(anchor=NE, pady=10)
 
-			if choix == "" or choix.upper() == "NO":
+		progress['value'] = 30
+		self.update_idletasks()
+		time.sleep(0.1)
 
-				progress['value'] = 100
-				self.update_idletasks()
-				time.sleep(0.1)
-				progress.destroy()
-				break
-			
-			elif choix.upper() == "YES":
+		text.insert(END, "\n[{}]\n".format(username))
+		text.insert(END, " Name: {}\n".format(name))
+		text.insert(END, " Pictures: {}\n".format(image))
+		text.insert(END, " ID: {}\n".format(userId))
+		text.insert(END, " Protected: {}\n".format(private))
+		text.insert(END, " Subscribers: {}  |  Subscriptions: {}\n".format(followers, friend))
+		text.insert(END, " Publication: {}\n".format(publication))
+		text.insert(END, " Bio: {}\n".format(bio))
 
-				progress['value'] = 70
-				self.update_idletasks()
-				time.sleep(0.1)
+		progress['value'] = 50
+		self.update_idletasks()
+		time.sleep(0.1)
 
-				pathDefault = os.getcwd()+"/"+user
-				print("\n"+question+" Or do you want to save the photos ?")
-				print(Fore.YELLOW+" Default path: "+os.getcwd()+"/"+user+Fore.RESET)
+		if url:
+			text.insert(END, " Url: {}\n".format(url))
+		if email:
+			text.insert(END, " Email: {}\n".format(email))
+		if phone:
+			text.insert(END, " Phone: {}\n".format(phone))
+		if adresse:
+			text.insert(END, " Places: {}\n".format(adresse))
 
-				# print("\n"+wait+" Upload photos from '%s'\n" % (user))
-			
-				if not pathDefault:
-					path = pathDefault
-				print(path)
-				pictureInfo = insta.get_picturesInfo(urlProfil)
+		if not private:
 
-				for i in pictureInfo:
-					media = pictureInfo[i]['display']
-					typeMedia = pictureInfo[i]['type_media']
-					date = pictureInfo[i]['date']
-					view = pictureInfo[i]['info']
-					loc = pictureInfo[i]['localisation'] 
-					filename = user+'_'+str(i)+".jpg"
+			while True:
+				choix = messagebox.askquestion("Download Image", "Do you want to download the last 12 photos posted?")
 
-					if not loc:
-						loc = ''
+				if choix == "" or choix.upper() == "NO":
 
-					insta.downloadPictures(media, path, filename)
-					print("(%s) %s %s [%s] %s downloaded." % (str(i), typeMedia, date, view, loc))
+					progress['value'] = 100
+					self.update_idletasks()
+					time.sleep(0.1)
+					progress.destroy()
+					break
 
-				print("\n"+found+" Download finished.")
+				elif choix.upper() == "YES":
 
-				progress['value'] = 100
-				self.update_idletasks()
-				time.sleep(0.1)
-				progress.destroy()
-				break
-	progress.destroy()
+					progress['value'] = 70
+					self.update_idletasks()
+					time.sleep(0.1)
+
+					pathDefault = os.getcwd() + "/" + user
+					pat(progress, 70, insta, urlProfil, pathDefault, self, user)
+					break
+		else:
+			messagebox.showinfo("Private Account", "We can't download images from {0}'s Profile.".format(user))
+			progress.destroy()
+	except TypeError:
+		progress.destroy()
+		messagebox.showerror("NOT FOUND",user+" user not found")
