@@ -33,8 +33,6 @@ def signin(self,title1):
     e0.place(x=250, y=140)
     e1 = Entry(self, relief=FLAT, show="*", font=("comicsansms", 20, "bold"))
     e1.place(x=250, y=240)
-    e0.insert(END,"ankeshs054@gmail.com")
-    e1.insert(END,"beahacker")
     bt1 = Button(self, activebackground="black", activeforeground="white", text="{0}".format(dic[0]), bg="white", fg="black", font=("comicsansms", 12, "bold"),
                     relief=SUNKEN, borderwidth=3, command=lambda frame1=self: main.login(frame1,e0.get(),e1.get())).place(
             x=550, y=600)
