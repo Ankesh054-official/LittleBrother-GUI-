@@ -43,9 +43,10 @@ def download_insta_img(value, frame, insta, urlProfil, user, path):
 			loc = ''
 
 		insta.downloadPictures(media, user, path, filename)
-		progress['value'] += 5
+		progress['value'] += 2
 		frame.update_idletasks()
 		time.sleep(0.1)
 		Label(frame, text="(%s) %s %s [%s] %s downloaded." % (str(i), typeMedia, date, view, loc)).pack()
 	progress.destroy()
+	frame.destroy()
 	messagebox.showinfo("Flag message", " Download Image finished.")
