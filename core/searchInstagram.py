@@ -80,7 +80,7 @@ def searchInstagram(self,instagram_info,user,text):
 		render = ImageTk.PhotoImage(load)
 		img = Label(self, image=render)
 		img.image = render
-		img.pack(anchor=NE, pady=10)
+		img.place(x=1030, y=10)
 
 		progress['value'] = 30
 		self.update_idletasks()
@@ -93,8 +93,11 @@ def searchInstagram(self,instagram_info,user,text):
 		text.insert(END, " Protected: {}\n".format(private))
 		text.insert(END, " Subscribers: {}  |  Subscriptions: {}\n".format(followers, friend))
 		text.insert(END, " Publication: {}\n".format(publication))
-		text.insert(END, " Bio: {}\n".format(bio))
-
+		try:
+			text.insert(END, " Bio: {}\n".format(bio))
+		except:
+			messagebox.showinfo("Unsupported","Sorry But we can't show you Bio's because your computer's terminal does't support emojis.")
+			text.insert(END, " Sorry But we can't show you Bio's because your computer's terminal does't support emojis.\n")
 		progress['value'] = 50
 		self.update_idletasks()
 		time.sleep(0.1)
