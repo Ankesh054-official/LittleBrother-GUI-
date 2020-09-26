@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+import time
 
 class searchLinkedIn:
 	def __init__(self):
@@ -18,15 +19,23 @@ class searchLinkedIn:
 		self.linkedin_list = ["| LinkedIn", "on LinkedIn", "- LinkedIn", "LinkedIn"]
 		self.google_search = "https://"+server+"/search?num="+limit+"&q=%s %s insite:fr.linkedin.com/in"
 
-	def search(self, searching, city):
+	def search(self, progress,frame, searching, city):
 		google_search = self.google_search % (searching, city)
 		linkedin_list = self.linkedin_list
+
+		progress['value'] = 15
+		frame.update_idletasks()
+		time.sleep(0.1)
 
 		employee_list = []
 		pages_list = []
 
 		req = requests.get(google_search, headers=self.headers)
 		status_code = req.status_code
+
+		progress['value'] = 25
+		frame.update_idletasks()
+		time.sleep(0.1)
 
 		if status_code == 200:
 			html = BeautifulSoup(req.text, "html.parser")
@@ -42,6 +51,9 @@ class searchLinkedIn:
 						if l in employee:
 							employee = employee.replace(l, "")
 							employee_list.append(employee)
+						progress['value'] += 2
+						frame.update_idletasks()
+						time.sleep(0.1)
 
 				page = res.find_all("cite", {'class':'iUh30'})
 				for p in page:
@@ -54,3 +66,6 @@ class searchLinkedIn:
 		self.found = len(employee_list)
 		self.employees = employee_list
 		self.profiles = pages_list
+		progress['value'] = 65
+		frame.update_idletasks()
+		time.sleep(0.1)
