@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
-from core import searchPersonne, searchInstagram,searchUserName
+from core import searchPersonne, searchInstagram,searchUserName,employee_lookup
 from core import settings
 
 
@@ -114,9 +114,26 @@ def Username_lookup(self, text, lookup):
     username_lookup.mainloop()
 
 
-def Employees_search(self, lookup):
+def Employees_search(self,text, lookup):
     lookup.destroy()
-    return messagebox.showinfo("info", "Employees_search")
+    Employees_search = Toplevel(self)
+    Employees_search.title("-Employees Lookup")
+    Employees_search.config(bg="grey17")
+    Employees_search.geometry("600x300+200+200")
+    Employees_search.maxsize(600, 300)
+    Employees_search.minsize(600, 300)
+    l1 = Label(Employees_search, text="Bussiness:", bg="black", fg="Grey",
+              font=("comicsansms", 16, "bold"), relief=FLAT).place(x=60, y=60)
+    l2 = Label(Employees_search, text="City:", bg="black", fg="Grey",
+              font=("comicsansms", 16, "bold"), relief=FLAT).place(x=60, y=160)
+    bus = Entry(Employees_search, relief=FLAT, font=("comicsansms", 20, "bold"))
+    bus.place(x=290, y=60)
+    cit = Entry(Employees_search, relief=FLAT, font=("comicsansms", 20, "bold"))
+    cit.place(x=290, y=160)
+    btn = Button(Employees_search, text="Search", font="BahnschriftLight 15", bg="gray17", fg="white",
+                 activebackground="gray17", activeforeground="green", bd=0,
+                 command=lambda: employee_lookup.employee_lookup(self, text, Employees_search, bus, cit)).place(x=120, y=260)
+    Employees_search.mainloop()
 
 
 def Lookup_address(self, lookup):
