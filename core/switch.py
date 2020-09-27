@@ -70,7 +70,7 @@ def hashdecrypter(more_tools, navself):
 def Person_lookup(self, text, lookup):
     lookup.destroy()
     person_lookup = Toplevel(self)
-    person_lookup.title("Person Lookup")
+    person_lookup.title("-Person Lookup")
     person_lookup.config(bg="grey17")
     person_lookup.geometry("600x300+200+200")
     person_lookup.maxsize(600,300)
@@ -99,7 +99,7 @@ def Mail_tracer(self, lookup):
 def Username_lookup(self, text, lookup):
     lookup.destroy()
     username_lookup = Toplevel(self)
-    username_lookup.title("Username Lookup")
+    username_lookup.title("-Username Lookup")
     username_lookup.config(bg="grey17")
     username_lookup.geometry("600x300+200+200")
     username_lookup.maxsize(600, 300)
@@ -157,7 +157,7 @@ def SSID_locator(self, lookup):
 def instagram_info(self,text, lookup):
     lookup.destroy()
     instagram_info = Toplevel(self)
-    instagram_info.title("Person Lookup")
+    instagram_info.title("-Instagram Lookup")
     instagram_info.config(bg="grey17")
     instagram_info.geometry("700x350+200+200")
     instagram_info.maxsize(600, 300)
