@@ -62,7 +62,7 @@ def searchGoogle(self, text,progress,l3, requete='', requete2=''):
 				if not "/settings/ads" in url:
 					if not "/policies/faq" in url:
 					# if "insta" in url or "twitter" in url or "facebook" in url:
-						text.insert(END,"[++] Possible connection: "+url)
+						text.insert(END,"[++] Possible connection: {0}\n".format(url))
 			progress['value'] += 2
 			self.update_idletasks()
 			time.sleep(0.1)
@@ -81,8 +81,8 @@ def searchGoogle(self, text,progress,l3, requete='', requete2=''):
 			if not "/settings/ads" in url:
 				if not "/policies/faq" in url:
 				# if "insta" in url or "twitter" in url or "facebook" in url:
-					print("[+] Possible connection: "+url)
-					text.insert(END, "[++] Possible connection: " + url)
+				# 	print("[+] Possible connection: "+url)
+					text.insert(END, "[++] Possible connection: {0}\n".format(url))
 
 		progress['value'] += 5
 		self.update_idletasks()
