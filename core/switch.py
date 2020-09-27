@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
-from core import searchPersonne, searchInstagram
+from core import searchPersonne, searchInstagram,searchUserName
 from core import settings
 
 
@@ -96,9 +96,22 @@ def Mail_tracer(self, lookup):
     return messagebox.showinfo("info", "Mail_tracer")
 
 
-def Username_lookup(self, lookup):
+def Username_lookup(self, text, lookup):
     lookup.destroy()
-    return messagebox.showinfo("info", "Username_lookup")
+    username_lookup = Toplevel(self)
+    username_lookup.title("Username Lookup")
+    username_lookup.config(bg="grey17")
+    username_lookup.geometry("600x300+200+200")
+    username_lookup.maxsize(600, 300)
+    username_lookup.minsize(600, 300)
+    l = Label(username_lookup, text="Psudo:", bg="black", fg="Grey",
+              font=("comicsansms", 16, "bold"), relief=FLAT).place(x=60, y=60)
+    psudo = Entry(username_lookup, relief=FLAT, font=("comicsansms", 20, "bold"))
+    psudo.place(x=290, y=60)
+    btn = Button(username_lookup, text="Search", font="BahnschriftLight 15", bg="gray17", fg="white",
+                 activebackground="gray17", activeforeground="green", bd=0,
+                 command=lambda: searchUserName.searchUserName(self, text, username_lookup, psudo.get())).place(x=120, y=160)
+    username_lookup.mainloop()
 
 
 def Employees_search(self, lookup):
