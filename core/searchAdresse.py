@@ -11,7 +11,7 @@ wait = "["+Fore.MAGENTA+"*"+Fore.RESET+"]"
 
 init()
 
-def searchAdresse(codemonpays):
+def searchAdresse(self, text, Lookup_addr ,adresse, codemonpays):
 	adresse = input(" Adresse: ")
 	# clear()
 	print("\n"+wait+" Recherche '%s'..." % (adresse))
