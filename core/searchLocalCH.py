@@ -1,9 +1,11 @@
+import time
+
 import requests
 from tkinter import *
 from bs4 import BeautifulSoup
 from terminaltables import SingleTable
 
-def searchLocalCH(text,url):
+def searchLocalCH(progress, self, text,url):
 	data = requests.get(url).content.decode("utf-8")
 
 	soup = BeautifulSoup(data, "html.parser") 
@@ -16,6 +18,10 @@ def searchLocalCH(text,url):
 	adresseList2 = []
 	phoneList2 = []
 
+	progress['value'] = 30
+	self.update_idletasks()
+	time.sleep(0.1)
+
 	for name in nameList:
 		nameList2.append(name.string.strip())
 
@@ -27,6 +33,10 @@ def searchLocalCH(text,url):
 
 	regroup = zip(nameList2,adresseList2, phoneList2)
 
+	progress['value'] = 40
+	self.update_idletasks()
+	time.sleep(0.1)
+
 	TABLE_DATA = [
 		("Name", "Adresse", "Telephone"),
 	]
@@ -34,6 +44,14 @@ def searchLocalCH(text,url):
 	for r in regroup:
 		TABLE_DATA.append(r)
 
+	progress['value'] = 60
+	self.update_idletasks()
+	time.sleep(0.1)
+
 	table = SingleTable(TABLE_DATA, title="Yellow")
 	text.insert(END,table.table)
+
+	progress['value'] = 70
+	self.update_idletasks()
+	time.sleep(0.1)
 	# print(table.table)
