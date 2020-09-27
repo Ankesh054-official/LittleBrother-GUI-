@@ -13,8 +13,8 @@ Table of Contents
 LittleBrother(GUI)
 =
 LittleBrother is an information collection tool (OSINT), It is basically a CLI based tool which aims to carry out research on a French, Swiss,Luxembourgish
-or Belgian person.It provides various modules that allow efficient searches. LittleBrother does not require an API key or login ID. This is a extended version
-of LittleBrother tool, It is a GUI based tool.We need some of your information to run this tool properly, We promise you not to leak your data and try to make it more secure.
+or Belgian person.It provides various modules that allow efficient searches. LittleBrother-GUI- is a extended version
+of that, It is a GUI based tool.We need some of your information to run this tool properly, We promise you not to leak your data and try to make it more secure.
 
 Disclaimer
 =
@@ -62,15 +62,15 @@ Installation on Linux
 =
 You must have git and python3 installed on your machine.
             
-            sudo apt install git python3 #sur les distributions utilisant APT (comme la famille Debian)
-            git clone https://github.com/Lulz3xploit/LittleBrother
-            cd LittleBrother
+            sudo apt install git python3 #on distributions using APT (like the Debian family)
+            git clone https://github.com/Ankesh054-official/LittleBrother-GUI-.git
+            cd LittleBrother-GUI-
             python3 -m pip install -r requirements.txt
 Execution Linux
 =
 In the LittleBrother directory, run this command to be able to launch LittleBrother:
             
-            python3 LittleBrother.py
+            python3 start.py
 
 Installation on Windows
 =
@@ -81,7 +81,7 @@ Installation on Windows
 
 
             cd Desktop\
-            cd LittleBrother-master\
+            cd LittleBrother-Gui-master\
 and run:
 
             python3 -m pip install -r requirements.txt
@@ -91,7 +91,7 @@ Start LittleBrother from Windows:
 * Go to the **LittleBrother-master** directory as it was installed and run the command:
 
 
-            python3 LittleBrother.py
+            python3 start.py
 
 Compatible
 =
