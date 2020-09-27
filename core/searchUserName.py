@@ -14,10 +14,10 @@ def searchUserName(self, text, username_lookup, username):
 	# username = input(" Pseudo: ")
 	# Progress bar widget
 	progress = Progressbar(self, orient=HORIZONTAL, length=200, mode='determinate')
-	progress.place(x=200, y=140)
+	progress.place(x=400, y=140)
 	username_lookup.destroy()
 	l3 = Label(self, text="Searching... '%s'..." % (username),font=("comicsansms", 16, "bold"))
-	l3.place(x=200,y=200)
+	l3.place(x=350,y=200)
 
 	progress['value'] = 5
 	self.update_idletasks()
