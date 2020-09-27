@@ -1,4 +1,5 @@
 /__pycache__/
+venv/
 .idea/
 *.pyc
 nav.py
