@@ -136,9 +136,27 @@ def Employees_search(self,text, lookup):
     Employees_search.mainloop()
 
 
-def Lookup_address(self, lookup):
+def Lookup_address(self, text, lookup):
     lookup.destroy()
-    return messagebox.showinfo("info", "Lookup_address")
+    Lookup_addr = Toplevel(self)
+    Lookup_addr.title("Address Lookup")
+    Lookup_addr.config(bg="grey17")
+    Lookup_addr.geometry("600x300+200+200")
+    Lookup_addr.maxsize(600, 300)
+    Lookup_addr.minsize(600, 300)
+    l1 = Label(Lookup_addr, text="Address:", bg="black", fg="Grey",
+               font=("comicsansms", 16, "bold"), relief=FLAT).place(x=60, y=60)
+    l2 = Label(Lookup_addr, text="City:", bg="black", fg="Grey",
+               font=("comicsansms", 16, "bold"), relief=FLAT).place(x=60, y=160)
+    bus = Entry(Lookup_addr, relief=FLAT, font=("comicsansms", 20, "bold"))
+    bus.place(x=290, y=60)
+    cit = Entry(Lookup_addr, relief=FLAT, font=("comicsansms", 20, "bold"))
+    cit.place(x=290, y=160)
+    btn = Button(Lookup_addr, text="Search", font="BahnschriftLight 15", bg="gray17", fg="white",
+                 activebackground="gray17", activeforeground="green", bd=0,
+                 command=lambda: employee_lookup.employee_lookup(self, text, Lookup_addr, bus, cit)).place(x=120,
+                                                                                                                y=260)
+    Lookup_addr.mainloop()
 
 
 def Google_search(self, lookup):
