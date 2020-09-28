@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
-from core import searchPersonne, searchInstagram,searchUserName,employee_lookup,searchAdresse
+from core import searchPersonne, searchInstagram,searchUserName,employee_lookup,searchAdresse,ipFinder
 from core import settings
 
 
@@ -170,9 +170,23 @@ def Facebook_GraphSearch(self, lookup):
     return messagebox.showinfo("info", "Facebook_GraphSearch")
 
 
-def IP_lookup(self, lookup):
+def IP_lookup(self, text, lookup):
     lookup.destroy()
-    return messagebox.showinfo("info", "IP_lookup")
+    Lookup_ipaddr = Toplevel(self)
+    Lookup_ipaddr.title("IP-Address Lookup")
+    Lookup_ipaddr.config(bg="grey17")
+    Lookup_ipaddr.geometry("600x300+200+200")
+    Lookup_ipaddr.maxsize(600, 300)
+    Lookup_ipaddr.minsize(600, 300)
+    l1 = Label(Lookup_ipaddr, text="IPAddress:", bg="black", fg="Grey",
+               font=("comicsansms", 16, "bold"), relief=FLAT).place(x=60, y=60)
+    ipaddr = Entry(Lookup_ipaddr, relief=FLAT, font=("comicsansms", 20, "bold"))
+    ipaddr.place(x=290, y=60)
+    btn = Button(Lookup_ipaddr, text="Search", font="BahnschriftLight 15", bg="gray17", fg="white",
+                 activebackground="gray17", activeforeground="green", bd=0,
+                 command=lambda: ipFinder.ipFinder(self, text, Lookup_ipaddr, ipaddr.get())).place(x=120,
+                                                                                          y=260)
+    Lookup_ipaddr.mainloop()
 
 
 def twitter_info(self, lookup):
