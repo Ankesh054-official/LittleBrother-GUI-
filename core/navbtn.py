@@ -123,7 +123,7 @@ def Lookup(self, img, text, topFrame, navself):
                "SSID locator", "instagram info", "Email lookup"]
     work = [lambda: Person_lookup(self, text, lookup), lambda: Mail_tracer(self, lookup), lambda: Username_lookup(self,text, lookup),
             lambda: Employees_search(self,text, lookup), lambda: Lookup_address(self, text, lookup), lambda: Google_search(lookup),
-            lambda: Phone_lookup(lookup), lambda: Facebook_GraphSearch(lookup), lambda: IP_lookup(self, text, lookup),
+            lambda: Phone_lookup(self, text,lookup), lambda: Facebook_GraphSearch(lookup), lambda: IP_lookup(self, text, lookup),
             lambda: twitter_info(lookup), lambda: SSID_locator(lookup), lambda: instagram_info(self,text,lookup),
             lambda: Email_lookup(lookup)]
     lookup.geometry("300x685+0+55")
