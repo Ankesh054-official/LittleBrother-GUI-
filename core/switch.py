@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
-from core import searchPersonne, searchInstagram,searchUserName,employee_lookup,searchAdresse,ipFinder
+from core import searchPersonne, searchInstagram,searchUserName,employee_lookup,searchAdresse,ipFinder,searchNumber
 from core import settings
 
 
@@ -160,9 +160,22 @@ def Google_search(self, lookup):
     return messagebox.showinfo("info", "Google_search")
 
 
-def Phone_lookup(self, lookup):
+def Phone_lookup(self,text, lookup):
     lookup.destroy()
-    return messagebox.showinfo("info", "Phone_lookup")
+    phone_look = Toplevel(self)
+    phone_look.title("Address Lookup")
+    phone_look.config(bg="grey17")
+    phone_look.geometry("600x300+200+200")
+    phone_look.maxsize(600, 300)
+    phone_look.minsize(600, 300)
+    l1 = Label(phone_look, text="PHONE NUMBER:", bg="black", fg="Grey",
+               font=("comicsansms", 16, "bold"), relief=FLAT).place(x=60, y=60)
+    phno = Entry(phone_look, relief=FLAT, font=("comicsansms", 20, "bold"))
+    phno.place(x=290, y=60)
+    btn = Button(phone_look, text="Search", font="BahnschriftLight 15", bg="gray17", fg="white",
+                 activebackground="gray17", activeforeground="green", bd=0,
+                 command=lambda: searchNumber.searchNumber(self, text, phone_look, phno.get())).place(x=120,y=260)
+    phone_look.mainloop()
 
 
 def Facebook_GraphSearch(self, lookup):
