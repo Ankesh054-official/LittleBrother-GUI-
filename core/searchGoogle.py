@@ -1,6 +1,5 @@
 import requests, re
 from tkinter import *
-from tkinter.ttk import *
 import time
 
 def searchGoogle(self, text,progress,l3, requete='', requete2=''):
