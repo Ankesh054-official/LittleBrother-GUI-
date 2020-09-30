@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 from core import searchPersonne, searchInstagram,searchUserName,employee_lookup,searchAdresse,ipFinder,searchNumber
-from core import settings
+from core import settings,google
 
 
 # setting switch function:
@@ -155,9 +155,25 @@ def Lookup_address(self, text, lookup):
     Lookup_addr.mainloop()
 
 
-def Google_search(self, lookup):
+def Google_search(self, text, lookup):
     lookup.destroy()
-    return messagebox.showinfo("info", "Google_search")
+    googl = Toplevel(self)
+    googl.title("Google Lookup")
+    googl.config(bg="grey17")
+    googl.geometry("600x300+200+200")
+    googl.maxsize(600, 300)
+    googl.minsize(600, 300)
+    l1 = Label(googl, text="Enter First Name, Last Name, City, Department, Sport, School...",
+               bg="black", fg="Grey",font=("comicsansms", 16, "bold"), relief=FLAT).place(x=20, y=160)
+    l1 = Label(googl, text="Research:", bg="black", fg="Grey",
+               font=("comicsansms", 16, "bold"), relief=FLAT).place(x=60, y=60)
+    search = Entry(googl, relief=FLAT, font=("comicsansms", 20, "bold"))
+    search.place(x=290, y=60)
+    btn = Button(googl, text="Search", font="BahnschriftLight 15", bg="gray17", fg="white",
+                 activebackground="gray17", activeforeground="green", bd=0,
+                 command=lambda: google.google(self, text, googl, search.get())).place(x=120,
+                                                                                          y=260)
+    googl.mainloop()
 
 
 def Phone_lookup(self,text, lookup):
