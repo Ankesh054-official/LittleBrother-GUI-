@@ -1,3 +1,4 @@
+mechanize
 requests
 bs4
 terminaltables
