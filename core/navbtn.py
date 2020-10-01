@@ -118,14 +118,14 @@ def Lookup(self, img, text, topFrame, navself):
     text.delete(1.0,END)
     lookup = Toplevel(navself)
     # option in the navbar:
-    options = ["Person lookup", "Mail tracer", "Username lookup", "Employees search", "Lookup address",
-               "Google search", "Phone lookup", "Facebook GraphSearch", "IP lookup", "twitter info",
-               "SSID locator", "instagram info", "Email lookup"]
-    work = [lambda: Person_lookup(self, text, lookup), lambda: Mail_tracer(self, lookup), lambda: Username_lookup(self,text, lookup),
-            lambda: Employees_search(self,text, lookup), lambda: Lookup_address(self, text, lookup), lambda: Google_search(self, text, lookup),
-            lambda: Phone_lookup(self, text,lookup), lambda: Facebook_GraphSearch(lookup), lambda: IP_lookup(self, text, lookup),
-            lambda: twitter_info(self, text, lookup), lambda: SSID_locator(lookup), lambda: instagram_info(self,text,lookup),
-            lambda: Email_lookup(self, text, lookup)]
+    options = ["Person lookup", "Username lookup", "Employees search", "Lookup address",
+               "Google search", "Phone lookup", "IP lookup",
+               "SSID locator", "instagram info"]
+    work = [lambda: Person_lookup(self, text, lookup), lambda: Username_lookup(self,text, lookup),
+            lambda: Employees_search(self,text, lookup),lambda: Lookup_address(self, text, lookup),
+            lambda: Google_search(self, text, lookup),
+            lambda: Phone_lookup(self, text,lookup),  lambda: IP_lookup(self, text, lookup),
+            lambda: SSID_locator(lookup), lambda: instagram_info(self,text,lookup),]
     lookup.geometry("300x685+0+55")
     lookup.minsize(300,685)
     lookup.maxsize(300,685)
@@ -134,7 +134,7 @@ def Lookup(self, img, text, topFrame, navself):
     # Navbar Option Buttons:
     y = 10
     x = 22
-    for i in range(13):
+    for i in range(9):
         Button(lookup, text=options[i], font="BahnschriftLight 15", bg="gray17", fg="white",
                activebackground="gray17", activeforeground="green", bd=0,
                command=work[i]).place(x=x, y=y)
