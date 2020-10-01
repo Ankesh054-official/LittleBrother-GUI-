@@ -51,18 +51,17 @@ def main_frame(self, Email):
     img.pack(anchor=NE)
 
     # option in the navbar:
-    options = ["Profile", "Lookup","More Tools", "Change country","Main Help", "About", "Feedback"]
+    options = ["Profile", "Lookup","Main Help", "About", "Feedback"]
 
     # commands for the navbar:
     work = [lambda: Profle(self,topFrame,navself), lambda: Lookup(self, img, text, topFrame, navself),
-            lambda: More_Tools(self,topFrame,navself), lambda: Change_country(self,topFrame,navself),
             lambda: main_Help(self,topFrame,navself), lambda: About(self,topFrame,navself),
             lambda: Feedback(self,topFrame,navself)]
     # set y-coordinate of Navbar widgets:
     y = 80
     x = 30
     # Navbar Option Buttons:
-    for i in range(7):
+    for i in range(5):
         x += randrange(5, 20, 5)
         Button(navself, text=options[i], font="BahnschriftLight 15", bg="gray17", fg="white",
                activebackground="gray17", activeforeground="green", bd=0,
