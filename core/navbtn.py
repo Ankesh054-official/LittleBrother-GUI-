@@ -1,8 +1,7 @@
 from tkinter import *
-from core.switch import switch, createprofile, allprofile, seeProfle, hashdecrypter, Person_lookup, Mail_tracer
+from core.switch import switch, createprofile, allprofile, seeProfle, hashdecrypter, Person_lookup
 from core.switch import Username_lookup, Employees_search, Lookup_address, Google_search
-from core.switch import Phone_lookup, Facebook_GraphSearch, IP_lookup, twitter_info, SSID_locator, instagram_info, \
-    Email_lookup
+from core.switch import Phone_lookup,IP_lookup,SSID_locator, instagram_info
 from core.switch import FR, LU, BE, All, CH
 
 
@@ -71,10 +70,8 @@ def main_Help(self, topFrame, navself):
     Clear the screen.
     
     """
-    name = """
-     Name                             
-     ----                             
-     Name                   
+    name = """                         
+ Name                   
  ----                  
  Lookup                 
  Other Tool             
@@ -99,7 +96,6 @@ def main_Help(self, topFrame, navself):
     # setting Navbar frame:
     right = Frame(help, bg="gray17",  width=600)
     right.pack(side=RIGHT, fill=Y)
-    Label(left, font="Bahnschrift 15", bg="#252726", fg="black", height=2, width=300, padx=20).place(x=0, y=0)
 
     # label for help
     La = Label(left, text=name, bg="grey17", fg="white", font=("comicsansms", 20, "bold"), relief=FLAT).pack()
@@ -178,18 +174,12 @@ def Feedback(self, topFrame, navself):
     feedback.geometry("1200x900+75+200")
     feedback.config(bg="grey17")
     feedback.title("Feedback")
-    # Navbar Option Buttons:
-    y = 10
-    x = 22
-    for i in range(4):
-        Button(feedback, text=options[i], font="BahnschriftLight 15", bg="gray17", fg="white",
-               activebackground="gray17", activeforeground="green", bd=0,
-               command=[i]).place(x=x, y=y)
-        y += 40
+
+    Label(feedback, text="Developed BY: \n\t\t\t\t\t\t\tFRONTEND + Joining BACKEND: ANKESH\t", bg="grey17", fg="white",
+          font=("comicsansms", 13, "bold"), relief=FLAT).place(x=400,y=300)
     switch(navself,topFrame,btnState=True)
 
-    # feedback.mainloop()
-    return
+    feedback.mainloop()
 
 # for change country
 def Change_country(self, topFrame, navself):
