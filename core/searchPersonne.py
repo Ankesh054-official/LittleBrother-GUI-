@@ -65,7 +65,7 @@ def searchPersonne(self ,text,person_lookup,nom,city,codemonpays):
 		elif codemonpays == 'CH':
 			# Suisse search
 			url = "https://tel.local.ch/fr/q?area={}&city=&company=&ext=1&name={}&phone=&rid=455h&street=&typeref=res"
-			searchLocalCH(text,url.format(city, nom))
+			searchLocalCH(progress,self,text,url.format(city, nom))
 
 		elif codemonpays == 'LU':
 			# Luxembourg search
@@ -85,7 +85,7 @@ def searchPersonne(self ,text,person_lookup,nom,city,codemonpays):
 
 			# Recherche CH
 			url = "https://tel.local.ch/fr/q?area={}&city=&company=&ext=1&name={}&phone=&rid=455h&street=&typeref=res"
-			searchLocalCH(text,url.format(city, nom))
+			searchLocalCH(progress,self,text,url.format(city, nom))
 
 			# Recherche LU
 			url = "https://www.yellow.lu/fr/pages-blanches/recherche?query={}"
