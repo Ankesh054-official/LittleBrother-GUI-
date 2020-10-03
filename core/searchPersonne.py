@@ -177,11 +177,8 @@ def searchPersonne(self ,text,person_lookup,nom,city,codemonpays):
 		if count > 0:
 			table_instance = SingleTable(TABLE_DATA, title)
 			text.insert(END,table_instance.table)
-			# lb = Label(self, text=table_instance.table, bg="black", fg="red", font=("comicsansms", 10, "bold"),
-			# 		   relief=FLAT).place(x=250, y=480)
-		# print(table_instance.table)
-		# Instagram search
 
+		# Instagram search
 		title = " Instagram "
 
 		instatls = instagramSearchTool()
@@ -217,12 +214,6 @@ def searchPersonne(self ,text,person_lookup,nom,city,codemonpays):
 			progress.destroy()
 			table = SingleTable(TABLE_DATA, title)
 			text.insert(END,table.table)
-			# lb = Label(self, text=table.table, bg="black", fg="red", font=("comicsansms", 10, "bold"),
-			# 		   relief=FLAT).place(x=250, y=480)
-	# print(table.table)
-
-
-
 
 	except IOError:
 		progress['value'] = 50
