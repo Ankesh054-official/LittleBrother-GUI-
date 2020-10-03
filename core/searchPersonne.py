@@ -54,7 +54,7 @@ def searchPersonne(self ,text,person_lookup,nom,city,codemonpays):
 			# Page Jaune search
 			url = "https://www.pagesjaunes.fr/pagesblanches/recherche?quoiqui={}&ou={}"
 			requete = requests.get(url.format(nom, city), headers=headers)
-			searchPJ(text, requete)
+			searchPJ(progress,self,text, requete)
 
 		elif codemonpays == 'BE':
 			# Page D'or search
@@ -76,7 +76,7 @@ def searchPersonne(self ,text,person_lookup,nom,city,codemonpays):
 			# Recherche FR
 			url = "https://www.pagesjaunes.fr/pagesblanches/recherche?quoiqui={}&ou={}"
 			requete = requests.get(url.format(nom, city), headers=headers)
-			searchPJ(text, requete)
+			searchPJ(progress,self,text, requete)
 
 			# Recherche BE
 			url = "https://www.pagesblanches.be/chercher/personne/{}/{}/"
