@@ -8,9 +8,9 @@ warning = "["+Fore.RED+"!"+Fore.RESET+"]"
 question = "["+Fore.YELLOW+"?"+Fore.RESET+"]"
 found = "["+Fore.GREEN+"+"+Fore.RESET+"]"
 
-def searchPersonneLinkedin(text,nom, city):
+def searchPersonneLinkedin(self,progress,text,nom, city):
 	linkedin = searchLinkedIn()
-	linkedin.search(nom, city)
+	linkedin.search(progress,self,nom, city)
 	found = linkedin.found
 
 	if found:
