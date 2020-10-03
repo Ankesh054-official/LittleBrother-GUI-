@@ -102,7 +102,7 @@ def searchPersonne(self ,text,person_lookup,nom,city,codemonpays):
 		time.sleep(0.1)
 
 		# LinkedIn search
-		searchPersonneLinkedin(text, nom, city)
+		searchPersonneLinkedin(self,progress,text, nom, city)
 
 		# Facebook search
 		fbtool = facebookSearchTool()
