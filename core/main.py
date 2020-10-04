@@ -21,7 +21,7 @@ def login(frame1, Email, Password):
         try:
             login = auth.sign_in_with_email_and_password(email=Email, password=Password)
             # divert to the little brother console
-            main_frame.main_frame(frame1, Email)
+            main_frame.main_frame(frame1)
         except requests.exceptions.ConnectionError:
             return messagebox.showinfo("Connection Error!", "Internet Disconnected")
     except requests.exceptions.HTTPError:
