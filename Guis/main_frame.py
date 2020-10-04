@@ -6,24 +6,21 @@ from core.switch import switch
 from core.navbtn import Profle, main_Help, Feedback, More_Tools, Lookup, About, Change_country
 
 
-def main_frame(self, Email):
+def main_frame(self):
     self.destroy()
     self = Tk()
     # p1 = PhotoImage(file='../res/bit.png')
     p1 = PhotoImage(file='res/bit.png')
     self.iconphoto(False, p1)
     self.title("LittleBrother")
-    self.geometry("1200x900+75+200")
-    self.minsize(980, 660)
+    height = self.winfo_screenheight()
+    width = self.winfo_screenwidth()
+    self.maxsize(width, height)
+    self.minsize(width - 100, height - 100)
+    self.geometry("{0}x{1}+75+75".format(height, width))
     self.config(bg="black")
     # dictionary of colors:
     color = {"nero": "#252726", "orange": "#FF8700", "darkorange": "#FE6101"}
-
-
-    # # loading Navbar icon image:
-    # navIcon = PhotoImage(file="../res/menu.png")
-    # closeIcon = PhotoImage(file="../res/close.png")
-
     navIcon = PhotoImage(file="res/menu.png")
     closeIcon = PhotoImage(file="res/close.png")
 
@@ -79,4 +76,3 @@ def main_frame(self, Email):
                          command= lambda: switch(navself, topFrame, btnState=True))
     closeBtn.place(x=250, y=10)
     self.mainloop()
-# main_frame(self="root",Email="ankeshs054@gmail.com")
