@@ -93,11 +93,8 @@ def searchInstagram(self,instagram_info,user,text):
 		text.insert(END, " Protected: {}\n".format(private))
 		text.insert(END, " Subscribers: {}  |  Subscriptions: {}\n".format(followers, friend))
 		text.insert(END, " Publication: {}\n".format(publication))
-		# try:
 		text.insert(END, " Bio: {}\n".format(bio))#error whlie printing emojis font .
-		# except:
-		# 	messagebox.showinfo("Unsupported","Sorry But we can't show you Bio's because your computer's terminal does't support emojis.")
-		# 	text.insert(END, " Sorry But we can't show you Bio's because your computer's terminal does't support emojis.\n")
+
 		progress['value'] = 50
 		self.update_idletasks()
 		time.sleep(0.1)
@@ -130,8 +127,7 @@ def searchInstagram(self,instagram_info,user,text):
 					self.update_idletasks()
 					time.sleep(0.1)
 
-					pathDefault = os.getcwd() + "/" + user
-					pat(progress, 70, insta, urlProfil, pathDefault, self, user)
+					pat(progress, 70, insta, urlProfil,self, user)
 					break
 		else:
 			messagebox.showinfo("Private Account", "We can't download images from {0}'s Profile.".format(user))
