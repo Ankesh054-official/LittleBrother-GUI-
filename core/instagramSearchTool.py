@@ -1,6 +1,11 @@
+from tkinter import filedialog
+
+import emoji
 import requests, re, json, time, random, os
 
 # /core
+from regex import regex
+
 from core.getUrlGoogleSearch import getUrlGoogleSearch
 from core.RegexTool 		 import RegexTool
 from core.shortCutUrl 		 import shortCutUrl
@@ -12,33 +17,33 @@ from lib.download import download_insta_img
 
 from tkinter import *
 
-def go(l1, l2, l3, entry, value, insta, urlProfil, user,pathDefault,path, frame):
+def go(patc,progress, l1, l2, value, insta, urlProfil, user, frame):
+	patc.destroy()
 	l1.destroy()
 	l2.destroy()
-	l3.destroy()
-	entry.destroy()
-	if path == '':
-		path = pathDefault
-	download_insta_img(value, frame, insta, urlProfil, user, path)
-	return frame.destroy()
+	if value != 'DEFAULT':
+		path = filedialog.askdirectory()
+	else:
+		path = "{0}/{1}".format(os.getcwd(), user)
+	download_insta_img(progress, 70, frame, insta, urlProfil, user, path)
+	return
 
-def pat(progress, value,insta, urlProfil,pathDefault,frame, user):
-	progress.destroy()
+def pat(progress, value,insta, urlProfil,frame, user):
 	patc = Toplevel(frame)
 	patc.title("Path")
 	patc.config(bg="grey17")
 	patc.geometry("900x450+200+200")
 	patc.maxsize(600, 300)
 	patc.minsize(600, 300)
-	l1 = Label(patc, text="Path:", font=("comicsansms", 16, "bold"))
+	l1 = Label(patc, text="TO DOWNLOAD IMAGES OF %s" %user, font=("comicsansms", 16, "bold"))
 	l1.place(x=60, y=60)
 	l2 = Label(patc, text=" Default path: {0}/{1}".format(os.getcwd(), user), font=("comicsansms", 12, "bold"))
 	l2.place(x=10, y=100)
-	l3 = Label(patc, text="Click on get without inserting any input to choose default", fg="red",font=("comicsansms", 12, "bold"))
-	l3.place(x=10,y=140)
-	pac = Entry(patc, font=("comicsansms", 20, "bold"))
-	pac.place(x=290, y=60)
-	btn = Button(patc, text="Get", command=lambda: go(l1, l2, l3, pac, value, insta, urlProfil, user,pathDefault, pac.get(), patc)).place(
+	btn = Button(patc, text="Default Directory", command=lambda: go(
+		patc, progress, l1, l2, 'DEFAULT', insta, urlProfil, user, frame)).place(
+		x=320, y=200)
+	btn = Button(patc, text="Choose Directory", command=lambda: go(
+		patc, progress, l1, l2, value, insta, urlProfil, user,frame)).place(
 		x=120, y=200)
 	patc.mainloop()
 	return
@@ -126,6 +131,21 @@ class instagramSearchTool:
 		
 		download(url, user, path, filename)
 
+	def split_count(l):
+		data = regex.findall(r'\X', l)
+		l = []
+		j = 0
+		v=''
+		for word in data:
+			if any(char in emoji.UNICODE_EMOJI for char in word):
+				j += 1
+			else:
+				l.insert(j, word)
+				j += 1
+		for i in l:
+			v += i
+		return v
+
 	def getInfo(self, username):
 		profilId 	= None
 		profilPicHd = None
@@ -161,6 +181,7 @@ class instagramSearchTool:
 				urlAccount 	= url
 				profilId 	= values['id']
 				bio 		= values['biography']
+				bio = instagramSearchTool.split_count(bio)
 				user 		= values['username']
 				name 		= values['full_name']
 				private 	= values['is_private']
