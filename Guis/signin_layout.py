@@ -1,7 +1,6 @@
 """ #  Signin window
    Designed By : ANKESH"""
 from tkinter import *
-from tkinter import messagebox
 from core import main
 from Guis import create_account_layout,forgot_password_layout
 
@@ -11,8 +10,11 @@ def signin(self,title1):
     self = Tk()
     p1 = PhotoImage(file='res/bit.png')
     self.iconphoto(False, p1)
-    self.geometry("1200x900+75+200")
-    self.minsize(980, 660)
+    height = self.winfo_screenheight()
+    width = self.winfo_screenwidth()
+    self.maxsize(width,height)
+    self.minsize(width-100, height-100)
+    self.geometry("{0}x{1}+75+75".format(height,width))
     self.title(title1)
     self.config(bg="black")
     img = PhotoImage(file="res/canvalogo1.png")
