@@ -1,4 +1,6 @@
 mechanize
+emoji
+regex
 requests
 bs4
 terminaltables
