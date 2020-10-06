@@ -19,11 +19,10 @@ def download(url, user, path, filename):
 
 	f.close()
 
-def download_insta_img(value, frame, insta, urlProfil, user, path):
-	# Progress bar widget
-	progress = Progressbar(frame, orient=HORIZONTAL, length=200, mode='determinate')
-	progress.pack()
+def download_insta_img(progress,value, frame, insta, urlProfil, user, path):
 	pictureInfo = insta.get_picturesInfo(urlProfil)
+	lb = Label(frame, text="")
+	lb.pack(side=BOTTOM)
 
 	progress['value'] = value
 	frame.update_idletasks()
@@ -46,7 +45,9 @@ def download_insta_img(value, frame, insta, urlProfil, user, path):
 		progress['value'] += 2
 		frame.update_idletasks()
 		time.sleep(0.1)
-		Label(frame, text="(%s) %s %s [%s] %s downloaded." % (str(i), typeMedia, date, view, loc)).pack()
+		lb.destroy()
+		lb = Label(frame, text="(%s) %s %s [%s] %s downloaded." % (str(i), typeMedia, date, view, loc))
+		lb.pack(side=BOTTOM)
 	progress.destroy()
-	frame.destroy()
+	lb.destroy()
 	messagebox.showinfo("Flag message", " Download Image finished.")
