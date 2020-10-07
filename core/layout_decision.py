@@ -1,7 +1,8 @@
-""" # Decide where to divert the flow.
+"""
    Designed By : ANKESH"""
-
 from Guis import signin_layout,create_account_layout,forgot_password_layout
+
+# Decide where to divert the flow.
 def create_lay(self, title1):
     if title1 == "Create Account":
         #Diverted the flow towards create account window
