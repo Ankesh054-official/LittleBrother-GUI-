@@ -78,8 +78,8 @@ def create_ac(self, title1):
                 command=lambda: self.destroy())
     bt.place(x=1286, y=10)
     Checkbutton(self, bg="black", bd=3, variable=var).place(x=(80 - 25), y=600)
-    bt = Button(self, activebackground="black", activeforeground="white", text="{0}".format(dic[3]), bg="black",
-                fg="blue", font=("comicsansms", 12, "bold"), relief=FLAT, borderwidth=-1,
-                command=lambda: main.terms_and_conditions())
-    bt.place(x=80, y=600)
+    terms_conditions = Label(self, activebackground="black", activeforeground="white", text="{0}".format(dic[3]), bg="black",
+                fg="blue", font=("comicsansms", 12, "bold"), relief=FLAT, borderwidth=-1, cursor="hand2")
+    terms_conditions.place(x=100, y=600)
+    terms_conditions.bind("<Button-1>", lambda e: main.terms_and_conditions())
     self.mainloop()
