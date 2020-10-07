@@ -21,22 +21,23 @@ def download(url, user, path, filename):
 
 def download_insta_img(progress,value, frame, insta, urlProfil, user, path):
 	pictureInfo = insta.get_picturesInfo(urlProfil)
-	lb = Label(frame, text="")
-	lb.pack(side=BOTTOM)
-
 	progress['value'] = value
 	frame.update_idletasks()
 	time.sleep(0.1)
-	Label(frame).pack()
 
 	for i in pictureInfo:
-		Label.forget(frame)
+		try:
+			lb.destroy()
+		except UnboundLocalError:
+			pass
 		media = pictureInfo[i]['display']
 		typeMedia = pictureInfo[i]['type_media']
 		date = pictureInfo[i]['date']
 		view = pictureInfo[i]['info']
 		loc = pictureInfo[i]['localisation']
 		filename = user + '_' + str(i) + ".jpg"
+		lb = Label(frame, text="(%s) %s %s [%s] %s downloaded." % (str(i), typeMedia, date, view, loc))
+		lb.pack(side=BOTTOM ,fill=X)
 
 		if not loc:
 			loc = ''
@@ -45,9 +46,6 @@ def download_insta_img(progress,value, frame, insta, urlProfil, user, path):
 		progress['value'] += 2
 		frame.update_idletasks()
 		time.sleep(0.1)
-		lb.destroy()
-		lb = Label(frame, text="(%s) %s %s [%s] %s downloaded." % (str(i), typeMedia, date, view, loc))
-		lb.pack(side=BOTTOM)
 	progress.destroy()
 	lb.destroy()
-	messagebox.showinfo("Flag message", " Download Image finished.")
+	return messagebox.showinfo("Flag message", " Download Image finished.")
