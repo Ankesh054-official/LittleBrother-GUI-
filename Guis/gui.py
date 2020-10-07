@@ -7,11 +7,11 @@ from core import layout_decision, loading
 def lay(frame1):
     frame1.title("LITTLE BROTHER")
 
-    # Checks Internet is connected or not,raise error accordingly.
-    def ch():
+    # check() Checks Internet is connected or not,raise error accordingly.
+    def check():
         if loading.check_internet(frame1) != 1:
-            ch()
-    ch()
+            check()
+    check()
     btn1 = Button(frame1, activebackground="black", activeforeground="white", text="Register",
                   font=("comicsansms", 12, "bold"), relief=SUNKEN, borderwidth=3, command=lambda:
                   layout_decision.create_lay(frame1, "Create Account")).place(x=115, y=100)

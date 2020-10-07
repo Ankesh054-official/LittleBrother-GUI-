@@ -3,8 +3,7 @@ from tkinter import *
 import os
 
 try:
-    if ():
-        os.system("clear")
+    os.system("clear")
     root = Tk()
     root.geometry('713x398+300+200')
     root.minsize(713, 398)
