@@ -7,25 +7,20 @@ from core.switch import FR, LU, BE, All, CH
 
 # for profile
 def Profle(self, topFrame, navself):
-    # option in the navbar:
-    options = [" Profile", "Show all Profiles", "Create profile"]
-    work = [lambda: seeProfle(profile, navself), lambda: allprofile(profile, navself), lambda: createprofile(profile, navself)]
     profile = Toplevel(navself)
-    profile.geometry("300x685+0+55")
-    profile.minsize(300,685)
-    profile.maxsize(300,685)
+    profile.title("Create Profile")
+    profile.minsize(713, 398)
+    profile.maxsize(713, 398)
     profile.config(bg="grey17")
-    profile.title("Profile")
-    # Navbar Option Buttons:
-    y = 10
-    x = 22
-    for i in range(3):
-        Button(profile, text=options[i], font="BahnschriftLight 15", bg="gray17", fg="white",
-               activebackground="gray17", activeforeground="green", bd=0,
-               command=work[i]).place(x=x, y=y)
-        y += 40
+    Label(profile, text="Profile Name:", bg="grey17", fg="red", font=("comicsansms", 15, "bold"), relief=FLAT).place(
+        x=5, y=20)
+    Label(profile, text="(Format: First name Last name)", bg="grey17", fg="red", font=("comicsansms", 15, "bold"),
+          relief=FLAT).place(x=150, y=130)
+    name = Entry(profile)
+    name.place(x=150, y=60)  # profile name
+    name = name.get()
+    Button(profile, text="submit").place(x=50, y=100)
     switch(navself,topFrame,btnState=True)
-
     profile.mainloop()
 
 
