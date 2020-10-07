@@ -26,7 +26,7 @@ def init(progress, frame1):
     global searchPersonne, SearchEmail, searchInstagram, searchTwitter, searchNumber, searchAdresse, searchUserName, facebookStalk
     global Profiler
 
-    version = '0.0.9 beta'
+    version = 'alpha'
 
     progress['value'] = 10
     frame1.update_idletasks()
@@ -52,10 +52,10 @@ def init(progress, frame1):
     frame1.update_idletasks()
     time.sleep(0.1)
 
-    timezone = value['timezone']
-    isp = value['isp']
-    org = value['org']
-    query = value['query']
+    # timezone = value['timezone']
+    # isp = value['isp']
+    # org = value['org']
+    # query = value['query']
 
     progress['value'] = 30
     frame1.update_idletasks()
