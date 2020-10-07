@@ -1,4 +1,3 @@
-# Facing window/Welcome Screen
 #    Designed By : ANKESH
 from tkinter import *
 from core import layout_decision, loading
