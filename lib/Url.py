@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import re
+import webbrowser
 
 class Url:
 	def __init__(self, url):
@@ -63,3 +64,7 @@ class Url:
 					url = url.replace(char, charEncode)
 
 		return(url)
+
+	# For opening link in default Web browser
+	def callback(url):
+		webbrowser.open_new(url)
