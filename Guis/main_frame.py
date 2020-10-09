@@ -44,14 +44,12 @@ def main_frame(self):
     navself = Frame(self, bg="gray17", height=1000, width=300)
     navself.place(x=-300, y=0)
     Label(navself, font="Bahnschrift 15", bg="#252726", fg="black", height=2, width=300, padx=20).place(x=0,y=0)
-    img = Label(self)
-    img.pack(anchor=NE)
 
     # option in the navbar:
     options = ["Profile", "Lookup","Main Help", "About", "Feedback"]
 
     # commands for the navbar:
-    work = [lambda: Profle(self,topFrame,navself), lambda: Lookup(self, img, text, topFrame, navself),
+    work = [lambda: Profle(self,topFrame,navself), lambda: Lookup(self, text, topFrame, navself),
             lambda: main_Help(self,topFrame,navself), lambda: About(self,topFrame,navself),
             lambda: Feedback(self,topFrame,navself)]
     # set y-coordinate of Navbar widgets:
