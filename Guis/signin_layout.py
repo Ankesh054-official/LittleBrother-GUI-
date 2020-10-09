@@ -39,7 +39,7 @@ def signin(self,title1):
                     relief=SUNKEN, borderwidth=3, command=lambda frame1=self: main.login(frame1,e0.get(),e1.get())).place(
             x=550, y=600)
     bt2 = Button(self, activebackground="black", activeforeground="white", text="{0}".format(dic[1]), bg="black", fg="blue", font=("comicsansms", 7, "bold"),
-                relief=FLAT, borderwidth=-1, command=lambda self=self: create_account_layout.create_ac(self,title1="{0}".format(dic[1]))).place(x=800, y=650)
+                relief=FLAT, borderwidth=-1, command=lambda self=self: create_account_layout.create_ac(self,title1="{0}".format(dic[1]))).place(x=860, y=650)
     bt3 = Button(self, activebackground="black", activeforeground="white", text="{0}".format(dic[2]), bg="white", fg="black", font=("comicsansms", 9, "bold"),
                 relief=SUNKEN, borderwidth=3, command=lambda: self.destroy()).place(x=1286, y=10)
     bt4 = Button(self, activebackground="black", activeforeground="white", text="{0}".format(dic[3]), bg="black", fg="blue", font=("comicsansms", 12, "bold"),
