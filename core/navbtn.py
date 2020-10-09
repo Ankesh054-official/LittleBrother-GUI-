@@ -1,4 +1,5 @@
 from tkinter import *
+from lib.Url import Url
 from core.switch import switch, createprofile, allprofile, seeProfle, hashdecrypter, Person_lookup
 from core.switch import Username_lookup, Employees_search, Lookup_address, Google_search
 from core.switch import Phone_lookup,IP_lookup,SSID_locator, instagram_info
@@ -104,8 +105,7 @@ def main_Help(self, topFrame, navself):
     return
 
 # for lookup
-def Lookup(self, img, text, topFrame, navself):
-    img.destroy()
+def Lookup(self, text, topFrame, navself):
     text.delete(1.0,END)
     lookup = Toplevel(navself)
     # option in the navbar:
@@ -150,11 +150,11 @@ def About(self, topFrame, navself):
                                   'This is a extended version of LittleBrother tool, It is a GUI based tool.\n\n'
                                   'We need some of your information to run this tool properly, We promise you not\n'
                                   ' to leak your data and try to make it more secure.'), bg="grey17", fg="white",
-          font=("comicsansms", 20, "bold"), relief=FLAT).place(x=10, y=200)
+          font=("comicsansms", 14, "bold"), relief=FLAT).place(x=10, y=200)
     Label(About, text="Developed BY: \n\t\t\t\t\t\t\tFRONTEND + Joining BACKEND: ANKESH\t", bg="grey17", fg="white",
-          font=("comicsansms", 13, "bold"), relief=FLAT).pack(side=BOTTOM, anchor=NE)
+          font=("comicsansms", 9, "bold"), relief=FLAT).pack(side=BOTTOM, anchor=NE)
     Button(About, activebackground="black", activeforeground="white", text="Exit", bg="white",
-                fg="black", font=("comicsansms", 9, "bold"),
+                fg="black", font=("comicsansms", 8, "bold"),
                 relief=SUNKEN, borderwidth=3, command=lambda: About.destroy()).place(x=1250, y=10)
     switch(navself,topFrame,btnState=True)
 
@@ -163,15 +163,25 @@ def About(self, topFrame, navself):
 
 #for feedback
 def Feedback(self, topFrame, navself):
-    # option in the navbar:
-    options = ["","","",""]
     feedback = Toplevel(navself)
     feedback.geometry("1200x900+75+200")
     feedback.config(bg="grey17")
     feedback.title("Feedback")
 
+    link1 = Label(feedback, activebackground="black", activeforeground="white", bg="white",
+                fg="black", font=("comicsansms", 13, "bold"),
+                relief=SUNKEN, borderwidth=3, text="Register Issue", cursor="hand2")
+    link1.place(x=300,y=200)
+    link1.bind("<Button-1>", lambda e: Url.callback("https://github.com/Ankesh054-official/LittleBrother-GUI-/issues/new"))
+
+    link2 = Label(feedback, activebackground="black", activeforeground="white", bg="white",
+                fg="black", font=("comicsansms", 13, "bold"),
+                relief=SUNKEN, borderwidth=3, text="Support",  cursor="hand2")
+    link2.place(x=800,y=200)
+    link2.bind("<Button-1>", lambda e: Url.callback("mailto:littlebrother.cyber@gmail.com"))
+
     Label(feedback, text="Developed BY: \n\t\t\t\t\t\t\tFRONTEND + Joining BACKEND: ANKESH\t", bg="grey17", fg="white",
-          font=("comicsansms", 13, "bold"), relief=FLAT).place(x=400,y=300)
+          font=("comicsansms", 9, "bold"), relief=FLAT).pack(side=BOTTOM, anchor=NE)
     switch(navself,topFrame,btnState=True)
 
     feedback.mainloop()
