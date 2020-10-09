@@ -38,14 +38,15 @@ def download_insta_img(progress,value, frame, insta, urlProfil, user, path):
 		filename = user + '_' + str(i) + ".jpg"
 		lb = Label(frame, text="(%s) %s %s [%s] %s downloaded." % (str(i), typeMedia, date, view, loc))
 		lb.pack(side=BOTTOM ,fill=X)
+		while (i):
+			if not loc:
+				loc = ''
 
-		if not loc:
-			loc = ''
-
-		insta.downloadPictures(media, user, path, filename)
-		progress['value'] += 2
-		frame.update_idletasks()
-		time.sleep(0.1)
+			insta.downloadPictures(media, user, path, filename)
+			progress['value'] += 2
+			frame.update_idletasks()
+			time.sleep(3)
+			i = ""
 	progress.destroy()
 	lb.destroy()
 	return messagebox.showinfo("Flag message", " Download Image finished.")
