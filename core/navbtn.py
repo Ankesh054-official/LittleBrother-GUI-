@@ -8,7 +8,7 @@ from core.switch import FR, LU, BE, All, CH
 # for profile
 def Profle(self, topFrame, navself):
     profile = Toplevel(navself)
-    profile.title("Create Profile")
+    profile.title("Profile")
     profile.minsize(713, 398)
     profile.maxsize(713, 398)
     profile.config(bg="grey17")
