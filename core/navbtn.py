@@ -19,8 +19,7 @@ def Profle(self, topFrame, navself):
           relief=FLAT).place(x=150, y=130)
     name = Entry(profile)
     name.place(x=150, y=60)  # profile name
-    name = name.get()
-    Button(profile, text="submit").place(x=50, y=100)
+    Button(profile, text="submit", command= lambda name = name.get(): print(name.split(' ')[-1]+'\n')).place(x=50, y=100)
     switch(navself,topFrame,btnState=True)
     profile.mainloop()
 
