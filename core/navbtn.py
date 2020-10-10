@@ -1,25 +1,61 @@
 from tkinter import *
+import sqlite3
 from lib.Url import Url
+from lib.database import databases
 from core.switch import switch, createprofile, allprofile, seeProfle, hashdecrypter, Person_lookup
 from core.switch import Username_lookup, Employees_search, Lookup_address, Google_search
 from core.switch import Phone_lookup,IP_lookup,SSID_locator, instagram_info
 from core.switch import FR, LU, BE, All, CH
+import os
+
+
+
+def prof(self,text, topFrame, navself, name, twitter, instagram, facebook):
+    d = os.getcwd()
+    try:
+        os.mkdir("{0}/little's_database".format(d))
+    except FileExistsError:
+        pass
+    os.chdir("{0}/little's_database".format(d))
+    remote = databases.connect_db('con', 'Profile')
+    try:
+        databases.create_table(remote, 'profile')
+    except sqlite3.OperationalError:
+        pass
+    id = databases.select_record(remote, 'profile')
+    databases.insert_data(remote, 'profile', len(id)+1, name, twitter, instagram, facebook)
+    info = databases.select_record(remote, 'profile')
+    databases.close_connection(remote)
+    for x, y in info.items():
+        text.insert(END,"\n\nProfile ID: %s" % x)
+        for i, z in y.items():
+            text.insert(END,(i, z))
+    os.chdir('{0}'.format(d))
 
 
 # for profile
-def Profle(self, topFrame, navself):
+def Profle(self,text, topFrame, navself):
+    text.delete(1.0,END)
     profile = Toplevel(navself)
     profile.title("Profile")
     profile.minsize(713, 398)
     profile.maxsize(713, 398)
     profile.config(bg="grey17")
-    Label(profile, text="Profile Name:", bg="grey17", fg="red", font=("comicsansms", 15, "bold"), relief=FLAT).place(
-        x=5, y=20)
+    Label(profile, text="Profile Name:", bg="grey17", fg="red", font=("comicsansms", 12, "bold"), relief=FLAT).pack(anchor=SW,pady=10,padx=(20,10))
     Label(profile, text="(Format: First name Last name)", bg="grey17", fg="red", font=("comicsansms", 15, "bold"),
-          relief=FLAT).place(x=150, y=130)
+          relief=FLAT).pack(side=BOTTOM, fill=X)
     name = Entry(profile)
-    name.place(x=150, y=60)  # profile name
-    Button(profile, text="submit", command= lambda name = name.get(): print(name.split(' ')[-1]+'\n')).place(x=50, y=100)
+    name.pack(side=TOP, pady=(1,1),padx=(20,10))  # profile name
+    Label(profile, text="Twitter Link:", bg="grey17", fg="red", font=("comicsansms", 12, "bold"), relief=FLAT).pack(anchor=SW,pady=10,padx=(20,10))
+    twitter = Entry(profile)
+    twitter.pack(side=TOP, pady=(1,1),padx=(20,10))
+    Label(profile, text="Instagram Link:", bg="grey17", fg="red", font=("comicsansms", 12, "bold"), relief=FLAT).pack(anchor=SW, pady=10,padx=(20,10) )
+    instagram = Entry(profile)
+    instagram.pack(side=TOP, pady=(1,1),padx=(20,10))
+    Label(profile, text="Facebook Link:", bg="grey17", fg="red", font=("comicsansms", 12, "bold"), relief=FLAT).pack(anchor=SW , pady=10,padx=(20,10))
+    facebook = Entry(profile)
+    facebook.pack(side=TOP, pady=(1,1),padx=(20,10))
+    Button(profile, text="submit", command= lambda: prof(self,text,topFrame,navself,name.get(),twitter.get(), instagram.get(), facebook.get())).pack(side=BOTTOM)
     switch(navself,topFrame,btnState=True)
     profile.mainloop()
 
