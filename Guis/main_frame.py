@@ -49,7 +49,7 @@ def main_frame(self):
     options = ["Profile", "Lookup","Main Help", "About", "Feedback"]
 
     # commands for the navbar:
-    work = [lambda: Profle(self,topFrame,navself), lambda: Lookup(self, text, topFrame, navself),
+    work = [lambda: Profle(self,text,topFrame,navself), lambda: Lookup(self, text, topFrame, navself),
             lambda: main_Help(self,topFrame,navself), lambda: About(self,topFrame,navself),
             lambda: Feedback(self,topFrame,navself)]
     # set y-coordinate of Navbar widgets:
