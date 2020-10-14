@@ -1,7 +1,7 @@
 import ImageTk
 import requests
 from colorama import init, Fore,  Back,  Style
-from core.instagramSearchTool import instagramSearchTool, pat, go
+from core.instagramSearchTool import instagramSearchTool, pat
 from core.shortCutUrl import shortCutUrl
 from tkinter import *
 from tkinter.ttk import *
