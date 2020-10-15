@@ -16,6 +16,7 @@ class databases:
             # return 1
         else:
             print("link.invalid: Instagram account is not your.")
+
     def connect_db(self, db_name):
         self = connect('{0}.db'.format(db_name))
         return self
