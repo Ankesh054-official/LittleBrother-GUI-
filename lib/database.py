@@ -8,7 +8,6 @@ class databases:
 
     def link_verify(self, name, twiter, instag, facbok):
         user = instag.split("/")[3]
-        print(user)
         insta = instagramSearchTool()
         insta.getInfo(user)
         if name == insta.name:
