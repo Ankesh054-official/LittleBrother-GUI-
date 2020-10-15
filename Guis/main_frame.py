@@ -2,8 +2,10 @@
    Designed By : ANKESH"""
 from tkinter import *
 from random import *
-from core.switch import switch
-from core.navbtn import Profle, main_Help, Feedback, More_Tools, Lookup, About, Change_country
+from core.switch import switch, Person_lookup
+from core.navbtn import Profle, main_Help, Feedback, About
+from core.switch import Username_lookup, Employees_search, Lookup_address, Google_search
+from core.switch import Phone_lookup,IP_lookup,SSID_locator, instagram_info
 
 
 def main_frame(self):
@@ -43,26 +45,31 @@ def main_frame(self):
     # setting Navbar frame:
     navself = Frame(self, bg="gray17", height=1000, width=300)
     navself.place(x=-300, y=0)
+
     Label(navself, font="Bahnschrift 15", bg="#252726", fg="black", height=2, width=300, padx=20).place(x=0,y=0)
 
     # option in the navbar:
-    options = ["Profile", "Lookup","Main Help", "About", "Feedback"]
+    options = ["Profile", "Person lookup", "Username lookup", "Employees search", "Lookup address",
+               "Google search", "Phone lookup", "IP lookup",
+               "SSID locator", "instagram info","Main Help", "About", "Feedback"]
 
     # commands for the navbar:
-    work = [lambda: Profle(self,text,topFrame,navself), lambda: Lookup(self, text, topFrame, navself),
+    work = [lambda: Profle(self,text,topFrame,navself), lambda: Person_lookup(self, text, navself, topFrame), lambda: Username_lookup(self,text, navself, topFrame),
+            lambda: Employees_search(self,text, navself, topFrame),lambda: Lookup_address(self, text, navself, topFrame),
+            lambda: Google_search(self, text, navself, topFrame),
+            lambda: Phone_lookup(self, text, navself, topFrame),  lambda: IP_lookup(self, text, navself, topFrame),
+            lambda: SSID_locator(navself, topFrame), lambda: instagram_info(self,text, navself, topFrame),
             lambda: main_Help(self,topFrame,navself), lambda: About(self,topFrame,navself),
             lambda: Feedback(self,topFrame,navself)]
     # set y-coordinate of Navbar widgets:
-    y = 80
-    x = 30
+    y = 50
+    x = 15
     # Navbar Option Buttons:
-    for i in range(5):
-        x += randrange(5, 20, 5)
+    for i in range(12):
         Button(navself, text=options[i], font="BahnschriftLight 15", bg="gray17", fg="white",
-               activebackground="gray17", activeforeground="green", bd=0,
+               activebackground="gray17", activeforeground="green", bd=0, width=19,
                command=work[i]).place(x=x, y=y)
         y += 40
-        x -= randrange(10, 20, 5)
 
     # Navbar button:
     navbarBtn = Button(topFrame, image=navIcon, bg=color["orange"], activebackground=color["orange"], bd=0, padx=20,
