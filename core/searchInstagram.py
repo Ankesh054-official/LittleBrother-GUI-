@@ -11,6 +11,8 @@ import wget
 import time
 from PIL import Image
 
+from lib import Url
+
 warning = "["+Fore.RED+"!"+Fore.RESET+"]"
 question = "["+Fore.YELLOW+"?"+Fore.RESET+"]"
 found = "["+Fore.GREEN+"+"+Fore.RESET+"]"
@@ -81,6 +83,7 @@ def searchInstagram(self,instagram_info,user,text):
 			img = Label(self, image=render)
 			img.image = render
 			img.place(x=1030, y=10)
+			img.bind("<Button-1>", lambda e: Url.Url.callback(image_url))
 
 			progress['value'] = 30
 			self.update_idletasks()
