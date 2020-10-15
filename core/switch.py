@@ -41,7 +41,8 @@ def allprofile(profile, navself):
 
 
 # to create a profile
-def createprofile(profile, navself):
+def createprofile(profile, navself, topFrame):
+    switch(navself, topFrame, btnState=True)
     profile.destroy()
     navself = Toplevel(navself)
     navself.title("Create Profile")
@@ -67,8 +68,9 @@ def hashdecrypter(more_tools, navself):
     more_tools.destroy()
     return messagebox.showinfo("info","hash")
 
-def Person_lookup(self, text, lookup):
-    lookup.destroy()
+def Person_lookup(self, text, navself, topFrame):
+    switch(navself, topFrame, btnState=True)
+    # lookup.destroy()
     person_lookup = Toplevel(self)
     person_lookup.title("Person Lookup")
     person_lookup.config(bg="grey17")
@@ -96,8 +98,9 @@ def Mail_tracer(self, lookup):
     return messagebox.showinfo("info", "Mail_tracer")
 
 
-def Username_lookup(self, text, lookup):
-    lookup.destroy()
+def Username_lookup(self, text, navself, topFrame):
+    switch(navself, topFrame, btnState=True)
+    # lookup.destroy()
     username_lookup = Toplevel(self)
     username_lookup.title("Username Lookup")
     username_lookup.config(bg="grey17")
@@ -114,8 +117,9 @@ def Username_lookup(self, text, lookup):
     username_lookup.mainloop()
 
 
-def Employees_search(self,text, lookup):
-    lookup.destroy()
+def Employees_search(self,text, navself, topFrame):
+    switch(navself, topFrame, btnState=True)
+    # lookup.destroy()
     Employees_search = Toplevel(self)
     Employees_search.title("Employees Lookup")
     Employees_search.config(bg="grey17")
@@ -136,8 +140,9 @@ def Employees_search(self,text, lookup):
     Employees_search.mainloop()
 
 
-def Lookup_address(self, text, lookup):
-    lookup.destroy()
+def Lookup_address(self, text, navself, topFrame):
+    switch(navself, topFrame, btnState=True)
+    # lookup.destroy()
     Lookup_addr = Toplevel(self)
     Lookup_addr.title("Address Lookup")
     Lookup_addr.config(bg="grey17")
@@ -155,8 +160,9 @@ def Lookup_address(self, text, lookup):
     Lookup_addr.mainloop()
 
 
-def Google_search(self, text, lookup):
-    lookup.destroy()
+def Google_search(self, text, navself, topFrame):
+    switch(navself, topFrame, btnState=True)
+    # lookup.destroy()
     googl = Toplevel(self)
     googl.title("Google Lookup")
     googl.config(bg="grey17")
@@ -176,8 +182,9 @@ def Google_search(self, text, lookup):
     googl.mainloop()
 
 
-def Phone_lookup(self,text, lookup):
-    lookup.destroy()
+def Phone_lookup(self,text, navself, topFrame):
+    switch(navself, topFrame, btnState=True)
+    # lookup.destroy()
     phone_look = Toplevel(self)
     phone_look.title("Address Lookup")
     phone_look.config(bg="grey17")
@@ -199,8 +206,9 @@ def Facebook_GraphSearch(self, lookup):
     return messagebox.showinfo("info", "Facebook_GraphSearch")
 
 
-def IP_lookup(self, text, lookup):
-    lookup.destroy()
+def IP_lookup(self, text, navself, topFrame):
+    switch(navself, topFrame, btnState=True)
+    # lookup.destroy()
     Lookup_ipaddr = Toplevel(self)
     Lookup_ipaddr.title("IP-Address Lookup")
     Lookup_ipaddr.config(bg="grey17")
@@ -228,8 +236,9 @@ def SSID_locator(self, lookup):
     return messagebox.showinfo("info", "SSID_locator")
 
 
-def instagram_info(self,text, lookup):
-    lookup.destroy()
+def instagram_info(self,text, navself, topFrame):
+    switch(navself, topFrame, btnState=True)
+    # lookup.destroy()
     instagram_info = Toplevel(self)
     instagram_info.title("Instagram Lookup")
     instagram_info.config(bg="grey17")
