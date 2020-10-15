@@ -12,12 +12,12 @@ def lay(frame1):
             check()
     check()
     btn1 = Button(frame1, activebackground="black", activeforeground="white", text="Register",
-                  font=("comicsansms", 12, "bold"), relief=SUNKEN, borderwidth=3, command=lambda:
+                  font=("comicsansms", 12, "bold"), relief=SUNKEN, borderwidth=3, width=13,command=lambda:
                   layout_decision.create_lay(frame1, "Create Account")).place(x=115, y=100)
     btn2 = Button(frame1, activebackground="black", activeforeground="white", text="SignIn",
-                  font=("comicsansms", 12, "bold"), relief=SUNKEN, borderwidth=3,
+                  font=("comicsansms", 12, "bold"), relief=SUNKEN, borderwidth=3, width=13,
                   command=lambda: layout_decision.create_lay(frame1, "SignIn")).place(x=115, y=150)
     btn3 = Button(frame1, activebackground="black", activeforeground="white", text="Forgot Password",
-                  font=("comicsansms", 12, "bold"), relief=SUNKEN, borderwidth=3,
+                  font=("comicsansms", 12, "bold"), relief=SUNKEN, borderwidth=3, width=13,
                   command=lambda: layout_decision.create_lay(frame1, "Forgot Password")).place(x=115, y=200)
 
