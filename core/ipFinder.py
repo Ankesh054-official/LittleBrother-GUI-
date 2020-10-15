@@ -29,13 +29,6 @@ def ipFinder(self, text, Lookup_ipaddr, ip):
 	data = requests.get(url+ip).content.decode('utf-8')
 	values = json.loads(data)
 
-	# text.insert(END,values)
-
-	# {'status': 'success', 'country': 'India', 'countryCode': 'IN', 'region': 'HR', 'regionName': 'Haryana',
-	#  'city': 'Rohtak', 'zip': '124001', 'lat': 28.8964, 'lon': 76.5909, 'timezone': 'Asia/Kolkata',
-	#  'isp': 'Reliance Jio Infocomm Limited', 'org': 'Rjil Internet', 'as': 'AS55836 Reliance Jio Infocomm Limited',
-	#  'query': '157.36.151.141'}
-
 	progress['value'] = 20
 	self.update_idletasks()
 	time.sleep(0.1)
@@ -48,39 +41,9 @@ def ipFinder(self, text, Lookup_ipaddr, ip):
 		self.update_idletasks()
 		time.sleep(0.1)
 		progress.destroy()
+		l2.destroy()
 
 	else:
-		# infos = ("IP", ip)
-		# TABLE_DATA.append(infos)
-		# infos = ("ISP", values['isp'])
-		# TABLE_DATA.append(infos)
-		# progress['value'] = 40
-		# self.update_idletasks()
-		# time.sleep(0.1)
-		# infos = ("Organisation", values['org'])
-		# TABLE_DATA.append(infos)
-		# infos = ("Pays", values['country'])
-		# TABLE_DATA.append(infos)
-		# infos = ("Region", values['regionName'])
-		# TABLE_DATA.append(infos)
-		# infos = ("Ville", values['city'])
-		# progress['value'] = 60
-		# self.update_idletasks()
-		# time.sleep(0.1)
-		# TABLE_DATA.append(infos)
-		# infos = ("Code Postal", values['zip'])
-		# TABLE_DATA.append(infos)
-		# localisation = str(values['lat'])+', '+str(values['lon'])
-		# infos = ("Localisation", localisation)
-		# TABLE_DATA.append(infos)
-		# progress['value'] = 80
-		# self.update_idletasks()
-		# time.sleep(0.1)
-		# infos = ("Maps", "https://www.google.fr/maps?q="+localisation)
-		# TABLE_DATA.append(infos)
-		# # table = SingleTable(TABLE_DATA, ip)
-		# # text.insert(END,table.table)
-		#
 		text.insert(END,"[ %s ]" % (ip))
 		text.insert(END,"\n IP: " + ip)
 		# text.insert(END,"\n Hostname: " + values['ipName'])
