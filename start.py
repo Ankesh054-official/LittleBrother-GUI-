@@ -1,6 +1,6 @@
 from Guis.gui import lay
 from tkinter import *
-import os
+import os,time
 
 try:
     os.system("clear")
@@ -17,4 +17,7 @@ try:
     lay(root)  # first window
     root.mainloop()
 except:
-    os.system('clear && echo {0}'.format("FORCE EXIT"))
+    os.system('echo {0}'.format("FORCE EXIT"))
+    time.sleep(5)
+finally:
+    os.system('clear')
