@@ -73,11 +73,11 @@ def main_frame(self):
 
     # Navbar button:
     navbarBtn = Button(topFrame, image=navIcon, bg=color["orange"], activebackground=color["orange"], bd=0, padx=20,
-                           command= lambda: switch(navself, topFrame, btnState=False))
+                           command= lambda: switch(navself, text, topFrame, btnState=False))
     navbarBtn.place(x=6, y=10)
 
     # Navbar Close Button:
     closeBtn = Button(navself, image=closeIcon, bg=color["orange"], activebackground=color["orange"], bd=0,
-                         command= lambda: switch(navself, topFrame, btnState=True))
+                         command= lambda: switch(navself,text,  topFrame, btnState=True))
     closeBtn.place(x=250, y=10)
     self.mainloop()
