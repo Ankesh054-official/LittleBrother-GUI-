@@ -5,27 +5,24 @@ from core import settings,google
 
 
 # setting switch function:
-def switch(navself, topFrame, btnState):
+def switch(navself,text, topFrame, btnState):
+    text.delete(1.0,END)
     # create animated Navbar closing:
     if btnState is True:
         for x in range(301):
             navself.place(x=-x, y=0)
             topFrame.update()
-
         # resetting widget colors:
         topFrame.config(bg="#252726")
-
         # turning button OFF:
         btnState = False
     else:
         # make self dim:
         topFrame.config(bg="#252726")
-
         # created animated Navbar opening:
         for x in range(-300, 0):
             navself.place(x=x, y=0)
             topFrame.update()
-
         # turing button ON:
         btnState = True
 
@@ -55,12 +52,6 @@ def createprofile(profile, navself, topFrame):
     name.place(x=150 ,y=60) # profile name
     name = name.get()
     Button(navself, text="submit").place(x=50, y=100)
-
-    # p1 = Entry(navself)
-    # p1.place(x=150, y=20)
-    # Label(navself, text="(Format: First name Last name)", bg="grey17", fg="red", font=("comicsansms", 10, "bold"),
-    #       relief=FLAT).place(x=100, y=50)
-
     navself.mainloop()
 
 # to decrypte hash
@@ -69,7 +60,7 @@ def hashdecrypter(more_tools, navself):
     return messagebox.showinfo("info","hash")
 
 def Person_lookup(self, text, navself, topFrame):
-    switch(navself, topFrame, btnState=True)
+    switch(navself,text, topFrame, btnState=True)
     # lookup.destroy()
     person_lookup = Toplevel(self)
     person_lookup.title("Person Lookup")
@@ -99,7 +90,7 @@ def Mail_tracer(self, lookup):
 
 
 def Username_lookup(self, text, navself, topFrame):
-    switch(navself, topFrame, btnState=True)
+    switch(navself, text,topFrame, btnState=True)
     # lookup.destroy()
     username_lookup = Toplevel(self)
     username_lookup.title("Username Lookup")
@@ -118,7 +109,7 @@ def Username_lookup(self, text, navself, topFrame):
 
 
 def Employees_search(self,text, navself, topFrame):
-    switch(navself, topFrame, btnState=True)
+    switch(navself,text, topFrame, btnState=True)
     # lookup.destroy()
     Employees_search = Toplevel(self)
     Employees_search.title("Employees Lookup")
@@ -141,7 +132,7 @@ def Employees_search(self,text, navself, topFrame):
 
 
 def Lookup_address(self, text, navself, topFrame):
-    switch(navself, topFrame, btnState=True)
+    switch(navself, text, topFrame, btnState=True)
     # lookup.destroy()
     Lookup_addr = Toplevel(self)
     Lookup_addr.title("Address Lookup")
@@ -155,13 +146,13 @@ def Lookup_address(self, text, navself, topFrame):
     addr.place(x=290, y=60)
     btn = Button(Lookup_addr, text="Search", font="BahnschriftLight 15", bg="gray17", fg="white",
                  activebackground="gray17", activeforeground="green", bd=0,
-                 command=lambda: searchAdresse.searchAdresse(self, text, Lookup_addr,addr.get() ,settings.countrycode)).place(x=120,
-                                                                                                                y=260)
+                 command=lambda: searchAdresse.searchAdresse(self, text, Lookup_addr,addr.get() ,settings.countrycode)).\
+        place(x=120,y=260)
     Lookup_addr.mainloop()
 
 
 def Google_search(self, text, navself, topFrame):
-    switch(navself, topFrame, btnState=True)
+    switch(navself, text, topFrame, btnState=True)
     # lookup.destroy()
     googl = Toplevel(self)
     googl.title("Google Lookup")
@@ -183,7 +174,7 @@ def Google_search(self, text, navself, topFrame):
 
 
 def Phone_lookup(self,text, navself, topFrame):
-    switch(navself, topFrame, btnState=True)
+    switch(navself,text, topFrame, btnState=True)
     # lookup.destroy()
     phone_look = Toplevel(self)
     phone_look.title("Address Lookup")
@@ -207,7 +198,7 @@ def Facebook_GraphSearch(self, lookup):
 
 
 def IP_lookup(self, text, navself, topFrame):
-    switch(navself, topFrame, btnState=True)
+    switch(navself, text, topFrame, btnState=True)
     # lookup.destroy()
     Lookup_ipaddr = Toplevel(self)
     Lookup_ipaddr.title("IP-Address Lookup")
@@ -221,8 +212,7 @@ def IP_lookup(self, text, navself, topFrame):
     ipaddr.place(x=290, y=60)
     btn = Button(Lookup_ipaddr, text="Search", font="BahnschriftLight 15", bg="gray17", fg="white",
                  activebackground="gray17", activeforeground="green", bd=0,
-                 command=lambda: ipFinder.ipFinder(self, text, Lookup_ipaddr, ipaddr.get())).place(x=120,
-                                                                                          y=260)
+                 command=lambda: ipFinder.ipFinder(self, text, Lookup_ipaddr, ipaddr.get())).place(x=120,y=260)
     Lookup_ipaddr.mainloop()
 
 
@@ -237,7 +227,7 @@ def SSID_locator(self, lookup):
 
 
 def instagram_info(self,text, navself, topFrame):
-    switch(navself, topFrame, btnState=True)
+    switch(navself, text, topFrame, btnState=True)
     # lookup.destroy()
     instagram_info = Toplevel(self)
     instagram_info.title("Instagram Lookup")
