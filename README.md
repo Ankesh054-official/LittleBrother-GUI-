@@ -102,8 +102,8 @@ Compatible
     
 
 <!--Features-->
-<!--=-->
-###TO-DO:
+TO-DO:
+=
  - Lookup:
     - [ ] Phone lookup
     - [ ] Email lookup
