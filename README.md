@@ -125,7 +125,7 @@ TO-DO:
     - [ ] Temp-Mail Generator
 	- [ ] Hash Bruteforce
 
-- Profiler (New!)
+- Profiler
     - [ ] Profiler an profile
     - [ ] Database management
     - [ ] Profile creator
