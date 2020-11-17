@@ -3,7 +3,7 @@ from tkinter import *
 import os,time
 
 try:
-    os.system("clear")
+    os.system("clear && figlet -c -t  Littlebrother")
     root = Tk()
     root.geometry('713x398+300+200')
     root.minsize(713, 398)
@@ -20,4 +20,4 @@ except:
     os.system('echo {0}'.format("FORCE EXIT"))
     time.sleep(5)
 finally:
-    os.system('clear')
+    os.system('echo bye')
