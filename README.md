@@ -105,30 +105,30 @@ Compatible
 =
 ###TO-DO:
  - Lookup:
-    -[ ] Phone lookup
-    -[ ] Email lookup
-    -[ ] Last name / First name lookup
-    -[ ] Surname lookup
-    -[ ] Lookup address
-    -[ ] Mail ip locator
-    -[ ] Ip locator
-    -[ ] Bssid locator
-    -[ ] Exif read
-    -[ ] Google search
-    -[ ] Twitter
-    -[ ] Instagram
-    -[ ] Facebook
-    -[ ] LinkedIn employee search (New!)
-    -[ ] Hash Bruteforce (New!)
+    - [ ] Phone lookup
+    - [ ] Email lookup
+    - [ ] Last name / First name lookup
+    - [ ] Surname lookup
+    - [ ] Lookup address
+    - [ ] Mail ip locator
+    - [ ] Ip locator
+    - [ ] Bssid locator
+    - [ ] Exif read
+    - [ ] Google search
+    - [ ] Twitter
+    - [ ] Instagram
+    - [ ] Facebook
+    - [ ] LinkedIn employee search (New!)
+    - [ ] Hash Bruteforce (New!)
 
  - Other tools:
-    -[ ] Temp-Mail Generator
-	-[ ] Hash Bruteforce
+    - [ ] Temp-Mail Generator
+	- [ ] Hash Bruteforce
 
 - Profiler (New!)
-    -[ ] Profiler an profile
-    -[ ] Database management
-    -[ ] Profile creator
+    - [ ] Profiler an profile
+    - [ ] Database management
+    - [ ] Profile creator
 
 
 
