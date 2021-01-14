@@ -7,6 +7,7 @@ Table of Contents
    * [Languages and Tools](#Languages-and-Tools)
    * [Installation on Linux](#Installation-on-Linux)
    * [Installation on Windows](#Installation-on-Windows)
+   * [Compatible](#Compatible)
    * [Contributors](#Contributors)
 
 
