@@ -23,7 +23,6 @@ def welcome(inp_para):
     inp = inp_para
     inp = inp.upper()
     for i in inp:
-            print(i)
             text['{0}'.format(i.upper())] = (font['"{0}"'.format(i)]).split('\n')
 
     for i in range(1,8):
@@ -32,9 +31,31 @@ def welcome(inp_para):
                     print(text['{0}'.format(j)][i], end=" ")
             print()
 
-
+def check_exist(f):
+    x = ("beautifulsoup4","bs4","colorama","emoji","gcloud","googleapis-common-protos","html5lib",
+           "httplib2","jws","mechanize","oauth2client","Pillow","protobuf","pyasn1","pyasn1-modules",
+           "pycryptodome","pyparsing","Pyrebase","python-jwt","regex","requests","requests-toolbelt",
+           "rsa","six","soupsieve","terminaltables","webencodings","wget")
+    for i in x:
+        if i not in f.read():
+            return False
+        
+    return True
+            
 
 try:
+    with open("requirements.txt","r") as f:
+            print("Checking requirements ......")
+            
+            if not check_exist(f):
+                print("Installing requirements ......")
+                os.system("pip3 install pyrebase && pip3 install --upgrade setuptools && pip3 install --upgrade gcloud && pip3 install pyrebase")
+                os.system("pip3 install -r requirements.txt")
+
+            if check_exist(f):
+                  os.system("pip freeze> requirements.txt")
+
+
     if(platform.system() == "Windows"):
         os.system("cls")
 

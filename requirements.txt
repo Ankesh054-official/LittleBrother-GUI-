@@ -1,18 +1,28 @@
-figlet
-pyperclip
-mechanize
+beautifulsoup4
+bs4
+colorama
 emoji
+gcloud
+googleapis-common-protos
+html5lib
+httplib2
+jws
+mechanize
+oauth2client
+Pillow
+protobuf
+pyasn1
+pyasn1-modules
+pycryptodome
+pyparsing
+Pyrebase
+python-jwt
 regex
 requests
-bs4
+requests-toolbelt
+rsa
+six
+soupsieve
 terminaltables
-exifread
-colorama
-pyrebase
-PIL
-try:
-    pip3 install pyrebase
-expect:
-    pip3 install --upgrade setuptools
-    pip3 install --upgrade gcloud
-    pip3 install pyrebase
+webencodings
+wget
