@@ -1,4 +1,4 @@
-import ImageTk
+from PIL import ImageTk, Image
 import requests
 from colorama import init, Fore,  Back,  Style
 from core.instagramSearchTool import instagramSearchTool, pat

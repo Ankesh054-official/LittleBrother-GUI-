@@ -11,7 +11,7 @@ def check_internet(frame1):
 	progress.place(x=210, y=190)
 	#Check Internet is conected or not
 	global url, timeout
-	url = "http://www.kite.com"
+	url = "http://www.google.com"
 	timeout = 5
 	try:
 		progress['value'] = 5
